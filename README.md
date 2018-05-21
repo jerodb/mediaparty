@@ -1,12 +1,13 @@
 # Mediaparty #
 
-**Clone repo:** <br />
-$ git clone https://github.com/jerodb/mediaparty.git
+**Repo:**
+$ git clone https://jerodb@bitbucket.org/jerodb/media-party.git
 
-**Inside cloned directory run:** <br />
-$ npm i
+**Install dependencies**
+$ yarn
 
-**Start development:** <br />
-$ npm start
+**Build dist:**
+$ yarn build
 
-**The Media Party app will be running at localhost:4000**
+**Start dev**
+$ yarn start
