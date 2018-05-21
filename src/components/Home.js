@@ -166,7 +166,7 @@ class Home extends React.Component {
         {/* SPEAKERS */}
         { this.state.featuredSpeakers.length > 0 &&
         <section id="speakers" className="wrapper">
-          <h2><div className="title-txt">SPEAKERS 2018</div><div className="title-line" /></h2>
+          <h2><div className="title-txt">SPEAKERS 2017</div><div className="title-line" /></h2>
           <div className="event__speakers_featured">
             {
               this.state.featuredSpeakers.map((data, k) => {
