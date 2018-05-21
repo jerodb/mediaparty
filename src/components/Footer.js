@@ -29,7 +29,8 @@ class Footer extends React.Component {
               <a href="http://lanyrd.com/2013/hhba/" className="event__link" onClick={ () => { handleGAClick(gaEvents.formerEditions[0], '2013'); } }>2013</a>,
               <a href="http://lanyrd.com/2014/hhba/" className="event__link" onClick={ () => { handleGAClick(gaEvents.formerEditions[0], '2014'); } }>2014</a>,
               <a href="https://hackshackersbamediaparty2015.sched.com/" className="event__link" onClick={ () => { handleGAClick(gaEvents.formerEditions[0], '2015'); } }>2015</a>,
-              <a href="https://hackshackersbamediaparty2016.sched.com/" className="event__link" onClick={ () => { handleGAClick(gaEvents.formerEditions[0], '2016'); } }>2016</a>
+              <a href="https://hackshackersbamediaparty2016.sched.com/" className="event__link" onClick={ () => { handleGAClick(gaEvents.formerEditions[0], '2016'); } }>2016</a>,
+              <a href="http://sched17.mediaparty.info//" className="event__link" onClick={ () => { handleGAClick(gaEvents.formerEditions[0], '2017'); } }>2017</a>
             </p>
             <p className="event__copyright">Copyright © 2018</p>
           </div>
