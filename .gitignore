@@ -1,0 +1,7 @@
+.git
+.idea
+build
+node_modules
+*.bak
+*.log
+mp-prod*
