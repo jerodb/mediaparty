@@ -1,5 +1,6 @@
 import React from 'react';
 import CardQuote from './partials/CardQuote';
+import PropTypes from "prop-types";
 
 class Quotes extends React.Component {
   render() {
@@ -8,11 +9,15 @@ class Quotes extends React.Component {
     return (
       <div id="quotes" className="event__quotes row">
         {
-          quotes.map(item => <CardQuote data={ item } />)
+          quotes.map((item, k) => <CardQuote key={ k } data={ item } />)
         }
       </div>
     );
   }
 }
+
+Quotes.propTypes = {
+  data: PropTypes.array,
+};
 
 export default Quotes;

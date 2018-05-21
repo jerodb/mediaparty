@@ -4,14 +4,17 @@ import App from './App';
 
 const translations = [
   {
+    id: 'spanish',
     path: '/es',
     lang: 'es',
   },
   {
+    id: 'english',
     path: '/en',
     lang: 'en',
   },
   {
+    id: 'default',
     path: '',
     lang: 'es',
   },
@@ -19,8 +22,8 @@ const translations = [
 
 const Router = () => (
   <Switch>
-    { translations.map(({ path, lang }) => (
-      <Route path={ path } render={ () => (<App lang={ lang } root={ path } />) } />
+    { translations.map(({ id, path, lang }) => (
+      <Route key={ id } path={ path } render={ () => (<App lang={ lang } root={ path } />) } />
     ))}
   </Switch>
 );

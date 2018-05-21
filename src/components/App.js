@@ -55,6 +55,7 @@ const App = ({ root, lang }) => {
             const cLang = Object.assign(lan[state][lang], { root }, { lang });
             return (
               <Route
+                key={ state }
                 path={ root + path }
                 exact={ exact }
                 render={ () => (
