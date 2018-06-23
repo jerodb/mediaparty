@@ -7,8 +7,8 @@ export default {
   ],
   hero: [
     {
-      category: 'Register for days',
-      action: 'Click on DAY 1',
+      category: 'Register',
+      action: 'Click on Register',
     },
     {
       category: 'Register for days',
