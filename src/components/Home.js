@@ -100,14 +100,13 @@ class Home extends React.Component {
           <div className="row event__hero_inner" />
         </div>
         { /* CTAs */ }
-        {/*
 
         <section className="event__actions">
           <div className="row">
             <div className="col-xs-12 event__meet_up">
               <div className="wrapper">
                 <p>{ registerPre }</p>
-                <p className="title">&darr;&darr; { register } &darr;&darr;</p>
+                { /* <p className="title">&darr;&darr; { register } &darr;&darr;</p>
                 <div className="event__meet_up_links">
                   <div className="left_arrow">{here} &rarr; </div>
                   <div className="links_inner">
@@ -115,23 +114,35 @@ class Home extends React.Component {
                     <a href="https://www.meetup.com/es-ES/HacksHackersBA/events/241142717/" onClick={ () => { handleGAClick(gaEvents.hero[1]); } } target="_blank" rel="noopener noreferrer" className="event__meet_up_cta">{ day } 2</a> /
                     <a href="https://www.meetup.com/es-ES/HacksHackersBA/events/241142729/" onClick={ () => { handleGAClick(gaEvents.hero[2]); } } target="_blank" rel="noopener noreferrer" className="event__meet_up_cta">{ day } 3</a>
                   </div>
-
                   <div className="right_arrow"> &larr; {here}</div>
+                </div> */}
+                <div className="event__meet_up_links">
+                  <div className="links_inner">
+                    <a href="https://www.meetup.com/es-ES/HacksHackersBA/events/" onClick={ () => { handleGAClick(gaEvents.hero[0]); } } target="_blank" rel="noopener noreferrer" className="event__meet_up_cta">{ register }</a>
+                  </div>
                 </div>
                 <p>{ registerPos }</p>
               </div>
             </div>
-            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 event__forms">
-              <p>{ proposal }</p>
-              <div className="event__forms_links">
-                <Link to={ '/' } className="event__form_cta disabled" onClick={ () => { handleGAClick(gaEvents.hero[3]); } }>{ workshop }</Link> /
-                <Link to={ '/' } className="event__form_cta disabled" onClick={ () => { handleGAClick(gaEvents.hero[4]); } }>{ talk }</Link> /
-                <Link to={ '/' } className="event__form_cta disabled" onClick={ () => { handleGAClick(gaEvents.hero[5]); } }>{ fair }</Link>
-              </div>
+          </div>
+        </section>
+
+        <section className="wrapper event__proposals">
+          <div className="col-sm-12 col-xs-12 event__forms">
+            <p>{ proposal }</p>
+            <div className="event__forms_links">
+              <a href="https://goo.gl/forms/gbo24YkCZozAQDQe2" onClick={ () => { handleGAClick(gaEvents.hero[3]); } } target="_blank" rel="noopener noreferrer" className="event__form_cta">{ workshop }</a> /
+              <a href="https://goo.gl/forms/N84m60yy8XjhsYay1" onClick={ () => { handleGAClick(gaEvents.hero[4]); } } target="_blank" rel="noopener noreferrer" className="event__form_cta">{ talk }</a> /
+              <a href="https://goo.gl/forms/tx8Dc7DOHZDJTiyC2" onClick={ () => { handleGAClick(gaEvents.hero[5]); } } target="_blank" rel="noopener noreferrer" className="event__form_cta">{ fair }</a>
+
+              { /*
+              <Link to={ '/posit-workshop' } className="event__form_cta" onClick={ () => { handleGAClick(gaEvents.hero[3]); } }>{ workshop }</Link> /
+              <Link to={ '/posit-lightning-talk' } className="event__form_cta" onClick={ () => { handleGAClick(gaEvents.hero[4]); } }>{ talk }</Link> /
+              <Link to={ '/posit-media-fair' } className="event__form_cta" onClick={ () => { handleGAClick(gaEvents.hero[5]); } }>{ fair }</Link>
+              */ }
             </div>
           </div>
         </section>
-        */}
 
         { /* QUOTES */ }
         <section className="wrapper">
@@ -196,10 +207,10 @@ class Home extends React.Component {
             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 event__where_to_stay_description" dangerouslySetInnerHTML={ where.description } />
             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 event__where_to_stay_description">
               <span dangerouslySetInnerHTML={ where.description2 } />
-              <p><a href="http://www.abastohotel.com/" target="_blank" onClick={ () => { handleGAClick(gaEvents.whereToStay[0], 'Abasto Hotel'); } }>Abasto Hotel</a></p>
-              <p><a href="http://www.hotelegipto.com.ar/" target="_blank" onClick={ () => { handleGAClick(gaEvents.whereToStay[0], 'Hotel Egipto'); } }>Hotel Egipto</a></p>
-              <p><a href="http://www.nontuehotel.com.ar/" target="_blank" onClick={ () => { handleGAClick(gaEvents.whereToStay[0], 'Hotel N’Ontue'); } }>Hotel N’Ontue</a></p>
-              <p><a href="http://abastoapartsuites.com.ar/" target="_blank" onClick={ () => { handleGAClick(gaEvents.whereToStay[0], 'Abasto Apartments & Suites'); } }>Abasto Apartments & Suites</a></p>
+              <p><a href="http://www.abastohotel.com/" target="_blank" rel="noopener noreferrer" onClick={ () => { handleGAClick(gaEvents.whereToStay[0], 'Abasto Hotel'); } }>Abasto Hotel</a></p>
+              <p><a href="http://www.hotelegipto.com.ar/" target="_blank" rel="noopener noreferrer" onClick={ () => { handleGAClick(gaEvents.whereToStay[0], 'Hotel Egipto'); } }>Hotel Egipto</a></p>
+              <p><a href="http://www.nontuehotel.com.ar/" target="_blank" rel="noopener noreferrer" onClick={ () => { handleGAClick(gaEvents.whereToStay[0], 'Hotel N’Ontue'); } }>Hotel N’Ontue</a></p>
+              <p><a href="http://abastoapartsuites.com.ar/" target="_blank" rel="noopener noreferrer" onClick={ () => { handleGAClick(gaEvents.whereToStay[0], 'Abasto Apartments & Suites'); } }>Abasto Apartments & Suites</a></p>
             </div>
           </div>
         </section>

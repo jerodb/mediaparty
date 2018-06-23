@@ -396,7 +396,7 @@ a {
 }
 
 .event__meet_up_links {
-	margin: 0 auto 1em;
+	margin: 1.5em auto 1em;
 	padding-bottom: 8px;
 }
 
@@ -426,7 +426,8 @@ a {
 	background: #F00;
 	color: #fff;
 	height: 60px;
-	max-width: 600px;
+	width: 100%;
+	max-width: 400px;
 	display: inline-block;
 	padding-top: 16px;
 	padding-left: 8px;
@@ -458,7 +459,7 @@ a {
 	padding: 0 .3em;
 	font-weight: 600;
 	font-size: 18px;
-	text-decoration: underline;
+	/* text-decoration: underline; */
 }
 
 @media (min-width: 400px) {
@@ -485,9 +486,23 @@ a {
 	color: #000;
 }
 
-@media (max-width: 992px) {
-	.event__forms  {
-		margin-top: 16px;
+.event__forms  {
+	margin-bottom: 52px;
+	float: none;
+}
+
+.event__proposals .event__forms {
+	font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+	.event__proposals {
+		padding: 0 !important;
+	}
+
+	.event__proposals .event__forms {
+		font-size: 1em;
+		padding: 0;
 	}
 }
 
