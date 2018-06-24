@@ -9,8 +9,8 @@ require('dotenv').config();
 const all = (req, res) => {
   let lang = req.header('Accept-Language');
   console.log(lang);
-  lang = lang ? lang.split('-') : ['es'];
   const parsed = acceptLang.parse(lang);
+  lang = lang ? lang.split('-') : ['es'];
   const locale = ['es', 'en'].indexOf(lang[0]) !== -1 ? lang[0] : process.env.DEFAULT_LANG
 
   console.log(lang);
