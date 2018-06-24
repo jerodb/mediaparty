@@ -423,15 +423,9 @@ a {
 }
 
 .event__meet_up_links .links_inner {
-	background: #F00;
-	color: #fff;
-	height: 60px;
 	width: 100%;
 	max-width: 400px;
 	display: inline-block;
-	padding-top: 16px;
-	padding-left: 8px;
-	padding-right: 8px;
 }
 
 .event__meet_up_links .right_arrow, .event__meet_up_links .left_arrow {
@@ -455,22 +449,26 @@ a {
 }
 
 .event__meet_up_links a{
-	color: #fff;
-	padding: 0 .3em;
 	font-weight: 600;
 	font-size: 18px;
-	/* text-decoration: underline; */
+	background: red;
+	color: #fff;
+	height: 60px;
+	width: 100%;
+	max-width: 400px;
+	display: inline-block;
+	padding-top: 16px;
+	padding-left: 8px;
+	padding-right: 8px;
 }
 
-@media (min-width: 400px) {
-	.event__meet_up_links a {
-		padding: 0 .5em;
-	}
+
+.event__meet_up_links a:hover {
+	background: rgba(255, 0, 0, 0.85)
 }
 
 @media (min-width: 768px) {
 	.event__meet_up_links a {
-		padding: 0 1.5em;
 		font-size: 20px;
 	}
 }
