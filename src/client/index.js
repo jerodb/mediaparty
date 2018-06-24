@@ -14,5 +14,7 @@ const gaKey = process.env.GA_TRACKING_ID || '';
 ReactGA.initialize(gaKey);
 
 window.onload = () => {
-  ReactDOM.render(<BrowserRouter><Router /></BrowserRouter>, document.getElementById('app'));
+  const locale = document.documentElement.getAttribute('lang') || 'es';
+  console.log('client lang:', locale);
+  ReactDOM.render(<BrowserRouter><Router locale={ locale } /></BrowserRouter>, document.getElementById('app'));
 };

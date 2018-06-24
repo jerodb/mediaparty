@@ -19,7 +19,7 @@ const all = (req, res) => {
   // locale = 'en';
 
   // generate the React markup for the current route
-  const markup = renderToString(<StaticRouter context={ {} } location={ req.url }><Router locale /></StaticRouter>);
+  const markup = renderToString(<StaticRouter context={ {} } location={ req.url }><Router locale={ locale } /></StaticRouter>);
 
   // render the index template with the embedded React markup
   return res.render('index', { markup, locale });
