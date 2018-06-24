@@ -2,11 +2,13 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import App from './App';
 
-let lang = navigator.language;
+// let lang = navigator.language;
 
-lang = lang.split('-')[0];
+// lang = lang.split('-')[0];
 
-lang = ['es', 'en'].indexOf(lang) !== -1 ? lang : 'es'
+// lang = ['es', 'en'].indexOf(lang) !== -1 ? lang : 'es'
+
+const lang = 'es'
 
 const translations = [
   {
