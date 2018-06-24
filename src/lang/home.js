@@ -1,7 +1,7 @@
 const home = {
   'en': {
     'register': 'REGISTER HERE',
-    'registerPre': 'For the registry we use a plataform called Meetup. To register please click below on each day you want to attend.',
+    'registerPre': 'For the registry we use a plataform called Meetup. To register please click the button below:',
     'registerPos': 'Once inside meetup you must enter your email and you will be associated to the Hacks/Hackers Buenos Aires group. You can also register in the place before you get inside.',
     'here': 'Here',
     'proposal': 'Submit your proposals',
@@ -117,7 +117,7 @@ const home = {
   },
   'es': {
     'register': 'REGISTRATE AQUÍ',
-    'registerPre': 'Para el registro utilizamos una plataforma llamada Meetup. Para registrarse por favor haga click a continuación en cada uno de los días que piensa asistir.',
+    'registerPre': 'Para el registro utilizamos una plataforma llamada Meetup. Para registrarse por favor haga click en el siguiente botón:',
     'registerPos': 'Cuando ingrese a meetup deberá poner su email y quedará asociado al grupo de Hacks/Hackers Buenos Aires. Usted también puede registrarse en el lugar antes de ingresar al predio.',
     'here': 'Aquí',
     'proposal': 'Proponé tu',
