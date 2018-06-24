@@ -25,12 +25,12 @@ app.set('views', path.join(__dirname, '..', '..', 'build'));
 require('./router')(app);
 
 // start the server
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 const env = process.env.NODE_ENV || 'development';
 
 server.listen(port, err => {
   if (err) {
     return console.error(err);
   }
-  console.info(`Server running on port:${ port } [${ env }]`);
+  return console.info(`Server running on port:${ port } [${ env }]`);
 });
