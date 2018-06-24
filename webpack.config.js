@@ -9,6 +9,9 @@ const WebpackChunkHash = require('webpack-chunk-hash');
 const CompressionPlugin = require('compression-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+// Load the config from .env file into process.env
+require('dotenv').config();
+
 const nodeEnv = process.env.NODE_ENV || 'development';
 const port = process.env.PORT || '4000';
 const gaTrackingId = process.env.GA_TRACKING_ID || '';
