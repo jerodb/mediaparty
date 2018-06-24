@@ -464,7 +464,7 @@ a {
 
 
 .event__meet_up_links a:hover {
-	background: rgba(255, 0, 0, 0.85)
+	background: rgba(255, 0, 0, 0.7)
 }
 
 @media (min-width: 768px) {
