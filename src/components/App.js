@@ -43,8 +43,8 @@ const routes = [
   },
 ];
 
-const App = ({ root, lang }) => {
-  const { langClass, header, footer } = lan.layout[lang];
+const App = ({ root, locale }) => {
+  const { langClass, header, footer } = lan.layout[locale];
   const h = Object.assign(header, { root });
   return (
     <div className={ langClass }>
@@ -52,7 +52,7 @@ const App = ({ root, lang }) => {
         <Header { ...h } />
         <Switch>
           { routes.map(({ path, Component, state, exact }) => {
-            const cLang = Object.assign(lan[state][lang], { root }, { lang });
+            const cLang = Object.assign(lan[state][locale], { root }, { locale });
             return (
               <Route
                 key={ state }

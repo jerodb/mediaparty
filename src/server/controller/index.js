@@ -10,7 +10,7 @@ const all = (req, res) => {
   console.log(lang);
 
   const parsed = acceptLang.parse(req.header('Accept-Language'));
-  const locale = parsed[0];
+  const locale = ['es', 'en'].indexOf(parsed[0]) !== -1 ? parsed[0] : 'en'
 
   console.log(parsed)
   console.log(locale)
@@ -18,7 +18,7 @@ const all = (req, res) => {
   // locale = 'en';
 
   // generate the React markup for the current route
-  const markup = renderToString(<StaticRouter context={ {} } location={ req.url }><Router /></StaticRouter>);
+  const markup = renderToString(<StaticRouter context={ {} } location={ req.url }><Router locale /></StaticRouter>);
 
   // render the index template with the embedded React markup
   return res.render('index', { markup, locale });

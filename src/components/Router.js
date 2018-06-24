@@ -2,37 +2,32 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import App from './App';
 
-let lang = document.documentElement.getAttribute('lang');
-console.log('lang: ', lang);
+const Router = (props) => {
+  const translations = [
+    {
+      id: 'spanish',
+      path: '/es',
+      locale: 'es',
+    },
+    {
+      id: 'english',
+      path: '/en',
+      locale: 'en',
+    },
+    {
+      id: 'default',
+      path: '',
+      locale: props.locale,
+    },
+  ];
 
-// let lang = navigator.language;
-// lang = lang.split('-')[0];
-lang = ['es', 'en'].indexOf(lang) !== -1 ? lang : 'en'
-
-const translations = [
-  {
-    id: 'spanish',
-    path: '/es',
-    lang: 'es',
-  },
-  {
-    id: 'english',
-    path: '/en',
-    lang: 'en',
-  },
-  {
-    id: 'default',
-    path: '',
-    lang,
-  },
-];
-
-const Router = () => (
-  <Switch>
-    { translations.map(({ id, path, lang }) => (
-      <Route key={ id } path={ path } render={ () => (<App lang={ lang } root={ path } />) } />
-    ))}
-  </Switch>
-);
+  return (
+    <Switch>
+      {translations.map(({ id, path, locale }) => (
+        <Route key={ id } path={ path } render={ () => (<App locale={ locale } root={ path } />) } />
+      ))}
+    </Switch>
+  );
+};
 
 export default Router;
