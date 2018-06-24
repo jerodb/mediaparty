@@ -51,13 +51,13 @@ class Header extends React.Component {
             >
               { nav.stay }
             </Link>
-            <Link
+            {/* <Link
               to={ `${ root }/#more-speakers` }
               className="event__menu_item"
               onClick={ () => { handleGAClick(gaEvents.header[0], 'More Speakers'); } }
             >
               { nav.moreSpeakers }
-            </Link>
+            </Link> */}
             <a href="http://blog.mediaparty.info" target="_blank" rel="noopener noreferrer" className="event__menu_item event__blog" onClick={ () => { handleGAClick(gaEvents.header[0], 'Blog'); } }>{ nav.blog }</a>
           </div>
         </div>
