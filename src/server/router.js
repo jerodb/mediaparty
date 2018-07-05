@@ -1,4 +1,4 @@
-const api = require('./controller/api');
+const api = require('./controller/schedApi');
 const index = require('./controller/index');
 
 module.exports = app => {

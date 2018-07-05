@@ -2,6 +2,8 @@ import path from 'path';
 import { Server } from 'http';
 import Express from 'express';
 
+require('dotenv').config();
+
 const bodyParser = require('body-parser');
 const compress = require('compression');
 

@@ -9,8 +9,8 @@ class CardD extends React.Component {
 
     return (
       <div className="col-lg-2 col-md-2 col-sm-6 col-xs-6 event__recruiter">
-        <a href={ `https://mediaparty2017.sched.com/volunteer/${ username }` } target="_blank" rel="noopener noreferrer" className="">
-          <img src={ pic } className="event__recruiter_img" />
+        <a href={ `${ process.env.SCHED_URL }/volunteer/${ username }` } target="_blank" rel="noopener noreferrer" className="">
+          <img src={ pic } alt={ `${ name } pic` } className="event__recruiter_img" />
           <div className="event__recruiters_name">
             <p>{ name }</p>
           </div>

@@ -35,7 +35,7 @@ class Home extends React.Component {
 
   componentDidMount() {
     // const script = document.createElement('script');
-    // script.src = 'https://mediaparty2017.sched.com/js/embed.js';
+    // script.src = 'https://mediaparty2018.sched.com/js/embed.js';
     // script.async = true;
     // this.sponsors.appendChild(script);
     fetch('/api/user/front', {
@@ -177,7 +177,7 @@ class Home extends React.Component {
         {/* SPEAKERS */}
         { this.state.featuredSpeakers.length > 0 &&
         <section id="speakers" className="wrapper">
-          <h2><div className="title-txt">SPEAKERS 2017</div><div className="title-line" /></h2>
+          <h2><div className="title-txt">SPEAKERS</div><div className="title-line" /></h2>
           <div className="event__speakers_featured">
             {
               this.state.featuredSpeakers.map((data, k) => {
@@ -319,7 +319,7 @@ class Home extends React.Component {
         { /*
         <section className="wrapper">
           <div className="titleSection">{ sponsor.title }</div>
-          <a id="sched-embed" data-sched-sidebar="no" href="https://mediaparty2017.sched.com/directory/sponsors">
+          <a id="sched-embed" data-sched-sidebar="no" href="https://mediaparty2018.sched.com/directory/sponsors">
             View the Media Party 2018 mobile app
           </a>
           <div ref={ (ref) => (this.sponsors = ref) } />

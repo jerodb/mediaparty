@@ -1,30 +1,31 @@
 import fetch from 'isomorphic-fetch';
 import { stringify } from 'qs';
 
-const apiKey = '22ee684177cc569aeb337a667ea71b9a';
+const apiKey = process.env.API_KEY;
+const schedUrl = process.env.SCHED_URL;
 
 const getUsersFront = (req, res) => {
   const fullResponse = {};
   const endPoints = [
     {
       name: 'speakers',
-      url: `https://mediaparty2017.sched.com/api/role/export?api_key=${ apiKey }&role=speaker&format=json&strip_html=Y&featured=y&fields=name,about,url,avatar,username`,
+      url: `${ schedUrl }/api/role/export?api_key=${ apiKey }&role=speaker&format=json&strip_html=Y&featured=y&fields=name,about,url,avatar,username`,
     },
     {
       name: 'speakersSec',
-      url: `https://mediaparty2017.sched.com/api/role/export?api_key=${ apiKey }&role=speaker&format=json&strip_html=Y&fields=name,about,url,avatar,username`,
+      url: `${ schedUrl }/api/role/export?api_key=${ apiKey }&role=speaker&format=json&strip_html=Y&fields=name,about,url,avatar,username`,
     },
     {
       name: 'sponsors',
-      url: `https://mediaparty2017.sched.com/api/role/export?api_key=${ apiKey }&role=sponsor&format=json&strip_html=Y&fields=level,name,avatar`,
+      url: `${ schedUrl }/api/role/export?api_key=${ apiKey }&role=sponsor&format=json&strip_html=Y&fields=level,name,avatar`,
     },
     {
       name: 'team',
-      url: `https://mediaparty2017.sched.com/api/role/export?api_key=${ apiKey }&role=artist&format=json&strip_html=Y&fields=name,avatar,username`,
+      url: `${ schedUrl }/api/role/export?api_key=${ apiKey }&role=artist&format=json&strip_html=Y&fields=name,avatar,username`,
     },
     {
       name: 'executiveTeam',
-      url: `https://mediaparty2017.sched.com/api/role/export?api_key=${ apiKey }&role=volunteer&format=json&strip_html=Y&fields=name,avatar,username`,
+      url: `${ schedUrl }/api/role/export?api_key=${ apiKey }&role=volunteer&format=json&strip_html=Y&fields=name,avatar,username`,
     },
   ];
 
@@ -233,7 +234,7 @@ const addSession = (req, res) => {
     'sessions': randKey.toString(),
   });
 
-  fetch('https://mediaparty2017.sched.com/api/session/add', {
+  fetch(`${ schedUrl }/api/session/add`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -243,7 +244,7 @@ const addSession = (req, res) => {
     body: sessionData,
   })
   .then(() => {
-    fetch('https://mediaparty2017.sched.com/api/user/add', {
+    fetch(`${ schedUrl }/api/user/add`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',

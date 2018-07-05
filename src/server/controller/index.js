@@ -3,8 +3,6 @@ import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import Router from '../../components/Router';
 
-require('dotenv').config();
-
 const all = (req, res) => {
   let lang = req.header('Accept-Language');
   let locale = process.env.DEFAULT_LANG;

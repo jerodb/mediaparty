@@ -6,7 +6,7 @@ class CardFeatured extends React.Component {
     const { about, avatar, name, url, username, id } = this.props.data;
     const align = id % 2 ? 'event__speaker event__speaker_even' : 'event__speaker event__speaker_odd';
     const pic = avatar || '../assets/img/ph_speakers.png';
-    const urlLink = url.startsWith("http") ? url : `http://${ url }`;
+    const urlLink = url.startsWith('http') ? url : `http://${ url }`;
 
     const userDescWrapper = {
       position: 'relative',
@@ -32,9 +32,9 @@ class CardFeatured extends React.Component {
 
     return (
       <div className={ align }>
-        <img src={ pic } className="event__speaker_img" />
+        <img src={ pic } alt={ `${ name } pic` } className="event__speaker_img" />
         <div className="event__speaker_info">
-          <a href={ `https://mediaparty2017.sched.com/speaker/${ username }` } target="_blank" rel="noopener noreferrer" className="event__speaker_info_link">
+          <a href={ `${ process.env.SCHED_URL }/speaker/${ username }` } target="_blank" rel="noopener noreferrer" className="event__speaker_info_link">
             <div className="event__speaker_name">
               <p>{ name }</p>
             </div>
@@ -45,7 +45,7 @@ class CardFeatured extends React.Component {
           <div className="event__speaker_desc" style={ userDescWrapper }>
             <p style={ userDescription }>{ about }</p>
             <div style={ readMore }>
-              <a style={ { color: '#333333' } } href={ `https://mediaparty2017.sched.com/speaker/${ username }` } target="_blank" rel="noopener noreferrer">Read more</a>
+              <a style={ { color: '#333333' } } href={ `${ process.env.SCHED_URL }/speaker/${ username }` } target="_blank" rel="noopener noreferrer">Read more</a>
             </div>
           </div>
         </div>

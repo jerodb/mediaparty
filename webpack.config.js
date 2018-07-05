@@ -16,6 +16,7 @@ const nodeEnv = process.env.NODE_ENV || 'development';
 const port = process.env.PORT || '4000';
 const gaTrackingId = process.env.GA_TRACKING_ID || '';
 const langDefault = process.env.LANG_DEFAULT || 'es';
+const schedUrl = process.env.SCHED_URL;
 const isProduction = nodeEnv === 'production';
 
 const hash = isProduction ? '.[hash:8]' : '';
@@ -47,6 +48,7 @@ const plugins = [
       PORT: JSON.stringify(port),
       GA_TRACKING_ID: JSON.stringify(gaTrackingId),
       LANG_DEFAULT: JSON.stringify(langDefault),
+      SCHED_URL: JSON.stringify(schedUrl),
     },
   }),
 ];
