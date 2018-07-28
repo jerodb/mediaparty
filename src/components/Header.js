@@ -29,7 +29,7 @@ class Header extends React.Component {
           </div>
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-9 event__nav">
             <div className="title-line" />
-            { /* <a href="http://sched17.mediaparty.info/" target="_blank" rel="noopener noreferrer" className="event__menu_item event__agenda" onClick={ () => { handleGAClick(gaEvents.header[0], 'Agenda'); } }>{ nav.agenda }</a> */ }
+            <a href="http://sched18.mediaparty.info/" target="_blank" rel="noopener noreferrer" className="event__menu_item event__agenda" onClick={ () => { handleGAClick(gaEvents.header[0], 'Agenda'); } }>{ nav.agenda }</a>
             <Link
               to={ `${ root }/#speakers` }
               className="event__menu_item event__speakers"
@@ -51,13 +51,13 @@ class Header extends React.Component {
             >
               { nav.stay }
             </Link>
-            {/* <Link
+            <Link
               to={ `${ root }/#more-speakers` }
               className="event__menu_item"
               onClick={ () => { handleGAClick(gaEvents.header[0], 'More Speakers'); } }
             >
               { nav.moreSpeakers }
-            </Link> */}
+            </Link>
             <a href="http://blog.mediaparty.info" target="_blank" rel="noopener noreferrer" className="event__menu_item event__blog" onClick={ () => { handleGAClick(gaEvents.header[0], 'Blog'); } }>{ nav.blog }</a>
           </div>
         </div>

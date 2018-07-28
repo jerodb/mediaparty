@@ -244,7 +244,7 @@ class Home extends React.Component {
         }
 
         { /* COLLABORATORS */ }
-        { /* this.state.collaborators.length > 0 &&
+        { this.state.collaborators.length > 0 &&
         <section className="event__collaborators wrapper">
           <h2><div className="title-txt">COLLABORATORS</div><div className="title-line" /></h2>
           <div className="row flex-wrapper">
@@ -255,10 +255,10 @@ class Home extends React.Component {
             }
           </div>
         </section>
-        */ }
+        }
 
         { /* RECRUITERS */ }
-        { /* this.state.recruiters.length > 0 &&
+        { this.state.recruiters.length > 0 &&
         <section className="event__recruiters wrapper">
           <h2><div className="title-txt">RECRUITERS</div><div className="title-line" /></h2>
           <div className="row flex-wrapper">
@@ -269,10 +269,10 @@ class Home extends React.Component {
             }
           </div>
         </section>
-        */ }
+        }
 
         { /* EXECUTIVE TEAM */ }
-        { /* this.state.executiveTeam.length > 0 &&
+        { this.state.executiveTeam.length > 0 &&
         <section className="event__team wrapper">
           <h2><div className="title-txt">EXECUTIVE TEAM</div><div className="title-line" /></h2>
           <div className="row flex-wrapper">
@@ -283,10 +283,10 @@ class Home extends React.Component {
             }
           </div>
         </section>
-        */ }
+        }
 
         { /* TEAM */ }
-        { /* this.state.team.length > 0 &&
+        { this.state.team.length > 0 &&
         <section className="event__team wrapper">
           <h2><div className="title-txt">TEAM</div><div className="title-line" /></h2>
           <div className="row flex-wrapper">
@@ -297,10 +297,10 @@ class Home extends React.Component {
             }
           </div>
         </section>
-        */ }
+        }
 
         {/* MORE SPEAKERS */}
-        { /* this.state.secondarySpeakers.length > 0 &&
+        { this.state.secondarySpeakers.length > 0 &&
           <section id="more-speakers" className="wrapper">
             <h2><div className="title-txt">MORE SPEAKERS</div><div className="title-line" /></h2>
             <div className="event__speakers_full">
@@ -313,7 +313,7 @@ class Home extends React.Component {
               </div>
             </div>
           </section>
-        */ }
+        }
 
         { /* EMBEDDED SPONSORS */ }
         { /*

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dashboard -t 'Media Party' -- webpack-dev-server --colors --no-info",
+    "start-dev": "webpack-dashboard -t 'Media Party' -- webpack-dev-server --colors --no-info",
+    "start": "NODE_ENV=production babel-node src/server/index.js",
     "build": "rm -rf ./build && NODE_ENV=production node_modules/.bin/webpack -p",
     "preview": "NODE_ENV=production node_modules/.bin/babel-node src/server"
   },
