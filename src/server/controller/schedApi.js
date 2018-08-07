@@ -77,6 +77,7 @@ const getUsersFront = (req, res) => {
               break;
             case 'platinum':
             case 'gold':
+            case 'sponsors':
               fullResponse.sponsors.push(item);
               break;
             case 'collaborators':
