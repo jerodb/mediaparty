@@ -110,16 +110,6 @@ a {
 	padding: 16px 16px 0;
 }
 
-.event__logo_text {
-	float: right;
-	width: 244px;
-	height: 225px;
-	margin-right: -8vw;
-	margin-top: 0;
-	text-indent: -9999px;
-	background: url("../img/mp_logo.svg") no-repeat center;
-}
-
 @media (min-width: 768px) {
 	.event__header {
 		padding-bottom: 24px;
@@ -129,9 +119,6 @@ a {
 @media (min-width: 860px) {
 	.event__header {
 		padding: 24px 30px 38px;
-	}
-	.event__logo_text {
-		margin-top: 55px;
 	}
 }
 
@@ -349,9 +336,6 @@ a {
 }
 
 @media (max-width: 992px) {
-	.event__logo_text {
-		float: none;
-	}
 	.event__days,
 	.event__month {
 		font-size: 36px;

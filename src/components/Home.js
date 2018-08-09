@@ -167,8 +167,9 @@ class Home extends React.Component {
         </section>
 
         { /* TIMELINE */ }
-        <section className="event__timeline" />
-
+        <section className="wrapper">
+          <div className="event__timeline" />
+        </section>
         { /* ABOUT */ }
         <section className="wrapper">
           <About data={ about } />
