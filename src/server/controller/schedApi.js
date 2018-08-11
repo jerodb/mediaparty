@@ -1,135 +1,131 @@
-import fetch from 'isomorphic-fetch';
+import axios from 'axios';
 import { stringify } from 'qs';
 
 const apiKey = process.env.API_KEY;
 const schedUrl = process.env.SCHED_URL;
 
-const getUsersFront = (req, res) => {
+const getUsersFront = async (req, res) => {
   const fullResponse = {};
+
   const endPoints = [
     {
       name: 'speakers',
       url: `${ schedUrl }/api/role/export?api_key=${ apiKey }&role=speaker&format=json&strip_html=Y&featured=y&fields=name,about,url,avatar,username`,
     },
     {
-      name: 'speakersSec',
+      name: 'moreSpeakers',
       url: `${ schedUrl }/api/role/export?api_key=${ apiKey }&role=speaker&format=json&strip_html=Y&fields=name,about,url,avatar,username`,
     },
     {
-      name: 'sponsors',
-      url: `${ schedUrl }/api/role/export?api_key=${ apiKey }&role=sponsor&format=json&strip_html=Y&fields=level,name,avatar`,
+      name: 'executiveTeam',
+      url: `${ schedUrl }/api/role/export?api_key=${ apiKey }&role=artist&format=json&strip_html=Y&fields=name,avatar,username&featured=y`,
     },
     {
       name: 'team',
       url: `${ schedUrl }/api/role/export?api_key=${ apiKey }&role=artist&format=json&strip_html=Y&fields=name,avatar,username`,
     },
     {
-      name: 'executiveTeam',
-      url: `${ schedUrl }/api/role/export?api_key=${ apiKey }&role=volunteer&format=json&strip_html=Y&fields=name,avatar,username`,
+      name: 'sponsors',
+      url: `${ schedUrl }/api/role/export?api_key=${ apiKey }&role=sponsor&format=json&strip_html=Y&fields=level,name,avatar`,
     },
   ];
 
-  fetch(endPoints[0].url, {
-    method: 'GET',
-  })
-  .then((resp) => resp.json())
-  .then(data => {
-    fullResponse.speakers = data;
-
-    fetch(endPoints[1].url, {
-      method: 'GET',
-    })
-    .then((resp) => resp.json())
-    .then(data2 => {
-      let matchSpeaker;
-      const dataArr = [];
-
-      data2.map(item => {
-        matchSpeaker = false;
-        fullResponse.speakers.map(itemFeatured => {
-          if (itemFeatured.username === item.username) { matchSpeaker = true; }
-          return itemFeatured;
-        });
-
-        if (matchSpeaker === false) { dataArr.push(item); }
-
-        return item;
-      });
-
-      fullResponse.speakersSec = dataArr;
-
-      fetch(endPoints[2].url, {
-        method: 'GET',
-      })
-      .then((resp) => resp.json())
-      .then(data3 => {
-        fullResponse.partners = [];
-        fullResponse.sponsors = [];
-        fullResponse.collaborators = [];
-        fullResponse.recruiters = [];
-
-        data3.map(item => {
-          const level = item.level && item.level.toLowerCase();
-
-          switch (level) {
-            case 'partners':
-              fullResponse.partners.push(item);
-              break;
-            case 'platinum':
-            case 'gold':
-            case 'sponsors':
-              fullResponse.sponsors.push(item);
-              break;
-            case 'collaborators':
-              fullResponse.collaborators.push(item);
-              break;
-            case 'recruiters':
-              fullResponse.recruiters.push(item);
-              break;
-            default:
-          }
-        });
-
-        fetch(endPoints[3].url, {
-          method: 'GET',
-        })
-        .then((resp) => resp.json())
-        .then(data4 => {
-          fullResponse.team = data4;
-
-          fetch(endPoints[4].url, {
-            method: 'GET',
-          })
-          .then((resp) => resp.json())
-          .then(data5 => {
-            fullResponse.executiveTeam = data5;
-
-            res.json(fullResponse);
-          })
-          .catch((err) => {
-            console.info('Error: ', err);
-            res.json(false);
-          });
-        })
-        .catch((err) => {
-          console.info('Error: ', err);
-          res.json(false);
-        });
-      })
-      .catch((err) => {
-        console.info('Error: ', err);
-        res.json(false);
-      });
-    })
-    .catch((err) => {
-      console.info('Error: ', err);
-      res.json(false);
-    });
-  })
+  fullResponse.speakers = await axios.get(endPoints[0].url)
+  .then(response => response.data)
   .catch((err) => {
-    console.info('Error: ', err);
-    res.json(false);
+    console.error('Error featured speakers: ', err);
+    return res.json(false);
   });
+
+  const fullSpeakers = await axios.get(endPoints[1].url)
+  .then(response => response.data)
+  .catch((err) => {
+    console.error('Error more speakers: ', err);
+    return res.json(false);
+  });
+
+  fullResponse.executiveTeam = await axios.get(endPoints[2].url)
+  .then(response => response.data)
+  .catch((err) => {
+    console.error('Error executive team: ', err);
+    return res.json(false);
+  });
+
+  const fullTeam = await axios.get(endPoints[3].url)
+  .then(response => response.data)
+  .catch((err) => {
+    console.error('Error team: ', err);
+    return res.json(false);
+  });
+
+  const allSponsors = await axios.get(endPoints[4].url)
+  .then(response => response.data)
+  .catch((err) => {
+    console.error('Error sponsors: ', err);
+    return res.json(false);
+  });
+
+
+  let matchSpeaker;
+  fullResponse.moreSpeakers = [];
+
+  fullSpeakers.map(item => {
+    matchSpeaker = false;
+    fullResponse.speakers.map(itemFeatured => {
+      if (itemFeatured.username === item.username) { matchSpeaker = true; }
+      return itemFeatured;
+    });
+
+    if (matchSpeaker === false) { fullResponse.moreSpeakers.push(item); }
+
+    return item;
+  });
+
+  let matchTeam;
+  fullResponse.team = [];
+
+  fullTeam.map(item => {
+    matchTeam = false;
+    fullResponse.executiveTeam.map(itemFeatured => {
+      if (itemFeatured.username === item.username) { matchTeam = true; }
+      return itemFeatured;
+    });
+
+    if (matchTeam === false) { fullResponse.team.push(item); }
+
+    return item;
+  });
+
+  fullResponse.partners = [];
+  fullResponse.sponsors = [];
+  fullResponse.collaborators = [];
+  fullResponse.recruiters = [];
+
+  allSponsors.map(item => {
+    const level = item.level && item.level.toLowerCase();
+
+    switch (level) {
+      case 'partners':
+        fullResponse.partners.push(item);
+        break;
+      case 'platinum':
+      case 'gold':
+      case 'sponsors':
+        fullResponse.sponsors.push(item);
+        break;
+      case 'collaborators':
+        fullResponse.collaborators.push(item);
+        break;
+      case 'recruiters':
+        fullResponse.recruiters.push(item);
+        break;
+      default:
+    }
+
+    return item;
+  });
+
+  res.json(fullResponse);
 };
 
 const addSession = (req, res) => {

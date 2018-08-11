@@ -20,7 +20,7 @@ class Home extends React.Component {
     this.state = {
       mapEvents: 'notAllowEvents',
       featuredSpeakers: [],
-      secondarySpeakers: [],
+      moreSpeakers: [],
       partners: [],
       sponsors: [],
       collaborators: [],
@@ -45,7 +45,7 @@ class Home extends React.Component {
       res.json().then((data) => {
         this.setState({
           featuredSpeakers: data.speakers,
-          secondarySpeakers: data.speakersSec,
+          moreSpeakers: data.moreSpeakers,
           partners: data.partners,
           sponsors: data.sponsors,
           collaborators: data.collaborators,
@@ -301,13 +301,13 @@ class Home extends React.Component {
         }
 
         {/* MORE SPEAKERS */}
-        { this.state.secondarySpeakers.length > 0 &&
+        { this.state.moreSpeakers.length > 0 &&
           <section id="more-speakers" className="wrapper">
             <h2><div className="title-txt">MORE SPEAKERS</div><div className="title-line" /></h2>
             <div className="event__speakers_full">
               <div className="row event__speakers_full_inner">
                 {
-                  this.state.secondarySpeakers.map((data, k) => {
+                  this.state.moreSpeakers.map((data, k) => {
                     return (<CardSecondary key={ k } data={ data } />);
                   })
                 }
