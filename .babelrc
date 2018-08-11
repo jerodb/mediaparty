@@ -2,7 +2,8 @@
   "plugins": [
     "transform-class-properties",
     "syntax-decorators",
-    "transform-decorators-legacy"
+    "transform-decorators-legacy",
+    "transform-async-to-generator"
   ],
   "presets": ["es2015","react"],
   "env": {
