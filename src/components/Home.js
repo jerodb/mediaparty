@@ -81,7 +81,7 @@ class Home extends React.Component {
   }
 
   render() {
-    const { root, registerPre, registerPos, here, register, proposal, day, workshop, talk, fair, description, venue, where, sponsor, quotes, about } = this.props;
+    const { root, registerPre, registerPos, here, register, proposal, day, workshop, talk, fair, award, description, venue, where, sponsor, quotes, about } = this.props;
 
     const handleGAClick = (ev, action) => {
       const evObj = ev;
@@ -133,7 +133,8 @@ class Home extends React.Component {
             <div className="event__forms_links">
               <a href="https://goo.gl/forms/gbo24YkCZozAQDQe2" onClick={ () => { handleGAClick(gaEvents.hero[3]); } } target="_blank" rel="noopener noreferrer" className="event__form_cta">{ workshop }</a> /
               <a href="https://goo.gl/forms/N84m60yy8XjhsYay1" onClick={ () => { handleGAClick(gaEvents.hero[4]); } } target="_blank" rel="noopener noreferrer" className="event__form_cta">{ talk }</a> /
-              <a href="https://goo.gl/forms/tx8Dc7DOHZDJTiyC2" onClick={ () => { handleGAClick(gaEvents.hero[5]); } } target="_blank" rel="noopener noreferrer" className="event__form_cta">{ fair }</a>
+              <a href="https://goo.gl/forms/tx8Dc7DOHZDJTiyC2" onClick={ () => { handleGAClick(gaEvents.hero[5]); } } target="_blank" rel="noopener noreferrer" className="event__form_cta">{ fair }</a> /
+              <a href="https://goo.gl/forms/LTeksx8BGWIGOSSY2" onClick={ () => { handleGAClick(gaEvents.hero[8]); } } target="_blank" rel="noopener noreferrer" className="event__form_cta">{ award }</a>
 
               { /*
               <Link to={ '/posit-workshop' } className="event__form_cta" onClick={ () => { handleGAClick(gaEvents.hero[3]); } }>{ workshop }</Link> /

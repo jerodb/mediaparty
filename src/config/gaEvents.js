@@ -38,6 +38,10 @@ export default {
       category: 'Streaming',
       action: 'Click on Media Party video'
     },
+    {
+      category: 'Submit proposal',
+      action: 'INNOVATION AWARD',
+    },
   ],
   whereToStay: [
     {

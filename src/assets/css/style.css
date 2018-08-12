@@ -460,12 +460,20 @@ a {
 .event__forms_links {
 	background: #FFDA40;
 	color: #000;
-	height: 60px;
+	height: 80px;
 	padding-top: 16px;
+}
+
+@media (min-width: 600px) {
+	.event__forms_links {
+		height: 60px;
+	}
 }
 
 .event__forms_links  a{
 	color: #000;
+	line-height: 27px;
+    white-space: nowrap;
 }
 
 .event__forms  {
