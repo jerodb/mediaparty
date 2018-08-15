@@ -139,7 +139,7 @@ if (isProduction) {
       minRatio: 0.8,
     }),
     new CopyWebpackPlugin([
-      // { from: path.join(paths.source, 'assets/doc'), to: path.join(paths.build, 'doc') },
+      { from: path.join(paths.source, 'assets/terms.txt'), to: path.join(paths.build, 'assets/terms.txt') },
       { from: path.join(paths.source, 'assets/img'), to: path.join(paths.build, 'assets/img') },
     ])
   );
