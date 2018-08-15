@@ -64,7 +64,7 @@ class Home extends React.Component {
 
   iframeVideo() {
     return {
-      __html: '<iframe name="video" src="https://www.youtube.com/embed/-nIOwew9Crk?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe>',
+      __html: '<iframe width="560" height="315" src="https://www.youtube.com/embed/-STplo5GrxA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>',
     };
   }
 
