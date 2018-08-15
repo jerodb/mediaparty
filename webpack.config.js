@@ -28,7 +28,6 @@ const extractStyles = new ExtractTextPlugin(`styles${ contenthash }.css`);
 const paths = {};
 paths.build = path.join(__dirname, './build');
 paths.source = path.join(__dirname, './src');
-paths.jsSource = path.join(paths.source, '');
 paths.img = path.join(paths.source, 'assets/img');
 // paths.fonts = path.join(paths.source, 'assets/fonts');
 
@@ -57,7 +56,7 @@ const plugins = [
 const rules = [
   {
     test: /\.(js|jsx)$/,
-    include: paths.jsSource,
+    include: paths.source,
     use: [
       'babel-loader',
     ],
@@ -87,7 +86,7 @@ if (isProduction) {
   plugins.push(
     // Generate an ejs file that includes all webpack bundles in the body using script tags.
     new HtmlWebpackPlugin({
-      template: '!!raw-loader!' + path.join(paths.source, 'views/index.ejs'),
+      template: `!!raw-loader!${ path.join(paths.source, 'views/index.ejs') }`,
       path: paths.build,
       filename: 'index.ejs',
     }),
@@ -149,7 +148,7 @@ if (isProduction) {
   plugins.push(
     // Generate an HTML5 file that includes all webpack bundles in the body using script tags.
     new HtmlWebpackPlugin({
-      template: '!!raw-loader!' + path.join(paths.source, 'views/index.ejs'),
+      template: `!!raw-loader!${ path.join(paths.source, 'views/index.ejs') }`,
       filename: 'index.html',
     }),
     // enable Hot Module Replacement (HMR) globally
@@ -163,9 +162,9 @@ if (isProduction) {
 
 module.exports = {
   devtool: isProduction ? 'source-map' : 'eval-source-map',
-  // context: paths.jsSource,
+  // context: paths.source,
   entry: {
-    app: path.join(paths.source, 'client', 'index.js'),
+    app: path.join(paths.source, 'index.js'),
     vendor: [
       'babel-polyfill',
       'es6-promise',
@@ -193,7 +192,7 @@ module.exports = {
     extensions: ['.webpack-loader.js', '.web-loader.js', '.loader.js', '.js', '.jsx'],
     modules: [
       path.resolve(__dirname, 'node_modules'),
-      path.resolve(paths.jsSource),
+      path.resolve(paths.source),
     ],
   },
   plugins,

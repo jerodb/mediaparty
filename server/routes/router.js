@@ -1,7 +1,7 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
-import Router from '../../components/Router';
+import Router from '../../src/components/Router';
 
 const all = (req, res) => {
   let lang = req.header('Accept-Language');
@@ -19,4 +19,4 @@ const all = (req, res) => {
   return res.render('index', { markup, locale });
 };
 
-exports.all = all;
+module.exports = { all }

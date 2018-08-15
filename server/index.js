@@ -18,13 +18,13 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 app.use(compress());
 
 // define the folder that will be used for static assets
-app.use(Express.static(path.join(__dirname, '..', '..', 'build')));
+app.use(Express.static(path.join(__dirname, '..', 'build')));
 
 // Set views path, template engine and default layout
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '..', '..', 'build'));
+app.set('views', path.join(__dirname, '..', 'build'));
 
-require('./router')(app);
+require('./routes/index')(app);
 
 // start the server
 const port = process.env.PORT || 4000;

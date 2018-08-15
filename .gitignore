@@ -6,4 +6,3 @@ node_modules
 *.log
 mp-prod*
 .env
-src/assets/img_original

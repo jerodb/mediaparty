@@ -1,8 +1,8 @@
-const api = require('./controller/schedApi');
-const index = require('./controller/index');
+const router = require('./router');
+const api = require('./schedApi');
 
 module.exports = app => {
   app.post('/api/session/add', api.addSession);
   app.get('/api/user/front', api.getUsersFront);
-  app.get('*', index.all);
+  app.all('*', router.all);
 };
