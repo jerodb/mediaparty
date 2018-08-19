@@ -460,7 +460,8 @@ a {
 .event__forms_links {
 	background: #FFDA40;
 	color: #000;
-	height: 80px;
+	/*height: 80px;*/
+	height: 60px;
 	padding-top: 16px;
 }
 
@@ -474,6 +475,7 @@ a {
 	color: #000;
 	line-height: 27px;
     white-space: nowrap;
+	font-size: 16px;
 }
 
 .event__forms  {

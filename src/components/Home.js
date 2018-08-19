@@ -130,8 +130,8 @@ class Home extends React.Component {
         <section className="wrapper event__proposals">
           <div className="col-sm-12 col-xs-12 event__forms">
             <p>{ proposal }</p>
-            <div className="event__forms_links" style={ { height: '60px !important' } }>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2qysTQB0GCYZALBMnf9lPttA8yyl-tUvq0VbpzYSZYrM8gw/viewform" onClick={ () => { handleGAClick(gaEvents.hero[9]); } } target="_blank" rel="noopener noreferrer" className="event__form_cta" style={ { fontSize: '16px;' } }>{ applyHere }</a>
+            <div className="event__forms_links">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2qysTQB0GCYZALBMnf9lPttA8yyl-tUvq0VbpzYSZYrM8gw/viewform" onClick={ () => { handleGAClick(gaEvents.hero[9]); } } target="_blank" rel="noopener noreferrer" className="event__form_cta">{ applyHere }</a>
               { /* <a href="https://goo.gl/forms/gbo24YkCZozAQDQe2" onClick={ () => { handleGAClick(gaEvents.hero[3]); } } target="_blank" rel="noopener noreferrer" className="event__form_cta">{ workshop }</a> /
               <a href="https://goo.gl/forms/N84m60yy8XjhsYay1" onClick={ () => { handleGAClick(gaEvents.hero[4]); } } target="_blank" rel="noopener noreferrer" className="event__form_cta">{ talk }</a> /
               <a href="https://goo.gl/forms/tx8Dc7DOHZDJTiyC2" onClick={ () => { handleGAClick(gaEvents.hero[5]); } } target="_blank" rel="noopener noreferrer" className="event__form_cta">{ fair }</a> /
