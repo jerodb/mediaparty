@@ -42,6 +42,10 @@ export default {
       category: 'Submit proposal',
       action: 'INNOVATION AWARD',
     },
+    {
+      category: 'Workshops pre-registration',
+      action: 'click here',
+    },
   ],
   whereToStay: [
     {
