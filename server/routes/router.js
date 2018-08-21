@@ -1,14 +1,12 @@
 import React from 'react';
+import fs from 'fs';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import Router from '../../src/components/Router';
 
-const fs = require('fs');
-
-const all = (req, res) => {
+const all = async (req, res) => {
   let lang = req.header('Accept-Language');
   let locale = process.env.DEFAULT_LANG;
-  let videoId = null;
   let liveStreaming = 'off';
 
   if (lang) {
@@ -16,35 +14,36 @@ const all = (req, res) => {
     locale = ['es', 'en'].indexOf(lang) !== -1 ? lang : locale;
   }
 
-  fs.readFile('./liveStreaming', 'utf8', (err, data) => {
-    if (err) {
-      console.log(err);
-    } else {
-      liveStreaming = data || 'off';
-    }
-
-    if (liveStreaming !== 'on') {
-      // generate the React markup for the current route
-      const markup = renderToString(<StaticRouter context={ {} } location={ req.url }><Router locale={ locale } videoId={ videoId } /></StaticRouter>);
-
-      // render the index template with the embedded React markup
-      return res.render('index', { markup, locale, videoId });
-    }
-
-    fs.readFile('./videoId', 'utf8', (err2, data2) => {
-      if (err2) {
-        console.log(err2);
+  const getVideoId = () => new Promise((resolve, reject) => {
+    fs.readFile('./liveStreaming', 'utf8', (err, data) => {
+      if (err) {
+        console.error(err);
+      } else {
+        liveStreaming = data || 'off';
       }
 
-      videoId = data2 || null;
+      if (liveStreaming !== 'on') {
+        return resolve(null);
+      }
 
-      // generate the React markup for the current route
-      const markup = renderToString(<StaticRouter context={ {} } location={ req.url }><Router locale={ locale } videoId={ videoId } /></StaticRouter>);
+      fs.readFile('./videoId', 'utf8', (err2, id) => {
+        if (err2) {
+          console.error(err2);
+          return resolve(null);
+        }
 
-      // render the index template with the embedded React markup
-      return res.render('index', { markup, locale, videoId });
+        return resolve(id);
+      });
     });
   });
+
+  const videoId = await getVideoId();
+
+  // generate the React markup for the current route
+  const markup = renderToString(<StaticRouter context={ {} } location={ req.url }><Router locale={ locale } videoId={ videoId } /></StaticRouter>);
+
+  // render the index template with the embedded React markup
+  return res.render('index', { markup, locale, videoId });
 };
 
 module.exports = { all };
