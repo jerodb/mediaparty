@@ -68,9 +68,9 @@ class Home extends React.Component {
     };
   }
 
-  iframeVideoStreaming() {
+  iframeVideoStreaming(videoId) {
     return {
-      __html: '<iframe width="560" height="315" src="https://www.youtube.com/embed/jUgxMXsMJOI?rel=0&amp;showinfo=0&amp;autoplay=1&amp;loop=1" frameborder="0" allowfullscreen></iframe>',
+      __html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/${ videoId }?rel=0&amp;showinfo=0&amp;autoplay=1&amp;loop=1" frameborder="0" allowfullscreen></iframe>`,
     };
   }
 
@@ -81,7 +81,7 @@ class Home extends React.Component {
   }
 
   render() {
-    const { root, registerPre, registerPos, here, register, proposal, day, workshop, talk, fair, award, applyHere, description, venue, where, sponsor, quotes, about } = this.props;
+    const { root, registerPre, registerPos, here, register, proposal, day, workshop, talk, fair, award, applyHere, description, venue, where, sponsor, quotes, about, videoId } = this.props;
 
     const handleGAClick = (ev, action) => {
       const evObj = ev;
@@ -91,11 +91,12 @@ class Home extends React.Component {
 
     return (
       <div>
-        {/*
-        <section className="wrapper event__streaming" style={ { display: 'none' } }>
-          <div className="video-wrapper" dangerouslySetInnerHTML={ this.iframeVideoStreaming() } onClick={ () => { handleGAClick(gaEvents.hero[7]); } } />
-        </section>
-        */}
+        {
+          videoId &&
+            <section className="wrapper event__streaming">
+              <div className="video-wrapper" dangerouslySetInnerHTML={ this.iframeVideoStreaming(videoId) } onClick={ () => { handleGAClick(gaEvents.hero[7]); } } />
+            </section>
+        }
         <div className="event__hero">
           <div className="row event__hero_inner" />
         </div>

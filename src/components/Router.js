@@ -24,7 +24,7 @@ const Router = (props) => {
   return (
     <Switch>
       {translations.map(({ id, path, locale }) => (
-        <Route key={ id } path={ path } render={ () => (<App locale={ locale } root={ path } />) } />
+        <Route key={ id } path={ path } render={ () => (<App locale={ locale } videoId={ props.videoId } root={ path } />) } />
       ))}
     </Switch>
   );

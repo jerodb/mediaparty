@@ -2,10 +2,11 @@ import path from 'path';
 import { Server } from 'http';
 import Express from 'express';
 
-require('dotenv').config();
-
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const compress = require('compression');
+
+require('dotenv').config();
 
 // initialize the server and configure support for ejs templates
 const app = new Express();
@@ -13,6 +14,8 @@ const server = new Server(app);
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
+app.use(cookieParser());
 
 // serve gzip
 app.use(compress());

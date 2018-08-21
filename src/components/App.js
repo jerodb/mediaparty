@@ -43,7 +43,7 @@ const routes = [
   },
 ];
 
-const App = ({ root, locale }) => {
+const App = ({ root, locale, videoId }) => {
   const { langClass, header, footer } = lan.layout[locale];
   const h = Object.assign(header, { root });
   return (
@@ -59,7 +59,7 @@ const App = ({ root, locale }) => {
                 path={ root + path }
                 exact={ exact }
                 render={ () => (
-                  <Component { ...cLang } />
+                  <Component { ...cLang } videoId={ videoId } />
               ) }
               />
             );
