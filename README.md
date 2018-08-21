@@ -11,3 +11,7 @@ $ yarn build
 
 **Start dev**
 $ yarn start
+
+
+IMPORTANTE  
+Para que funcione livestreaming: Crear en el directorio raiz los archivos liveStreaming y videoId con permisos de lectura y escritura
