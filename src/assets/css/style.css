@@ -220,8 +220,8 @@ a {
 
 .event__hero {
 	position: relative;
-	padding-bottom: 132%;
-	height: 1px;
+	padding-bottom: 0;
+	height: 500px;
 	overflow: hidden;
 }
 
@@ -237,22 +237,13 @@ a {
 
 .event__hero_inner {
 	margin: 20px 0 40px;
-	height: 480px;
-}
-
-@media (min-width: 400px) {
-	.event__hero {
-		padding-bottom: 0;
-		height: 500px;
-	}
-	.event__hero_inner {
-		height: 450px;
-	}
+	height: 450px;
 }
 
 @media (min-width: 768px) {
 	.event__hero {
 		padding-bottom: 46%;
+		margin-bottom: 30px;
 		height: 1px;
 	}
 
