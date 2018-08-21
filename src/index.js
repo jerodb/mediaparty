@@ -15,6 +15,7 @@ ReactGA.initialize(gaKey);
 
 window.onload = () => {
   const locale = document.documentElement.getAttribute('lang') || process.env.LANG_DEFAULT;
+  const videoId = document.getElementById('videoId').value || null;
 
-  ReactDOM.render(<BrowserRouter><Router locale={ locale } /></BrowserRouter>, document.getElementById('app'));
+  ReactDOM.render(<BrowserRouter><Router locale={ locale } videoId={ videoId } /></BrowserRouter>, document.getElementById('app'));
 };
