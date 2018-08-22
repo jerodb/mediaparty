@@ -140,7 +140,7 @@ if (isProduction) {
     }),
     new CopyWebpackPlugin([
       { from: path.join(paths.source, 'assets/terms.txt'), to: path.join(paths.build, 'assets/terms.txt') },
-      { from: path.join(paths.source, 'assets/robots.txt'), to: path.join(paths.build, 'assets/robots.txt') },
+      { from: path.join(paths.source, 'assets/robots.txt'), to: path.join(paths.build, 'robots.txt') },
       { from: path.join(paths.source, 'assets/img'), to: path.join(paths.build, 'assets/img') },
       { from: path.join(paths.source, 'views/auth.ejs'), to: path.join(paths.build, 'auth.ejs') },
     ])

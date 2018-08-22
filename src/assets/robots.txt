@@ -3,3 +3,5 @@
 User-agent: *
 Disallow: /liveon
 Disallow: /liveoff
+Disallow: /liveid
+Disallow: /auth
