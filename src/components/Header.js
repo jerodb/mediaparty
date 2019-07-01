@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactGA from 'react-ga';
-import { HashLink as Link } from'react-router-hash-link';
+import { HashLink as Link } from 'react-router-hash-link';
 import gaEvents from '../config/gaEvents';
 
 class Header extends React.Component {
@@ -29,7 +29,9 @@ class Header extends React.Component {
           </div>
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-9 event__nav">
             <div className="title-line" />
+            {/*
             <a href="http://sched18.mediaparty.info/" target="_blank" rel="noopener noreferrer" className="event__menu_item event__agenda" onClick={ () => { handleGAClick(gaEvents.header[0], 'Agenda'); } }>{ nav.agenda }</a>
+            */}
             <Link
               to={ `${ root }/#speakers` }
               className="event__menu_item event__speakers"
