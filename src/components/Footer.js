@@ -17,7 +17,7 @@ class Footer extends React.Component {
       <footer className="event__footer">
         <div className="row">
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 event__footer_cta">
-            <img src="../assets/img/mp_logo_mid.png" title="Media Party / 2018" alt="Media Party / 2018" />
+            <img src="../assets/img/mp_logo_mid.png" title="Media Party / 2019" alt="Media Party / 2019" />
             <h3>{ title }</h3>
             <p>
               { description }
@@ -32,7 +32,7 @@ class Footer extends React.Component {
               <a href="https://hackshackersbamediaparty2016.sched.com/" className="event__link" onClick={ () => { handleGAClick(gaEvents.formerEditions[0], '2016'); } }>2016</a>,
               <a href="http://sched17.mediaparty.info//" className="event__link" onClick={ () => { handleGAClick(gaEvents.formerEditions[0], '2017'); } }>2017</a>
             </p>
-            <p className="event__copyright">Copyright © 2018</p>
+            <p className="event__copyright">Copyright © 2019</p>
           </div>
         </div>
       </footer>

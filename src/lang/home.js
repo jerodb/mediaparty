@@ -115,7 +115,7 @@ const home = {
           ],
         ],
       },
-    ]
+    ],
   },
   'es': {
     'register': 'REGISTRATE AQUÍ',
@@ -136,7 +136,7 @@ const home = {
     'where': {
       'title': 'Dónde Alojarse',
       'description': {
-        __html: '<p>Hay muchísimas opciones para alojarse en la bella y agitada ciudad de Buenos Aires: hospedajes “tipo hostel”, alquileres temporarios de apartamentos, alquileres de habitaciones en casas de familia, hoteles de todas las categorías, etc.</p><p>Lo que es importante para tomar la decisión es tener en cuenta es que en esta ciudad las distancias son grandes y el transporte urbano no es de lo mejor, por eso puede llevarte mucho tiempo ir de un barrio a otro de Buenos Aires. La Media Party 2018 se llevará a cabo en el Ciudad Cultural Konex, en la calle Sarmiento 3131 del barrio Almagro de la ciudad. Barrio que también es conocido como “Abasto”.</p>',
+        __html: '<p>Hay muchísimas opciones para alojarse en la bella y agitada ciudad de Buenos Aires: hospedajes “tipo hostel”, alquileres temporarios de apartamentos, alquileres de habitaciones en casas de familia, hoteles de todas las categorías, etc.</p><p>Lo que es importante para tomar la decisión es tener en cuenta es que en esta ciudad las distancias son grandes y el transporte urbano no es de lo mejor, por eso puede llevarte mucho tiempo ir de un barrio a otro de Buenos Aires. La Media Party 2019 se llevará a cabo en el Ciudad Cultural Konex, en la calle Sarmiento 3131 del barrio Almagro de la ciudad. Barrio que también es conocido como “Abasto”.</p>',
       },
       'description2': {
         __html: '<p>Es recomendable hospedarse en ese barrio (Almagro/ Abasto), o en los linderos: Villa Crespo, Palermo, Recoleta, Centro, Boedo, Caballito. O bien en otros barrios cerca de la línea B del metro, el predio Ciudad Cultural Konex está situado a sólo 300m de la estación de metro Carlos Gardel.</p><p><b>Algunas recomendaciones:</b></p>',
@@ -216,7 +216,7 @@ const home = {
           [
             'Cierre',
             'Gran Sala (A)',
-            'Día 3 (Viernes 15/9) - 18 a 19 hs.,'
+            'Día 3 (Viernes 15/9) - 18 a 19 hs.,',
           ],
         ],
       },
@@ -234,7 +234,7 @@ const home = {
         ],
       },
     ],
-  }
+  },
 };
 
 export default home;
