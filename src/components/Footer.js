@@ -25,7 +25,7 @@ class Footer extends React.Component {
             </p>
           </div>
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <p>{ former }:
+            <p>{ `${ former }: ` }
               <a href="http://lanyrd.com/2013/hhba/" className="event__link" onClick={ () => { handleGAClick(gaEvents.formerEditions[0], '2013'); } }>2013</a>,
               <a href="http://lanyrd.com/2014/hhba/" className="event__link" onClick={ () => { handleGAClick(gaEvents.formerEditions[0], '2014'); } }>2014</a>,
               <a href="https://hackshackersbamediaparty2015.sched.com/" className="event__link" onClick={ () => { handleGAClick(gaEvents.formerEditions[0], '2015'); } }>2015</a>,
