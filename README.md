@@ -9,7 +9,7 @@ $ yarn build
 **Production server**  
 Para persistir el servidor usamos pm2:  
 Iniciar servidor: **$ pm2 start mediaParty**  
-Para servidor: **$ pm2 stop mediaParty**  
+Parar servidor: **$ pm2 stop mediaParty**  
 Reiniciar servidor: **$ pm2 restart mediaParty**  
 Listar servidores: **$ pm2 l**  
 
