@@ -20,9 +20,13 @@ Listar servidores: **$ pm2 l**
 **$ pm2 start yarn --name "mediaParty" -- start**  
   
 **Como subir cambios:**  
-Traer los cambios desde el repo: **$ git pull**  
-Buildear app: **$ yarn build**  
-Reiniciar servidor: **$ pm2 restart mediaParty**  
+1. Traer los cambios desde el repo: **$ git pull**  
+2. Buildear app: **$ yarn build**  
+3. Reiniciar servidor: **$ pm2 restart mediaParty**  
+  
+  
+## IMPORTANTE ##  
+- En el servidor de producción crear un archivo .env con los parametros de .env.example  
   
   
 ## Live streaming ##  
@@ -35,6 +39,3 @@ Reiniciar servidor: **$ pm2 restart mediaParty**
 (*) 2 y 3 sólo se pueden hacer desde el mismo browser donde previamente se hizo 1.  
 (**) El password que se usa en 1 se define en el archivo .env  
   
-  
-##IMPORTANT##  
-- En el servidor de producción crear un archivo .env con los parametros de .env.example  
