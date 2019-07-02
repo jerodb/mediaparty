@@ -4,7 +4,7 @@ const home = {
     'registerPre': 'For the registry we use a plataform called Meetup. To register please click the button below:',
     'registerPos': 'Once inside meetup you must enter your email and you will be associated to the Hacks/Hackers Buenos Aires group. You can also register in the place before you get inside.',
     'here': 'Here',
-    'proposal': 'Apply for workshops and media fair:',
+    'proposal': 'Apply for Workshops and Media Fair:',
     'day': 'Day',
     'workshop': 'Workshop',
     'talk': 'Lightning Talk',
