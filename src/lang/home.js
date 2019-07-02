@@ -122,7 +122,7 @@ const home = {
     'registerPre': 'Para el registro utilizamos una plataforma llamada Meetup. Para registrarse por favor haga click en el siguiente botón:',
     'registerPos': 'Cuando ingrese a meetup deberá poner su email y quedará asociado al grupo de Hacks/Hackers Buenos Aires. Usted también puede registrarse en el lugar antes de ingresar al predio.',
     'here': 'Aquí',
-    'proposal': 'Inscrición de Talleres y Media Feria:',
+    'proposal': 'Inscripción de Talleres y Media Feria:',
     'day': 'Día',
     'workshop': 'Taller',
     'talk': 'Charla Relámpago',
