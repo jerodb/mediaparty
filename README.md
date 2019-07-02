@@ -5,20 +5,20 @@ $ yarn
 
 **Build**  
 $ yarn build
-
+  
+**Start dev localhost**  
+$ yarn start  
+  
 **Production server**  
-Para persistir el servidor usamos pm2:  
+- Para persistir el servidor usamos pm2:  
 Iniciar servidor: **$ pm2 start mediaParty**  
 Parar servidor: **$ pm2 stop mediaParty**  
 Reiniciar servidor: **$ pm2 restart mediaParty**  
 Listar servidores: **$ pm2 l**  
 
-Si es la primera vez que se inicia la aplicación con pm2:  
-$ pm2 start yarn --name "mediaParty" -- start  
-
-**Start dev localhost**  
-$ yarn start
-
+- Si es la primera vez que se inicia la aplicación con pm2:  
+**$ pm2 start yarn --name "mediaParty" -- start**  
+  
 **Como subir cambios:**  
 Traer los cambios desde el repo: **$ git pull**  
 Buildear app: **$ yarn build**  
