@@ -12,4 +12,4 @@ $ yarn start
 
 **IMPORTANTE**  
 - Crear un archivo .env con los parametros que están en .env.example  
-- Para que funcione livestreaming: Crear en el directorio raiz los archivos liveStreaming y videoId con permisos de lectura y escritura
+- Para que funcione el Live Streaming hay que crear en el directorio raiz los archivos liveStreaming y videoId con permisos de lectura y escritura

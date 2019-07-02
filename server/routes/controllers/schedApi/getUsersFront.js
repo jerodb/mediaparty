@@ -5,27 +5,28 @@ const schedUrl = process.env.SCHED_URL;
 
 module.exports = async (req, res) => {
   const fullResponse = {};
+  const apiEndpoint = `${ schedUrl }/api/role/export?api_key=${ apiKey }`;
 
   const endPoints = [
     {
       name: 'speakers',
-      url: `${ schedUrl }/api/role/export?api_key=${ apiKey }&role=speaker&format=json&strip_html=Y&featured=y&fields=name,about,url,avatar,username`,
+      url: `${ apiEndpoint }&role=speaker&format=json&strip_html=Y&featured=y&fields=name,about,url,avatar,username`,
     },
     {
       name: 'moreSpeakers',
-      url: `${ schedUrl }/api/role/export?api_key=${ apiKey }&role=speaker&format=json&strip_html=Y&fields=name,about,url,avatar,username`,
+      url: `${ apiEndpoint }&role=speaker&format=json&strip_html=Y&fields=name,about,url,avatar,username`,
     },
     {
       name: 'executiveTeam',
-      url: `${ schedUrl }/api/role/export?api_key=${ apiKey }&role=artist&format=json&strip_html=Y&fields=name,avatar,username&featured=y`,
+      url: `${ apiEndpoint }&role=artist&format=json&strip_html=Y&fields=name,avatar,username&featured=y`,
     },
     {
       name: 'team',
-      url: `${ schedUrl }/api/role/export?api_key=${ apiKey }&role=artist&format=json&strip_html=Y&fields=name,avatar,username`,
+      url: `${ apiEndpoint }&role=artist&format=json&strip_html=Y&fields=name,avatar,username`,
     },
     {
       name: 'sponsors',
-      url: `${ schedUrl }/api/role/export?api_key=${ apiKey }&role=sponsor&format=json&strip_html=Y&fields=level,name,avatar`,
+      url: `${ apiEndpoint }&role=sponsor&format=json&strip_html=Y&fields=level,name,avatar`,
     },
   ];
 
