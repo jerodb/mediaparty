@@ -25,7 +25,7 @@ Listar servidores: **$ pm2 l**
 3. Reiniciar servidor: **$ pm2 restart mediaParty**  
   
   
-## IMPORTANTE ##  
+## Importante ##  
 - En el servidor de producción crear un archivo .env con los parametros de .env.example  
   
   
