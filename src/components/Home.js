@@ -132,9 +132,35 @@ class Home extends React.Component {
             <p>{ proposal }</p>
             <div className="event__forms_links">
               { /* <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2qysTQB0GCYZALBMnf9lPttA8yyl-tUvq0VbpzYSZYrM8gw/viewform" onClick={ () => { handleGAClick(gaEvents.hero[9]); } } target="_blank" rel="noopener noreferrer" className="event__form_cta">{ applyHere }</a> */ }
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdMpxrwWyUYYRzG1mliRBaX342I8ar6I5PuueTKQaSPGNntBQ/viewform?usp=sf_link" onClick={ () => { handleGAClick(gaEvents.hero[3]); } } target="_blank" rel="noopener noreferrer" className="event__form_cta">{ workshop }</a>&nbsp;/&nbsp;
-              { /* <a href="https://goo.gl/forms/N84m60yy8XjhsYay1" onClick={ () => { handleGAClick(gaEvents.hero[4]); } } target="_blank" rel="noopener noreferrer" className="event__form_cta">{ talk }</a> / */ }
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSehECCx60bQxRPkRPUyeJTpjY_cuPQQp9LvADc2LzlrWTzNZQ/viewform?usp=sf_link" onClick={ () => { handleGAClick(gaEvents.hero[5]); } } target="_blank" rel="noopener noreferrer" className="event__form_cta">{ fair }</a>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdMpxrwWyUYYRzG1mliRBaX342I8ar6I5PuueTKQaSPGNntBQ/viewform?usp=sf_link"
+                onClick={ () => { handleGAClick(gaEvents.hero[3]); } }
+                target="_blank"
+                rel="noopener noreferrer"
+                className="event__form_cta"
+              >
+                { workshop }
+              </a>
+              &nbsp;/&nbsp;
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeSv2HzbdR_mIz_LUUJPzkfJcF_KGIJpkHMTWm--mZjCBNWIw/viewform"
+                onClick={ () => { handleGAClick(gaEvents.hero[4]); } }
+                target="_blank"
+                rel="noopener noreferrer"
+                className="event__form_cta"
+              >
+                { talk }
+              </a>
+              &nbsp;/&nbsp;
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSehECCx60bQxRPkRPUyeJTpjY_cuPQQp9LvADc2LzlrWTzNZQ/viewform?usp=sf_link"
+                onClick={ () => { handleGAClick(gaEvents.hero[5]); } }
+                target="_blank"
+                rel="noopener noreferrer"
+                className="event__form_cta"
+              >
+                { fair }
+              </a>
               { /* <a href="https://goo.gl/forms/LTeksx8BGWIGOSSY2" onClick={ () => { handleGAClick(gaEvents.hero[8]); } } target="_blank" rel="noopener noreferrer" className="event__form_cta">{ award }</a> */ }
               { /*
               <Link to={ '/posit-workshop' } className="event__form_cta" onClick={ () => { handleGAClick(gaEvents.hero[3]); } }>{ workshop }</Link> /
