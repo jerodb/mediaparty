@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+// import { Link } from 'react-router-dom';
 import ReactGA from 'react-ga';
 import fetch from 'isomorphic-fetch';
 import Quotes from './Quotes';
@@ -169,9 +168,11 @@ class Home extends React.Component {
         </section>
 
         { /* TIMELINE */ }
-        <section className="wrapper">
-          <div className="event__timeline" />
-        </section>
+        {
+        // <section className="wrapper">
+        //  <div className="event__timeline" />
+        // </section>
+        }
         { /* ABOUT */ }
         <section className="wrapper">
           <About data={ about } />
