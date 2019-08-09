@@ -223,6 +223,8 @@ a {
 	padding-bottom: 0;
 	height: 500px;
 	overflow: hidden;
+	padding-left: 16px;
+	padding-right: 16px;
 }
 
 .event__en .event__hero_inner {
@@ -245,6 +247,8 @@ a {
 		padding-bottom: 46%;
 		margin-bottom: 30px;
 		height: 1px;
+		padding-left: 0;
+		padding-right: 0;
 	}
 
 	.event__hero_inner {
@@ -426,7 +430,7 @@ a {
 .event__meet_up_links a{
 	font-weight: 600;
 	font-size: 18px;
-	background: red;
+	background: rgba(255, 92, 92, 1); /*#FF5C5C*/
 	color: #fff;
 	height: 60px;
 	width: 100%;
@@ -439,7 +443,8 @@ a {
 
 
 .event__meet_up_links a:hover {
-	background: rgba(255, 0, 0, 0.7)
+	background: rgba(255, 92, 92, 0.7);
+	text-decoration: none;
 }
 
 @media (min-width: 768px) {
