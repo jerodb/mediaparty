@@ -1625,6 +1625,10 @@ a {
 	margin-bottom: 24px;
 }
 
+.event__about_icon img {
+	width: 150px;
+}
+
 .event__about_title {
 	font-size: 24px;
 	font-weight: bold;
