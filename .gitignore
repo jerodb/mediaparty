@@ -1,8 +1,0 @@
-.git
-.idea
-dist
-node_modules
-*.bak
-*.log
-mp-prod*
-.env

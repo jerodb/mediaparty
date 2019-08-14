@@ -1,7 +1,0 @@
-# robots.txt for http://mediaparty.info/
-
-User-agent: *
-Disallow: /liveon
-Disallow: /liveoff
-Disallow: /liveid
-Disallow: /auth
