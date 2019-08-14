@@ -1,14 +1,18 @@
-const router = require('./router');
-const cb = require('./controllers');
+import express from 'express'
+import root from './root'
+import {
+  auth, liveid, liveoff, liveon, getUsersFront
+} from './controllers'
 
-module.exports = app => {
-  app.post('/api/session/add', cb.schedApi.addSession);
-  app.get('/api/user/front', cb.schedApi.getUsersFront);
+const router = express.Router()
 
-  app.get('/liveon', cb.liveon);
-  app.get('/liveoff', cb.liveoff);
-  app.get('/liveid/:id', cb.liveid);
-  app.post('/auth', cb.auth);
+router.get('/api/user/front', getUsersFront)
+router.get('/liveon', liveon)
+router.get('/liveoff', liveoff)
+router.get('/liveid/:id', liveid)
+router.get('/liveid', liveid)
+router.post('/auth', auth)
 
-  app.all('*', router.all);
-};
+router.get('*', root)
+
+export default router

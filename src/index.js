@@ -1,21 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import 'babel-polyfill';
-import ReactGA from 'react-ga';
-import Router from './components/Router';
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
+import 'whatwg-fetch'
 
-import './assets/css/bootstrap.css';
-import './assets/css/style.css';
-// import '../../node_modules/react-day-picker/lib/style.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
+import ReactGA from 'react-ga'
+import Router from './components/Router'
 
-const gaKey = process.env.GA_TRACKING_ID || '';
+import './res/css/bootstrap.css'
+import './res/css/style.css'
 
-ReactGA.initialize(gaKey);
+const gaKey = process.env.GA_TRACKING_ID || ''
+
+ReactGA.initialize(gaKey)
 
 window.onload = () => {
-  const locale = document.documentElement.getAttribute('lang') || process.env.LANG_DEFAULT;
-  const videoId = document.getElementById('videoId').value || null;
+  const locale = document.documentElement.getAttribute('lang') || process.env.LANG_DEFAULT
+  let videoId = document.getElementById('videoId')
+  videoId = (videoId && videoId.value) || null
 
-  ReactDOM.render(<BrowserRouter><Router locale={ locale } videoId={ videoId } /></BrowserRouter>, document.getElementById('app'));
-};
+  ReactDOM.render(
+    <BrowserRouter>
+      <Router locale={ locale } videoId={ videoId } />
+    </BrowserRouter>, 
+    document.getElementById('app')
+  )
+}

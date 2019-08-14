@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {phSpeakers} from '../../res/images'
 
 class CardFeatured extends React.Component {
   render() {
     const { about, avatar, name, url, username, id } = this.props.data;
     const align = id % 2 ? 'event__speaker event__speaker_even' : 'event__speaker event__speaker_odd';
-    const pic = avatar || '../assets/img/ph_speakers.png';
+    const pic = avatar || phSpeakers;
     const urlLink = url.startsWith('http') ? url : `http://${ url }`;
 
     const userDescWrapper = {

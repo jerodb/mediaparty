@@ -1,5 +1,4 @@
-const crypto = require('crypto-js');
-require('dotenv').config();
+import crypto from 'crypto-js'
 
 const ENCRYPTION_KEY = process.env.MP_SECRET; // Must be 256 bytes (32 characters)
 
@@ -10,4 +9,5 @@ const decrypt = encrypted => {
   return bytes.toString(crypto.enc.Utf8);
 }
 
-module.exports = { decrypt, encrypt };
+export  { encrypt }
+export { decrypt }

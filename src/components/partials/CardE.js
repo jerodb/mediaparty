@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {phSpeakers} from '../../res/images'
 
 class CardE extends React.Component {
   render() {
     const { avatar, name, username } = this.props.data;
 
-    const pic = avatar || '../assets/img/ph_speakers.png';
+    const pic = avatar || phSpeakers;
 
     return (
       <div className="col-lg-2 col-md-3 col-sm-4 col-xs-6 event__team_member">

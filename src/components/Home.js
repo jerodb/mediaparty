@@ -1,7 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import ReactGA from 'react-ga';
-import fetch from 'isomorphic-fetch';
 import Quotes from './Quotes';
 import About from './About';
 import CardFeatured from './partials/CardFeatured';
@@ -80,7 +78,7 @@ class Home extends React.Component {
   }
 
   render() {
-    const { root, registerPre, registerPos, here, register, proposal, day, workshop, talk, fair, award, applyHere, description, venue, where, sponsor, quotes, about, videoId } = this.props;
+    const { registerPre, registerPos, here, register, proposal, day, workshop, talk, fair, award, applyHere, description, venue, where, sponsor, quotes, about, videoId } = this.props;
 
     const handleGAClick = (ev, action) => {
       const evObj = ev;
@@ -161,12 +159,6 @@ class Home extends React.Component {
               >
                 { fair }
               </a>
-              { /* <a href="https://goo.gl/forms/LTeksx8BGWIGOSSY2" onClick={ () => { handleGAClick(gaEvents.hero[8]); } } target="_blank" rel="noopener noreferrer" className="event__form_cta">{ award }</a> */ }
-              { /*
-              <Link to={ '/posit-workshop' } className="event__form_cta" onClick={ () => { handleGAClick(gaEvents.hero[3]); } }>{ workshop }</Link> /
-              <Link to={ '/posit-lightning-talk' } className="event__form_cta" onClick={ () => { handleGAClick(gaEvents.hero[4]); } }>{ talk }</Link> /
-              <Link to={ '/posit-media-fair' } className="event__form_cta" onClick={ () => { handleGAClick(gaEvents.hero[5]); } }>{ fair }</Link>
-              */ }
             </div>
           </div>
         </section>

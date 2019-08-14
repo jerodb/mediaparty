@@ -1,37 +1,12 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Home';
-import Workshop from './Workshop';
-import LightningTalk from './LightningTalk';
-import MediaFair from './MediaFair';
-import Keynote from './Keynote';
-import SuccessMsg from './SuccessMsg';
 import NotFound from './NotFound';
 import Header from './Header';
 import Footer from './Footer';
 import lan from '../lang';
 
 const routes = [
-  { path: '/posit-workshop',
-    state: 'workShop',
-    Component: Workshop,
-  },
-  { path: '/posit-lightning-talk',
-    state: 'lightningTalk',
-    Component: LightningTalk,
-  },
-  { path: '/posit-media-fair',
-    state: 'mediaFair',
-    Component: MediaFair,
-  },
-  { path: '/posit-keynote',
-    state: 'keynote',
-    Component: Keynote,
-  },
-  { path: '/success',
-    state: 'success',
-    Component: SuccessMsg,
-  },
   { path: '/',
     exact: true,
     state: 'home',

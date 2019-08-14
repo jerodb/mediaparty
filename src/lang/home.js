@@ -1,3 +1,7 @@
+import {
+  iKeynotes, iWorkshop, iFeria, iHackaton, iLightning
+} from '../res/images'
+
 const home = {
   'en': {
     'register': 'REGISTER HERE',
@@ -43,7 +47,7 @@ const home = {
     ],
     'about': [
       {
-        icon: 'i_keynotes.png',
+        icon: iKeynotes,
         title: 'Keynotes',
         description: 'International experts of the most important and innovative media worldwide come to Media Party to share their experiences and knowledge.',
         detail: [
@@ -56,7 +60,7 @@ const home = {
         ],
       },
       {
-        icon: 'i_workshop.png',
+        icon: iWorkshop,
         title: 'Workshops',
         description: 'An opportunity to develop, improve or change abilities and skills. A space to learn about making, using, etc whitin 2 or 3 hours. There will be two tracks with 8 workshops working simultaneously in the afternoons and 1 track with 3 workshops on Thursday and Friday afternoon. They will be delivered in the mother tongue of the person in charge and they might aim at some specific profiles, might require a computer or installed software. ',
         detail: [
@@ -69,7 +73,7 @@ const home = {
         ],
       },
       {
-        icon: 'i_feria.png',
+        icon: iFeria,
         title: 'Media Fair',
         description: 'An inspiring exhibition where creators show their prototypes, services, tools or data journalism products, media innovation initiatives, etc. A hotspot for networkng and face-to-face exchange with the makers.',
         detail: [
@@ -80,7 +84,7 @@ const home = {
         ],
       },
       {
-        icon: 'i_hackaton.png',
+        icon: iHackaton,
         title: 'Hackathon',
         description: 'A Hackathon is a full working day to develop a project. Ideas are suggested and those who want to develop them during the event organize multidisciplinary teams to produce interactive stories, web tools, civic apps or innovative media. Everybody can suggest a project on the HackDash or work on the project suggested by others during the event.',
         detail: [
@@ -103,7 +107,7 @@ const home = {
         ],
       },
       {
-        icon: 'i_lightning.png',
+        icon: iLightning,
         title: 'Lightning Talks',
         description: 'Short and dynamic talks about innovation projects regarding journalism, media, open data and citizen participation. Focusing on how the projects were carried out and their impact. In just 5 minutes.',
         detail: [
@@ -161,7 +165,7 @@ const home = {
     ],
     'about': [
       {
-        icon: 'i_keynotes.png',
+        icon: iKeynotes,
         title: 'Keynotes',
         description: 'Expertos internacionales de los medios más importantes e innovadores de todo el mundo llegan a la Media Party para compartir su experiencia y conocimientos.',
         detail: [
@@ -174,7 +178,7 @@ const home = {
         ],
       },
       {
-        icon: 'i_workshop.png',
+        icon: iWorkshop,
         title: 'Workshops',
         description: 'Oportunidades para desarrollar nuevas habilidades o aptitudes, o para mejorarlas o cambiarlas. Espacios para aprender a hacer, a usar, etc. en 2 o 3 horas. Habrá dos tracks de  8 talleres en simultáneo por las tardes y 1 track de 3 talleres por las mañanas de jueves y viernes. Serán en el idioma nativo de quien lo lidera, y puede que esté dirigido a perfiles específicos o requieran trabajar con compu, o tener un software instalado.',
         detail: [
@@ -187,7 +191,7 @@ const home = {
         ],
       },
       {
-        icon: 'i_feria.png',
+        icon: iFeria,
         title: 'Media Feria',
         description: 'Un recorrido inspirador donde los propios creadores exhiben sus prototipos, servicios, herramientas o productos de periodismo de datos, iniciativas de innovación en medios, etc. Es el momento caliente para el networking y el intercambio uno a uno con los hacedores.',
         detail: [
@@ -198,7 +202,7 @@ const home = {
         ],
       },
       {
-        icon: 'i_hackaton.png',
+        icon: iHackaton,
         title: 'Hackatón',
         description: 'Un hackatón en una jornada maratónica de trabajo para desarrollar un proyecto, se proponen ideas y los interesados en desarrollarlas durante la jornada se organizan en equipos multidisciplinarios para producir historias interactivas, herramientas web, aplicaciones cívicas o medios innovadores. Todo el mundo está invitado a proponer un proyecto en el HackDash y/o a sumarse a trabajar durante la jornada en el proyecto propuesto por otro.',
         detail: [
@@ -221,7 +225,7 @@ const home = {
         ],
       },
       {
-        icon: 'i_lightning.png',
+        icon: iLightning,
         title: 'Charlas Relámpago',
         description: 'Charlas cortas y dinámicas sobre proyectos de innovación en periodismo, medios, datos abiertos o participación ciudadana. Con foco en el cómo de los proyectos y/o en el impacto generado. En sólo 5\'.',
         detail: [

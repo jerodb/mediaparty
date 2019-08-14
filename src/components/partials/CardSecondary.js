@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {phSpeakers} from '../../res/images'
 
 class CardSecondary extends React.Component {
   render() {
     const { about, avatar, name, url, username } = this.props.data;
-    const pic = avatar || '../assets/img/ph_speakers.png';
+    const pic = avatar || phSpeakers;
     const urlLink = url.startsWith('http') ? url : `http://${ url }`;
 
     const readMore = {

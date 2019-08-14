@@ -228,12 +228,12 @@ a {
 }
 
 .event__en .event__hero_inner {
-	background: url("../img/hero_en_mob.png") no-repeat center top;
+	background: url("/images/hero_en_mob.png") no-repeat center top;
 	background-size: contain;
 }
 
 .event__es .event__hero_inner {
-	background: url("../img/hero_es_mob.png") no-repeat center top;
+	background: url("/images/hero_es_mob.png") no-repeat center top;
 	background-size: contain;
 }
 
@@ -257,11 +257,11 @@ a {
 		height: 420px;
 	}
 	.event__en .event__hero_inner {
-		background: url("../img/hero_en.png") no-repeat center top;
+		background: url("/images/hero_en.png") no-repeat center top;
 		background-size: contain;
 	}
 	.event__es .event__hero_inner {
-		background: url("../img/hero_es.png") no-repeat center top;
+		background: url("/images/hero_es.png") no-repeat center top;
 		background-size: contain;
 	}
 }
@@ -498,7 +498,7 @@ a {
 	text-align: left;
 	font-weight: 300;
 	padding: 0;
-	background: #FF5E5E url("../img/foto_escalera.jpg") no-repeat;
+	background: #FF5E5E url("/images/foto_escalera.jpg") no-repeat;
 	background-size: contain;
 }
 
@@ -585,7 +585,7 @@ a {
 	text-indent: -9999px;
 	font-size: 18px;
 	width: 290px;
-	background: url("../img/logo_hhba_blanco.svg") no-repeat right center;
+	background: url("/images/logo_hhba_blanco.svg") no-repeat right center;
 	background-size: cover;
 	margin: 0 auto;
 }
@@ -677,26 +677,26 @@ a {
 }
 .event__en .event__timeline {
 	height: 565px;
-	background: url("../img/timeline_en_mob.png") no-repeat center;
+	background: url("/images/timeline_en_mob.png") no-repeat center;
 	background-size: contain;
 }
 
 .event__es .event__timeline {
 	height: 565px;
-	background: url("../img/timeline_es_mob.png") no-repeat center;
+	background: url("/images/timeline_es_mob.png") no-repeat center;
 	background-size: contain;
 }
 
 @media (min-width: 992px) {
 	.event__en .event__timeline {
 		height: 366px;
-		background: url("../img/timeline_en.png") no-repeat center;
+		background: url("/images/timeline_en.png") no-repeat center;
 		background-size: contain;
 	}
 
 	.event__es .event__timeline {
 		height: 366px;
-		background: url("../img/timeline_es.png") no-repeat center;
+		background: url("/images/timeline_es.png") no-repeat center;
 		background-size: contain;
 	}
 }
@@ -1149,7 +1149,7 @@ a {
 	height: 300px;
 	color: #fff;
 	margin-top: 20px;
-	background: url("../img/konex_mob.png") no-repeat center;
+	background: url("/images/konex_mob.png") no-repeat center;
 	background-size: cover;
 }
 
@@ -1168,7 +1168,7 @@ a {
 
 @media (min-width: 992px) {
 	.event__venue_info {
-		background: url("../img/konex.png") no-repeat center;
+		background: url("/images/konex.png") no-repeat center;
 		background-size: cover;
 	}
 }

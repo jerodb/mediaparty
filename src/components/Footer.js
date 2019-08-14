@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactGA from 'react-ga';
 import gaEvents from '../config/gaEvents';
+import {mpLogoMid} from '../res/images'
 
 class Footer extends React.Component {
   render() {
@@ -17,7 +18,7 @@ class Footer extends React.Component {
       <footer className="event__footer">
         <div className="row">
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 event__footer_cta">
-            <img src="../assets/img/mp_logo_mid.png" title="Media Party / 2019" alt="Media Party / 2019" />
+            <img src={mpLogoMid} title="Media Party / 2019" alt="Media Party / 2019" />
             <h3>{ title }</h3>
             <p>
               { description }

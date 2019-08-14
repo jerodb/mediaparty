@@ -1,26 +1,38 @@
-const fs = require('fs');
-const crypto = require('../../services/crypto');
+import fs from 'fs'
+import path from 'path'
+import { decrypt } from '../../services/crypto'
+import { HOST, ROOT_DIR } from '../../../config'
 
-module.exports = (req, res) => {
-  let auth = req.cookies['media-party-auth'] || null;
-  auth = auth !== 'undefined' && auth !== '' ? auth : null;
+export default (req, res) => {
+  const template = path.join(ROOT_DIR, 'auth.html')
+  const redirect = `${ HOST }liveon`
 
-  const redirect = `${ process.env.BASE_PATH }/liveon`;
+  let auth = req.cookies['media-party-auth'] || null
+  auth = auth !== 'undefined' && auth !== '' ? auth : null
+  
+  const key = auth && JSON.parse(decrypt(decodeURIComponent(auth)))
 
-  if (auth) {
-    const key = JSON.parse(crypto.decrypt(decodeURIComponent(auth)));
+  if (auth && key === process.env.MP_KEY) {
+    fs.writeFile('./liveStreaming', 'on', 'utf8', err => {
+      if (err) {
+        console.log(err)
+        return res.send('Ocurrió un error al intentar encender el livestreaming.')
+      }
 
-    if (key !== process.env.MP_KEY) {
-      return res.render('auth', { redirect });
-    }
-  } else return res.render('auth', { redirect });
+      return res.redirect('/');
+    })
+  }
+  else {
+    // Loads auth template
+    fs.readFile(template, 'utf8', (err, data) => {
+      if (err) throw err
 
-  fs.writeFile('./liveStreaming', 'on', 'utf8', err => {
-    if (err) {
-      console.log(err);
-      return res.send('Ocurrió un error al intentar encender el livestreaming.');
-    }
+      // Insert redirect uri
+      const document = data
+        .replace('<input id="redirect">', `<input type="hidden"  name="redirect" value="${redirect}">`)
 
-    return res.redirect('/');
-  });
+      // Sends html
+      return res.send(document)
+    })
+  }
 }

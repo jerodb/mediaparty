@@ -1,0 +1,11 @@
+doctype html
+html(lang='en')
+  head
+    meta(http-equiv='content-type' content='text/html; charset=utf-8')
+    title Media Party / Auth
+  body
+    form(method='post' action='/auth')
+      label(for='key') Enter security key:
+        input(id='key' name='key' type='password')
+      input(id='redirect')
+    button(type='submit') SEND
