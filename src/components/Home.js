@@ -252,7 +252,7 @@ class Home extends React.Component {
             <div className="row flex-wrapper">
               {
                 this.state.partners.map((data, k) => {
-                  return (<CardA key={ k } data={ data } />);
+                  return (<CardA key={ JSON.stringify(k) } data={ data } />);
                 })
               }
             </div>
@@ -266,7 +266,7 @@ class Home extends React.Component {
             <div className="row flex-wrapper">
               {
                 this.state.sponsors.map((data, k) => {
-                  return (<CardB key={ k } data={ data } />);
+                  return (<CardB key={ JSON.stringify(k) } data={ data } />);
                 })
               }
             </div>
@@ -280,7 +280,7 @@ class Home extends React.Component {
           <div className="row flex-wrapper">
             {
               this.state.collaborators.map((data, k) => {
-                return (<CardC key={ k } data={ data } />);
+                return (<CardC key={ JSON.stringify(k) } data={ data } />);
               })
             }
           </div>
@@ -294,7 +294,7 @@ class Home extends React.Component {
           <div className="row flex-wrapper">
             {
               this.state.recruiters.map((data, k) => {
-                return (<CardD key={ k } data={ data } />);
+                return (<CardD key={ JSON.stringify(k) } data={ data } />);
               })
             }
           </div>
@@ -308,7 +308,7 @@ class Home extends React.Component {
           <div className="row flex-wrapper">
             {
               this.state.executiveTeam.map((data, k) => {
-                return (<CardE key={ k } data={ data } />);
+                return (<CardE key={ JSON.stringify(k) } data={ data } />);
               })
             }
           </div>
@@ -322,7 +322,7 @@ class Home extends React.Component {
           <div className="row flex-wrapper">
             {
               this.state.team.map((data, k) => {
-                return (<CardE key={ k } data={ data } />);
+                return (<CardE key={ JSON.stringify(k) } data={ data } />);
               })
             }
           </div>
@@ -337,7 +337,7 @@ class Home extends React.Component {
               <div className="row event__speakers_full_inner">
                 {
                   this.state.moreSpeakers.map((data, k) => {
-                    return (<CardSecondary key={ k } data={ data } />);
+                    return (<CardSecondary key={ JSON.stringify(k) } data={ data } />);
                   })
                 }
               </div>
