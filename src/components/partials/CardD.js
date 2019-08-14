@@ -1,0 +1,28 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import {phSpeakers} from '../../res/images'
+
+class CardD extends React.Component {
+  render() {
+    const { avatar, name, username } = this.props.data;
+
+    const pic = avatar || phSpeakers;
+
+    return (
+      <div className="col-lg-2 col-md-2 col-sm-6 col-xs-6 event__recruiter">
+        <a href={ `${ process.env.SCHED_URL }/volunteer/${ username }` } target="_blank" rel="noopener noreferrer" className="">
+          <img src={ pic } alt={ `${ name } pic` } className="event__recruiter_img" />
+          <div className="event__recruiters_name">
+            <p>{ name }</p>
+          </div>
+        </a>
+      </div>
+    );
+  }
+}
+
+CardD.propTypes = {
+  data: PropTypes.object.isRequired,
+};
+
+export default CardD;
