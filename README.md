@@ -1,5 +1,8 @@
 # Mediaparty  
   
+The Media Party is a 3 days event in Buenos Aires, Argentina, that gathers more than 2500 entrepreneurs, journalists, developers and designers from five continents to work together for the future of media.  
+  
+&nbsp;
 ## Getting started
 - Create .env file with the following variables:
 
@@ -34,6 +37,8 @@ For example:
 &nbsp;
 ## Install, build and run  
   
+*(\*) Node environment and Webpack mode depends on NODE_ENV value set in .env file.*  
+  
 - Install dependencies  
 ```
 $ yarn
@@ -53,26 +58,38 @@ $ yarn dev
 &nbsp;
 ## Production server  
   
-- Para persistir el servidor usamos pm2:  
-Iniciar servidor: **$ pm2 start mediaParty**  
-Parar servidor: **$ pm2 stop mediaParty**  
-Reiniciar servidor: **$ pm2 restart mediaParty**  
-Listar servidores: **$ pm2 l**  
+Para persistir el servidor usamos pm2.  
+
+- Si es la primera vez que se inicia la aplicación:  
+```
+$ pm2 start yarn --name "mediaParty" -- start
+```
   
-- Si es la primera vez que se inicia la aplicación con pm2:  
-**$ pm2 start yarn --name "mediaParty" -- start**  
+- Iniciar, detener y reiniciar:  
+```
+$ pm2 start mediaParty
+$ pm2 stop mediaParty
+$ pm2 restart mediaParty
+```
   
-**Como subir cambios:**  
-1. Traer los cambios desde el repo: **$ git pull**  
-2. Buildear app: **$ yarn build**  
-3. Reiniciar servidor: **$ pm2 restart mediaParty**  
+- Listar servidores:  
+```
+$ pm2 l
+```
+  
+- Para actualizar cambios en el servidor:
+```  
+1. $ git pull
+2. $ yarn build
+3. $ pm2 restart mediaParty
+```    
   
 &nbsp;
 ## Live streaming  
   
+*(\*) El password que se usa para configurar el live streaming se define en el archivo .env*  
+
 1. Ir a http://mediaparty.info/liveid/VIDEO_ID para setear el ID del video en youtube (https://www.youtube.com/embed/VIDEO_ID).
 2. Para activar el live streaming en el sitio: ir a http://mediaparty.info/liveon
-3. Para desactivar el live streaming en el sitio: ir a http://mediaparty.info/liveoff
-
-(*) El password que se usa para esto se define en el archivo .env  
+3. Para desactivar el live streaming en el sitio: ir a http://mediaparty.info/liveoff  
   
