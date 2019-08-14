@@ -39,15 +39,16 @@ For example:
 $ yarn
 ```
   
-- Build  
+- Bundle app using webpack and start node server:  
 ```
 $ yarn build
-```  
-  
-- Start dev localhost  
-```
 $ yarn start
-```  
+```
+
+- Start **[dev-server](https://webpack.js.org/configuration/dev-server)** with **[HMR](https://webpack.js.org/concepts/hot-module-replacement/)**:  
+```
+$ yarn dev
+``` 
   
 &nbsp;
 ## Production server  
