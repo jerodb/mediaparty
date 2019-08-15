@@ -7,31 +7,35 @@ The Media Party is a 3 days event in Buenos Aires, Argentina, that gathers more 
 - Create .env file with the following variables:
 
 ```
-  API_KEY=
-  BASE_NAME=
-  DEFAULT_LANG=
-  GA_TRACKING_ID=
+  NODE_ENV=
   HOST=
+  BASE_NAME=
+  PORT=
+  SSL_PORT=
+  SSL_CERT=
+  DEFAULT_LANG=
+  API_KEY=
+  SCHED_URL=
   MP_KEY=
   MP_SECRET=
-  NODE_ENV=
-  PORT=
-  SCHED_URL=
+  GA_TRACKING_ID=
 ```
   
 For example:
   
 ```
-  API_KEY=YOUR_SCHED_API_KEY
+  NODE_ENV=production
+  HOST=https://mediaparty.info/
   BASE_NAME=/
+  PORT=8080
+  SSL_PORT=443
+  SSL_CERT=/path/to/certs/dir/
   DEFAULT_LANG=en
-  GA_TRACKING_ID=UA-42580123-1
-  HOST=http://localhost:4000/
-  MP_KEY=YOUR_LIVE_STREAMING_KEY
-  MP_SECRET=DCBhUSDVjNBl4o87gD0kldloHKkdsap3f
-  NODE_ENV=development
-  PORT=4000
+  API_KEY=YOUR_SCHED_API_KEY
   SCHED_URL=https://mediaparty2019.sched.com
+  MP_KEY=YOUR_KEY_FOR_LIVE_STREAMING
+  MP_SECRET=YOUR_SECRET_FOR_LIVE_STREAMING
+  GA_TRACKING_ID=UA-42580986-1
 ```
   
 &nbsp;
@@ -58,26 +62,26 @@ $ yarn dev
 &nbsp;
 ## Production server  
   
-Para persistir el servidor usamos pm2.  
+We use **[pm2](https://www.npmjs.com/package/pm2)** to persist the server.  
 
-- Si es la primera vez que se inicia la aplicación:  
+- The first time you start the app run:  
 ```
 $ pm2 start yarn --name "mediaParty" -- start
 ```
   
-- Iniciar, detener y reiniciar:  
+- Start, stop and restart:  
 ```
 $ pm2 start mediaParty
 $ pm2 stop mediaParty
 $ pm2 restart mediaParty
 ```
   
-- Listar servidores:  
+- List active server:  
 ```
 $ pm2 l
 ```
   
-- Para actualizar cambios en el servidor:
+- Update changes:
 ```  
 1. $ git pull
 2. $ yarn build
@@ -86,10 +90,11 @@ $ pm2 l
   
 &nbsp;
 ## Live streaming  
-  
-*(\*) El password que se usa para configurar el live streaming se define en el archivo .env*  
 
-1. Ir a http://mediaparty.info/liveid/VIDEO_ID para setear el ID del video en youtube (https://www.youtube.com/embed/VIDEO_ID).
-2. Para activar el live streaming en el sitio: ir a http://mediaparty.info/liveon
-3. Para desactivar el live streaming en el sitio: ir a http://mediaparty.info/liveoff  
+1. Go to **https://mediaparty.info/liveid/<VIDEO_ID>** to set the youtube video that will be played on the landing page. (ex: https://mediaparty.info/liveid/**veas_6NvJMk**).
+2. Turn on live streaming: go to **http://mediaparty.info/liveon**
+3. Turn off live streaming: got to **http://mediaparty.info/liveoff**  
+    
+*(\*) The key/password used for live streaming management should be set in the .env file.*    
+*(\*\*) The **VIDEO_ID** can be obtained from the youtube video uri. ex: https://www.youtube.com/watch?v=**veas_6NvJMk**.*  
   
