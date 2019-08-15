@@ -35,7 +35,7 @@ const Footer = ({ title, description, former }) => {
 ,
             <a href="http://sched17.mediaparty.info/" className="event__link" onClick={() => { handleGAClick(gaEvents.formerEditions[0], '2017') }}>2017</a>
 ,
-            <a href="http://sched18.mediaparty.info/" className="event__link" onClick={() => { handleGAClick(gaEvents.formerEditions[0], '2017') }}>2018</a>
+            <a href="http://sched18.mediaparty.info/" className="event__link" onClick={() => { handleGAClick(gaEvents.formerEditions[0], '2018') }}>2018</a>
           </p>
           <p className="event__copyright">Copyright © 2019</p>
         </div>
