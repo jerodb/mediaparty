@@ -1,16 +1,16 @@
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 import http from 'http'
-import https from 'https'
-import fs from 'fs'
+// import https from 'https'
+// import fs from 'fs'
 import app from './app'
 
-const {
-  HOST, NODE_ENV, PORT, SSL_PORT, SSL_CERT
-} = process.env
+const { NODE_ENV, PORT } = process.env
 
 const env = NODE_ENV || 'development'
 const port = normalizePort(PORT) || 4000
+
+/*
 const sslPort = normalizePort(SSL_PORT) || 4003
 
 const options = {
@@ -19,18 +19,23 @@ const options = {
   dhparam: fs.readFileSync(`${SSL_CERT}dhparam.pem`),
 }
 const server = https.createServer(options, app)
+*/
+
+const server = http.createServer(app)
 
 server.on('error', onError)
 server.on('listening', onListening)
-server.listen(sslPort)
+server.listen(port)
 
 // Redirect from http to https
+/*
 http.createServer((req, res) => {
   res.writeHead(301, {
     Location: `${HOST.slice(0, -1)}${req.url}`
   })
   res.end()
 }).listen(port)
+*/
 
 /**
  * Event listener for HTTP routes "error" event.
