@@ -9,7 +9,6 @@ The Media Party is a 3 days event in Buenos Aires, Argentina, that gathers more 
 ```
   NODE_ENV=
   HOST=
-  BASE_NAME=
   PORT=
   SSL_PORT=
   SSL_CERT=
@@ -26,7 +25,6 @@ For example:
 ```
   NODE_ENV=production
   HOST=https://mediaparty.info/
-  BASE_NAME=/
   PORT=8080
   SSL_PORT=443
   SSL_CERT=/path/to/certs/dir/
@@ -92,8 +90,8 @@ $ pm2 l
 ## Live streaming  
 
 1. Go to **https://mediaparty.info/liveid/<VIDEO_ID>** to set the youtube video that will be played on the landing page. (ex: https://mediaparty.info/liveid/**veas_6NvJMk**).
-2. Turn on live streaming: go to **http://mediaparty.info/liveon**
-3. Turn off live streaming: got to **http://mediaparty.info/liveoff**  
+2. Turn on live streaming: go to **https://mediaparty.info/liveon**
+3. Turn off live streaming: got to **https://mediaparty.info/liveoff**  
     
 *(\*) The key/password used for live streaming management should be set in the .env file.*    
 *(\*\*) The **VIDEO_ID** can be obtained from the youtube video uri. ex: https://www.youtube.com/watch?v=**veas_6NvJMk**.*  
