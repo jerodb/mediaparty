@@ -10,8 +10,6 @@ The Media Party is a 3 days event in Buenos Aires, Argentina, that gathers more 
   NODE_ENV=
   HOST=
   PORT=
-  SSL_PORT=
-  SSL_CERT=
   DEFAULT_LANG=
   API_KEY=
   SCHED_URL=
@@ -26,8 +24,6 @@ For example:
   NODE_ENV=production
   HOST=https://mediaparty.info/
   PORT=8080
-  SSL_PORT=443
-  SSL_CERT=/path/to/certs/dir/
   DEFAULT_LANG=en
   API_KEY=YOUR_SCHED_API_KEY
   SCHED_URL=https://mediaparty2019.sched.com
