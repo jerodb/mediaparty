@@ -1,34 +1,34 @@
 // NOTE: webpack v4+ will minify your code by default in production mode.
 // import DashboardPlugin from 'webpack-dashboard/plugin';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import CompressionPlugin from 'compression-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import HtmlWebpackPugPlugin from 'html-webpack-pug-plugin';
-import webpack from 'webpack';
-import path from 'path';
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import CompressionPlugin from 'compression-webpack-plugin'
+import CopyWebpackPlugin from 'copy-webpack-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import HtmlWebpackPugPlugin from 'html-webpack-pug-plugin'
+import webpack from 'webpack'
+import path from 'path'
 import {
-  BASE_NAME, GA_TRACKING_ID, HOST, LANG_DEFAULT, NODE_ENV, PORT, ROOT_DIR, SCHED_URL
+  GA_TRACKING_ID, HOST, LANG_DEFAULT, NODE_ENV, PORT, ROOT_DIR, SCHED_URL
 } from './config'
 
-const host = HOST || 'http://localhost:4000/';
-const nodeEnv = NODE_ENV || 'development';
-const port = PORT || '4000';
-const gaTrackingId = GA_TRACKING_ID || '';
-const langDefault = LANG_DEFAULT || 'es';
-const schedUrl = SCHED_URL;
+const host = HOST || 'http://localhost:4000/'
+const nodeEnv = NODE_ENV || 'development'
+const port = PORT || '4000'
+const gaTrackingId = GA_TRACKING_ID || ''
+const langDefault = LANG_DEFAULT || 'es'
+const schedUrl = SCHED_URL
 
-const buildPath = ROOT_DIR;
-const sourcePath = path.join(__dirname, 'src');
-const assets = path.join(sourcePath, 'assets');
-const entryPoint = path.join(sourcePath, 'index.js');
-const outputBundle = path.join('js', 'bundle.js');
-const templates = path.join(sourcePath, 'templates');
+const buildPath = ROOT_DIR
+const sourcePath = path.join(__dirname, 'src')
+const assets = path.join(sourcePath, 'assets')
+const entryPoint = path.join(sourcePath, 'index.js')
+const outputBundle = path.join('js', 'bundle.js')
+const templates = path.join(sourcePath, 'templates')
 
-const mode = nodeEnv;
-const isDev = mode === 'development';
+const mode = nodeEnv
+const isDev = mode === 'development'
 
-const extractStyles = new ExtractTextPlugin('css/styles.css');
+const extractStyles = new ExtractTextPlugin('css/styles.css')
 
 const rules = [
   {
@@ -68,7 +68,7 @@ const rules = [
       }
     ]
   },
-];
+]
 
 const plugins = [
   // Moves all the require/import "[fileName].css" into a separate single CSS file.
@@ -102,19 +102,19 @@ const plugins = [
 
   // https://www.npmjs.com/package/html-webpack-pug-plugin
   new HtmlWebpackPugPlugin(),
-  
+
   new CompressionPlugin({
     algorithm: 'gzip',
-    //asset: '[path].gz[query]',
-    //minRatio: 0.8,
+    // asset: '[path].gz[query]',
+    // minRatio: 0.8,
     test: /\.js$|\.css$|\.html$/,
     // threshold: 10240,
   }),
-  
+
   new CopyWebpackPlugin([
     { from: assets, to: buildPath },
   ]),
-];
+]
 
 if (isDev) {
   // Development plugins
@@ -125,7 +125,7 @@ if (isDev) {
     new webpack.NamedModulesPlugin(),
     // CLI dashboard for the webpack dev server
     // new DashboardPlugin()
-  );
+  )
 }
 
 
@@ -157,4 +157,4 @@ export default () => ({
     contentBase: buildPath,
     port,
   },
-});
+})
