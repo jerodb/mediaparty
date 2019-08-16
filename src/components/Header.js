@@ -18,9 +18,9 @@ class Header extends React.Component {
           <div className="event__lang">
             <p>
               <Link
-                to={ lang.to }
-                title={ lang.title }
-                onClick={ () => { handleGAClick(gaEvents.header[0], lang.description) } }
+                to={lang.to}
+                title={lang.title}
+                onClick={() => { handleGAClick(gaEvents.header[0], lang.description) }}
                 className="event__lang_link"
               >
                 { lang.description }
@@ -33,34 +33,34 @@ class Header extends React.Component {
             <a href="http://sched18.mediaparty.info/" target="_blank" rel="noopener noreferrer" className="event__menu_item event__agenda" onClick={ () => { handleGAClick(gaEvents.header[0], 'Agenda') } }>{ nav.agenda }</a>
             */}
             <Link
-              to={ `${ root }/#speakers` }
+              to={`${root}/#speakers`}
               className="event__menu_item event__speakers"
-              onClick={ () => { handleGAClick(gaEvents.header[0], 'Speakers') } }
+              onClick={() => { handleGAClick(gaEvents.header[0], 'Speakers') }}
             >
               { nav.speakers }
             </Link>
             <Link
-              to={ `${ root }/#venue` }
+              to={`${root}/#venue`}
               className="event__menu_item event__venue"
-              onClick={ () => { handleGAClick(gaEvents.header[0], 'Venue') } }
+              onClick={() => { handleGAClick(gaEvents.header[0], 'Venue') }}
             >
               { nav.venue }
             </Link>
             <Link
-              to={ `${ root }/#where-to-stay` }
+              to={`${root}/#where-to-stay`}
               className="event__menu_item event__where"
-              onClick={ () => { handleGAClick(gaEvents.header[0], 'Where to stay') } }
+              onClick={() => { handleGAClick(gaEvents.header[0], 'Where to stay') }}
             >
               { nav.stay }
             </Link>
             <Link
-              to={ `${ root }/#more-speakers` }
+              to={`${root}/#more-speakers`}
               className="event__menu_item"
-              onClick={ () => { handleGAClick(gaEvents.header[0], 'More Speakers') } }
+              onClick={() => { handleGAClick(gaEvents.header[0], 'More Speakers') }}
             >
               { nav.moreSpeakers }
             </Link>
-            <a href="http://blog.mediaparty.info" target="_blank" rel="noopener noreferrer" className="event__menu_item event__blog" onClick={ () => { handleGAClick(gaEvents.header[0], 'Blog') } }>{ nav.blog }</a>
+            <a href="https://blog.mediaparty.info" target="_blank" rel="noopener noreferrer" className="event__menu_item event__blog" onClick={() => { handleGAClick(gaEvents.header[0], 'Blog') }}>{ nav.blog }</a>
           </div>
         </div>
       </header>

@@ -1,4 +1,4 @@
-# robots.txt for http://mediaparty.info/
+# robots.txt for https://mediaparty.info/
 
 User-agent: *
 Disallow: /liveon
