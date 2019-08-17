@@ -1,14 +1,15 @@
 import React from 'react'
 import ReactGA from 'react-ga'
-import Quotes from './Quotes'
-import About from './About'
-import CardFeatured from './partials/CardFeatured'
-import CardSecondary from './partials/CardSecondary'
-import CardA from './partials/CardA'
-import CardB from './partials/CardB'
-import CardC from './partials/CardC'
-import CardD from './partials/CardD'
-import CardE from './partials/CardE'
+import Quotes from '../components/Quotes'
+import About from '../components/About'
+import Speakers from '../components/Speakers'
+import MoreSpeakers from '../components/Avatars/MoreSpeakers'
+import AvatarsList from '../components/AvatarsList'
+import Partner from '../components/Avatars/Partner'
+import Sponsor from '../components/Avatars/Sponsor'
+import Collaborator from '../components/Avatars/Collaborator'
+import Recruiter from '../components/Avatars/Recruiter'
+import Team from '../components/Avatars/Team'
 import gaEvents from '../config/gaEvents'
 
 class Home extends React.Component {
@@ -81,6 +82,11 @@ class Home extends React.Component {
     const {
       registerPre, registerPos, here, register, proposal, day, workshop, talk, fair, award, applyHere, description, venue, where, sponsor, quotes, about, videoId
     } = this.props
+
+    const {
+      collaborators, executiveTeam, featuredSpeakers, mapEvents, moreSpeakers,
+      partners, recruiters, sponsors, team
+    } = this.state
 
     const handleGAClick = (ev, action) => {
       const evObj = ev
@@ -169,7 +175,7 @@ class Home extends React.Component {
 
         { /* QUOTES */ }
         <section className="wrapper">
-          <Quotes data={quotes} />
+          <Quotes quotes={quotes} />
         </section>
 
         { /* DESCRIPTION */ }
@@ -197,29 +203,13 @@ class Home extends React.Component {
         }
         { /* ABOUT */ }
         <section className="wrapper">
-          <About data={about} />
+          <About about={about} />
         </section>
 
         {/* SPEAKERS */}
-        { this.state.featuredSpeakers.length > 0
-        && (
         <section id="speakers" className="wrapper">
-          <h2>
-            <div className="title-txt">SPEAKERS</div>
-            <div className="title-line" />
-          </h2>
-          <div className="event__speakers_featured">
-            {
-              this.state.featuredSpeakers.map((data, k) => {
-                const dataObj = data
-                dataObj.id = k
-                return (<CardFeatured key={dataObj.id} data={dataObj} />)
-              })
-            }
-          </div>
+          <Speakers speakers={featuredSpeakers} />
         </section>
-        )
-        }
 
         { /* VENUE */ }
         <section id="venue">
@@ -228,7 +218,7 @@ class Home extends React.Component {
             <p className="event__venue_name">Ciudad Cultural Konex</p>
             <p className="event__venue_address">Sarmiento 3131, Buenos Aires, Argentina</p>
           </div>
-          <div className={this.state.mapEvents} dangerouslySetInnerHTML={this.iframeMap()} onClick={() => { this.allowMapEvents(true) }} onMouseLeave={() => { this.allowMapEvents(false) }} />
+          <div className={mapEvents} dangerouslySetInnerHTML={this.iframeMap()} onClick={() => { this.allowMapEvents(true) }} onMouseLeave={() => { this.allowMapEvents(false) }} />
         </section>
 
         { /* WHERE TO STAY */ }
@@ -250,125 +240,90 @@ class Home extends React.Component {
         </section>
 
         { /* PARTNERS */ }
-        { this.state.partners.length > 0
+        { partners[0]
           && (
-          <section className="event__partners wrapper">
-            <h2>
-              <div className="title-txt">PARTNERS</div>
-              <div className="title-line" />
-            </h2>
-            <div className="row flex-wrapper">
-              {
-                this.state.partners.map((data, k) => (<CardA key={JSON.stringify(k)} data={data} />))
-              }
-            </div>
-          </section>
+          <AvatarsList
+            list={partners}
+            name="PARTNERS"
+            type="partners"
+            Avatar={Partner}
+          />
           )
         }
 
         { /* SPONSORS */ }
-        { this.state.sponsors.length > 0
+        { sponsors[0]
           && (
-          <section className="event__sponsors wrapper">
-            <h2>
-              <div className="title-txt">SPONSORS</div>
-              <div className="title-line" />
-            </h2>
-            <div className="row flex-wrapper">
-              {
-                this.state.sponsors.map((data, k) => (<CardB key={JSON.stringify(k)} data={data} />))
-              }
-            </div>
-          </section>
+          <AvatarsList
+            list={sponsors}
+            name="SPONSORS"
+            type="sponsors"
+            Avatar={Sponsor}
+          />
           )
         }
 
         { /* COLLABORATORS */ }
-        { this.state.collaborators.length > 0
-        && (
-        <section className="event__collaborators wrapper">
-          <h2>
-            <div className="title-txt">COLLABORATORS</div>
-            <div className="title-line" />
-          </h2>
-          <div className="row flex-wrapper">
-            {
-              this.state.collaborators.map((data, k) => (<CardC key={JSON.stringify(k)} data={data} />))
-            }
-          </div>
-        </section>
-        )
+        { collaborators[0]
+          && (
+          <AvatarsList
+            list={collaborators}
+            name="COLLABORATORS"
+            type="collaborators"
+            Avatar={Collaborator}
+          />
+          )
         }
 
         { /* RECRUITERS */ }
-        { this.state.recruiters.length > 0
-        && (
-        <section className="event__recruiters wrapper">
-          <h2>
-            <div className="title-txt">RECRUITERS</div>
-            <div className="title-line" />
-          </h2>
-          <div className="row flex-wrapper">
-            {
-              this.state.recruiters.map((data, k) => (<CardD key={JSON.stringify(k)} data={data} />))
-            }
-          </div>
-        </section>
-        )
+        { recruiters[0]
+          && (
+          <AvatarsList
+            list={recruiters}
+            name="RECRUITERS"
+            type="recruiters"
+            Avatar={Recruiter}
+          />
+          )
         }
 
         { /* EXECUTIVE TEAM */ }
-        { this.state.executiveTeam.length > 0
-        && (
-        <section className="event__team wrapper">
-          <h2>
-            <div className="title-txt">EXECUTIVE TEAM</div>
-            <div className="title-line" />
-          </h2>
-          <div className="row flex-wrapper">
-            {
-              this.state.executiveTeam.map((data, k) => (<CardE key={JSON.stringify(k)} data={data} />))
-            }
-          </div>
-        </section>
-        )
+        { executiveTeam[0]
+          && (
+          <AvatarsList
+            list={executiveTeam}
+            name="EXECUTIVE TEAM"
+            type="team"
+            Avatar={Team}
+          />
+          )
         }
 
         { /* TEAM */ }
-        { this.state.team.length > 0
-        && (
-        <section className="event__team wrapper">
-          <h2>
-            <div className="title-txt">TEAM</div>
-            <div className="title-line" />
-          </h2>
-          <div className="row flex-wrapper">
-            {
-              this.state.team.map((data, k) => (<CardE key={JSON.stringify(k)} data={data} />))
-            }
-          </div>
-        </section>
-        )
+        { team[0]
+          && (
+          <AvatarsList
+            list={team}
+            name="TEAM"
+            type="team"
+            Avatar={Team}
+          />
+          )
         }
 
         {/* MORE SPEAKERS */}
-        { this.state.moreSpeakers.length > 0
-          && (
-          <section id="more-speakers" className="wrapper">
-            <h2>
-              <div className="title-txt">MORE SPEAKERS</div>
-              <div className="title-line" />
-            </h2>
-            <div className="event__speakers_full">
-              <div className="row event__speakers_full_inner">
-                {
-                  this.state.moreSpeakers.map((data, k) => (<CardSecondary key={JSON.stringify(k)} data={data} />))
-                }
-              </div>
-            </div>
-          </section>
-          )
-        }
+        <div id="more-speakers">
+          { moreSpeakers[0]
+            && (
+            <AvatarsList
+              list={moreSpeakers}
+              name="MORE SPEAKERS"
+              type="speakers_full"
+              Avatar={MoreSpeakers}
+            />
+            )
+          }
+        </div>
 
         { /* EMBEDDED SPONSORS */ }
         { /*
