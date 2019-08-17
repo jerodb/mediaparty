@@ -6,7 +6,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import ReactGA from 'react-ga'
-import Router from './components/Router'
+import Lang from './navigation/Lang'
 
 import './res/css/bootstrap.css'
 import './res/css/style.css'
@@ -22,8 +22,8 @@ window.onload = () => {
 
   ReactDOM.render(
     <BrowserRouter>
-      <Router locale={ locale } videoId={ videoId } />
-    </BrowserRouter>, 
+      <Lang locale={locale} videoId={videoId} />
+    </BrowserRouter>,
     document.getElementById('app')
   )
 }

@@ -3,7 +3,7 @@ import fs from 'fs'
 import path from 'path'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom'
-import Router from '../../src/components/Router'
+import Lang from '../../src/navigation/Lang'
 import { ROOT_DIR } from '../../config'
 
 export default async (req, res) => {
@@ -14,11 +14,11 @@ export default async (req, res) => {
   let liveStreaming = 'off'
 
   if (lang) {
-    lang = lang.split('-')[0]
+    [lang] = lang.split('-')
     locale = ['es', 'en'].indexOf(lang) !== -1 ? lang : locale
   }
 
-  const getVideoId = () => new Promise((resolve, reject) => {
+  const getVideoId = () => new Promise(resolve => {
     fs.readFile('./liveStreaming', 'utf8', (err, data) => {
       if (err) {
         console.error(err)
@@ -37,16 +37,16 @@ export default async (req, res) => {
         }
 
         return resolve(id)
-      });
-    });
-  });
+      })
+    })
+  })
 
   const videoId = await getVideoId()
 
   // generate the React markup for the current route
   const markup = renderToString(
-    <StaticRouter context={ {} } location={ req.url }>
-      <Router locale={ locale } videoId={ videoId } />
+    <StaticRouter context={{}} location={req.url}>
+      <Lang locale={locale} videoId={videoId} />
     </StaticRouter>
   )
 
@@ -63,4 +63,4 @@ export default async (req, res) => {
     // Sends html with the rendered React markup and styles.
     return res.send(document)
   })
-};
+}
