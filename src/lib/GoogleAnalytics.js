@@ -1,4 +1,12 @@
-export default {
+import ReactGA from 'react-ga'
+
+const handleGAClick = (ev, action) => {
+  const evObj = ev
+  evObj.action = action || ev.action
+  ReactGA.event(evObj)
+}
+
+const GAEvents = {
   header: [
     {
       category: 'Header nav',
@@ -65,4 +73,7 @@ export default {
       action: '',
     },
   ],
-};
+}
+
+export { GAEvents }
+export { handleGAClick }
