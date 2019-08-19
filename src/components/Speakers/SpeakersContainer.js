@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Speakers from './SpeakersComponent'
-import { phSpeakers } from '../../res/images'
 
 const SpeakersContainer = ({ speakers }) => {
   if (speakers.length > 0) {
@@ -19,7 +18,6 @@ const SpeakersContainer = ({ speakers }) => {
             } = data
 
             const align = k % 2 ? 'event__speaker event__speaker_even' : 'event__speaker event__speaker_odd'
-            const pic = avatar || phSpeakers
             const urlLink = url.startsWith('http') ? url : `http://${url}`
 
             return (
@@ -27,7 +25,8 @@ const SpeakersContainer = ({ speakers }) => {
                 about={about}
                 align={align}
                 name={name}
-                pic={pic}
+                imageSrc={avatar}
+                url={url}
                 urlLink={urlLink}
                 username={username}
                 key={JSON.stringify(k)}
