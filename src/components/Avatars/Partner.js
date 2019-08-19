@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Image from '../Image'
 
-const Partner = ({ name, pic }) => (
+const Partner = ({ name, imageSrc }) => (
   <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6 event__partner">
-    <img alt={name} src={pic} className="event__partners_img" />
+    <Image imageSrc={imageSrc} className="event__partners_img" altSrc={name} />
     <div className="event__partners_name">
       <p>{ name }</p>
     </div>
@@ -12,7 +13,7 @@ const Partner = ({ name, pic }) => (
 
 Partner.propTypes = {
   name: PropTypes.string,
-  pic: PropTypes.string,
+  imageSrc: PropTypes.string,
 }
 
 export default Partner

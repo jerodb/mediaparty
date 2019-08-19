@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Image from '../Image'
 
-const Collaborator = ({ name, pic }) => (
+const Collaborator = ({ name, imageSrc }) => (
   <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6 event__collaborator">
-    <img alt={name} src={pic} className="event__collaborators_img" />
+    <Image imageSrc={imageSrc} className="event__collaborators_img" altSrc={name} />
     <div className="event__collaborators_name">
       <p>{ name }</p>
     </div>
@@ -12,7 +13,7 @@ const Collaborator = ({ name, pic }) => (
 
 Collaborator.propTypes = {
   name: PropTypes.string,
-  pic: PropTypes.string,
+  imageSrc: PropTypes.string,
 }
 
 export default Collaborator

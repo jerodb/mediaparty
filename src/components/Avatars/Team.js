@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Image from '../Image'
 
-const Team = ({ name, pic, username }) => (
+const Team = ({ name, imageSrc, username }) => (
   <div className="col-lg-2 col-md-3 col-sm-4 col-xs-6 event__team_member">
-    <a href={`${process.env.SCHED_URL}/artist/${username}`} target="_blank" rel="noopener noreferrer" className="">
-      <img src={pic} alt={`${name} pic`} className="event__team_img" />
+    <a href={`${process.env.SCHED_URL}/artist/${username}`} target="_blank" rel="noopener noreferrer">
+      <Image imageSrc={imageSrc} className="event__team_img" altSrc={name} />
       <div className="event__team_name">
         <p>{ name }</p>
       </div>
@@ -14,7 +15,7 @@ const Team = ({ name, pic, username }) => (
 
 Team.propTypes = {
   name: PropTypes.string,
-  pic: PropTypes.string,
+  imageSrc: PropTypes.string,
   username: PropTypes.string,
 }
 

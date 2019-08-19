@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Image from '../Image'
 
-const Sponsor = ({ name, pic }) => (
+const Sponsor = ({ name, imageSrc }) => (
   <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6 event__sponsor">
-    <img alt={name} src={pic} className="event__sponsors_img" />
+    <Image imageSrc={imageSrc} className="event__sponsors_img" altSrc={name} />
     <div className="event__collaborators_name">
       <p>{ name }</p>
     </div>
@@ -12,7 +13,7 @@ const Sponsor = ({ name, pic }) => (
 
 Sponsor.propTypes = {
   name: PropTypes.string,
-  pic: PropTypes.string,
+  imageSrc: PropTypes.string,
 }
 
 export default Sponsor

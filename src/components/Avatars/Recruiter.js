@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Image from '../Image'
 
-const Recruiter = ({ name, pic, username }) => (
+const Recruiter = ({ name, imageSrc, username }) => (
   <div className="col-lg-2 col-md-2 col-sm-6 col-xs-6 event__recruiter">
     <a href={`${process.env.SCHED_URL}/volunteer/${username}`} target="_blank" rel="noopener noreferrer" className="">
-      <img src={pic} alt={`${name} pic`} className="event__recruiter_img" />
+      <Image imageSrc={imageSrc} className="event__recruiter_img" altSrc={name} />
       <div className="event__recruiters_name">
         <p>{ name }</p>
       </div>
@@ -14,7 +15,7 @@ const Recruiter = ({ name, pic, username }) => (
 
 Recruiter.propTypes = {
   name: PropTypes.string,
-  pic: PropTypes.string,
+  imageSrc: PropTypes.string,
   username: PropTypes.string,
 }
 
