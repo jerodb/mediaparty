@@ -724,9 +724,6 @@ a {
 	box-shadow: 3px -1px 0px #000;
 }
 
-.event__team_img {
-}
-
 .event__speakers_featured {
 	margin-bottom: 48px;
 }
@@ -1420,8 +1417,8 @@ a {
 .wrapper {
 	max-width: 1300px;
 	margin: 0 auto;
-	padding-left: 4px;
-	padding-right: 4px;
+	padding-left: 12px;
+	padding-right: 12px;
 }
 
 .wrapper-header {
@@ -1434,13 +1431,6 @@ a {
 
 .event__actions.wrapper {
 	width: 100%;
-}
-
-@media(min-width: 350px) {
-	.wrapper {
-		padding-left: 8px;
-		padding-right: 8px;
-	}
 }
 
 @media(min-width: 600px) {
@@ -1681,27 +1671,43 @@ a {
 }
 
 .read-more {
-	position: 'absolute';
+	position: absolute;
 	left: 0;
 	right: 0;
-	background-color: '#fff';
-	top: 140;
+	background-color: #fff;
 	font-weight: 600;
-	padding-top: 6;
-	height: 24;
+	padding-top: 6px;
+	height: 24px;
 }
 
 .read-more a {
-	color: '#333333'
+	color: #333333
+}
+
+.event__speakers_featured .read-more {
+	top: 220px;
+}
+
+.event__speakers_full .read-more {
+	top: 140px;
 }
 
 .userDescWrapper {
-	position: 'relative';
-	max-height: 244;
-	overflow: 'hidden';
+	position: relative;
+	max-height: 244px;
+	overflow: hidden;
 }
 
 .userDescription {
-	line-height: '20px';
-	margin-bottom: '5px';
+	line-height: 20px;
+	margin-bottom: 5px;
+}
+
+.venue .map-wrapper {
+	width: 100%;
+}
+
+.interactive-element {
+	border: 0;
+	cursor: deafult;
 }
