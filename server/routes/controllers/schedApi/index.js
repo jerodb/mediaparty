@@ -1,3 +1,7 @@
-import getUsersFront from './getUsersFront'
+import getSchedData from './getSchedData'
+import getSpeakers from './getSpeakers'
 
-export { getUsersFront }
+export default {
+  getSpeakers,
+  getSchedData,
+}

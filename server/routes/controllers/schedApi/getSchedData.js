@@ -4,14 +4,11 @@ const apiKey = process.env.API_KEY
 const schedUrl = process.env.SCHED_URL
 
 export default async (req, res) => {
+  const { feauteredSpeakers } = req.body
   const fullResponse = {}
   const apiEndpoint = `${schedUrl}/api/role/export?api_key=${apiKey}`
 
   const endPoints = [
-    {
-      name: 'speakers',
-      url: `${apiEndpoint}&role=speaker&format=json&strip_html=Y&featured=y&fields=name,about,url,avatar,username`,
-    },
     {
       name: 'moreSpeakers',
       url: `${apiEndpoint}&role=speaker&format=json&strip_html=Y&fields=name,about,url,avatar,username`,
@@ -30,37 +27,34 @@ export default async (req, res) => {
     },
   ]
 
-  fullResponse.speakers = await axios.get(endPoints[0].url)
+  const fullSpeakers = await axios.get(endPoints[0].url)
     .then(response => response.data)
     .catch(err => {
-      console.error('Error featured speakers: ', err)
-      return res.json(false)
-    })
-
-  const fullSpeakers = await axios.get(endPoints[1].url)
-    .then(response => response.data)
-    .catch(err => {
+      // eslint-disable-next-line no-console
       console.error('Error more speakers: ', err)
       return res.json(false)
     })
 
-  fullResponse.executiveTeam = await axios.get(endPoints[2].url)
+  fullResponse.executiveTeam = await axios.get(endPoints[1].url)
     .then(response => response.data)
     .catch(err => {
+      // eslint-disable-next-line no-console
       console.error('Error executive team: ', err)
       return res.json(false)
     })
 
-  const fullTeam = await axios.get(endPoints[3].url)
+  const fullTeam = await axios.get(endPoints[2].url)
     .then(response => response.data)
     .catch(err => {
+      // eslint-disable-next-line no-console
       console.error('Error team: ', err)
       return res.json(false)
     })
 
-  const allSponsors = await axios.get(endPoints[4].url)
+  const allSponsors = await axios.get(endPoints[3].url)
     .then(response => response.data)
     .catch(err => {
+      // eslint-disable-next-line no-console
       console.error('Error sponsors: ', err)
       return res.json(false)
     })
@@ -71,7 +65,7 @@ export default async (req, res) => {
 
   fullSpeakers.map(item => {
     matchSpeaker = false
-    fullResponse.speakers.map(itemFeatured => {
+    feauteredSpeakers.map(itemFeatured => {
       if (itemFeatured.username === item.username) { matchSpeaker = true }
       return itemFeatured
     })

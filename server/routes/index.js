@@ -1,12 +1,13 @@
 import express from 'express'
 import root from './root'
 import {
-  auth, liveid, liveoff, liveon, getUsersFront
+  auth, liveid, liveoff, liveon, api
 } from './controllers'
 
 const router = express.Router()
 
-router.get('/api/user/front', getUsersFront)
+router.get('/api/get/speakers', api.getSpeakers)
+router.post('/api/get/schedData/', api.getSchedData)
 router.get('/liveon', liveon)
 router.get('/liveoff', liveoff)
 router.get('/liveid/:id', liveid)
