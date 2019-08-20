@@ -1,13 +1,16 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Sched = () => {
   let sched = ''
+
+  const [linkTxt, setLinkTxt] = useState('')
 
   useEffect(() => {
     const script = document.createElement('script')
     script.src = 'https://mediaparty2019.sched.com/js/embed.js'
     script.async = true
     sched.appendChild(script)
+    setLinkTxt('View the Media Party 2019 schedule.')
   })
 
   return (
@@ -17,7 +20,7 @@ const Sched = () => {
         data-sched-sidebar="no"
         href="https://mediaparty2019.sched.com/"
       >
-        View the Media Party 2019 schedule.
+        {linkTxt}
       </a>
 
       <div ref={ref => { sched = ref }} />
