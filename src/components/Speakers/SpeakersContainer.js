@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Speakers from './SpeakersComponent'
 
 const SpeakersContainer = ({ speakers }) => {
-  if (speakers.length > 0) {
+  if (speakers && speakers.length > 0) {
     return (
       <>
         <h2>
@@ -18,7 +18,11 @@ const SpeakersContainer = ({ speakers }) => {
             } = data
 
             const align = k % 2 ? 'event__speaker event__speaker_even' : 'event__speaker event__speaker_odd'
-            const urlLink = url.startsWith('http') ? url : `http://${url}`
+            let urlLink = ''
+
+            if (url) {
+              urlLink = url.startsWith('http') ? url : `http://${url}`
+            }
 
             return (
               <Speakers

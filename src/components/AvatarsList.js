@@ -17,7 +17,8 @@ const AvatarsList = ({
           {
         list.map((data, k) => {
           const url = data && data.url
-          const urlLink = url.startsWith('http') ? url : `http://${url}`
+          let urlLink = ''
+          if (url) { urlLink = url.startsWith('http') ? url : `http://${url}` }
 
           return (
             <Avatar
