@@ -1,11 +1,11 @@
 import home from './home'
 import layout from './layout'
 import notFound from './notFound'
-import sched from './sched'
+import agenda from './agenda'
 
 export default {
   home,
   layout,
   notFound,
-  sched
+  agenda
 }

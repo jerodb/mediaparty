@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const Sched = () => {
+const Agenda = () => {
   let sched = ''
 
   const [linkTxt, setLinkTxt] = useState('')
@@ -10,7 +10,7 @@ const Sched = () => {
     script.src = 'https://mediaparty2019.sched.com/js/embed.js'
     script.async = true
     sched.appendChild(script)
-    setLinkTxt('View the Media Party 2019 schedule.')
+    // setLinkTxt('View the Media Party 2019 schedule.')
   })
 
   return (
@@ -28,4 +28,4 @@ const Sched = () => {
   )
 }
 
-export default Sched
+export default Agenda

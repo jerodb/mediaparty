@@ -1,13 +1,13 @@
 import Home from '../screens/Home'
-import Sched from '../screens/Sched'
+import Agenda from '../screens/Agenda'
 import NotFound from '../screens/NotFound'
 
 const routes = [
   {
-    path: '/sched',
+    path: '/agenda',
     exact: true,
-    state: 'sched',
-    Component: Sched,
+    state: 'agenda',
+    Component: Agenda,
   },
   {
     path: '/',
