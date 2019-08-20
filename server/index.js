@@ -1,7 +1,10 @@
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
+import fetch from 'node-fetch'
 import http from 'http'
 import app from './app'
+
+global.fetch = fetch
 
 const { NODE_ENV, PORT } = process.env
 
