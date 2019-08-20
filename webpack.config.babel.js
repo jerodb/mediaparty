@@ -144,7 +144,7 @@ export default () => ({
   output: {
     filename: outputBundle,
     path: buildPath,
-    publicPath: '/',
+    publicPath: host,
   },
   // https://webpack.js.org/configuration/plugins/
   plugins,
