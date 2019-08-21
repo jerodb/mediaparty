@@ -25,7 +25,7 @@ const Agenda = () => {
   }, [])
 
   return (
-    <div className="agenda-wrapper">
+    <>
       { /* eslint-disable-next-line jsx-a11y/anchor-has-content */ }
       <a
         id="sched-embed"
@@ -33,7 +33,7 @@ const Agenda = () => {
         href="https://mediaparty2019.sched.com/"
       />
       <div ref={ref => { sched = ref }} />
-    </div>
+    </>
   )
 }
 
