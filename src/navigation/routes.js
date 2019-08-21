@@ -4,16 +4,16 @@ import NotFound from '../screens/NotFound'
 
 const routes = [
   {
-    path: '/agenda',
-    exact: true,
-    state: 'agenda',
-    Component: Agenda,
-  },
-  {
     path: '/',
     exact: true,
     state: 'home',
     Component: Home,
+  },
+  {
+    path: '/agenda',
+    exact: true,
+    state: 'agenda',
+    Component: Agenda,
   },
   {
     path: '',
