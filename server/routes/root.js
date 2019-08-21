@@ -4,7 +4,7 @@ import path from 'path'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom'
 import Lang from '../../src/navigation/Lang'
-import { HOST, ROOT_DIR } from '../../config'
+import { ROOT_DIR } from '../../config'
 
 export default async (req, res) => {
   const template = path.join(ROOT_DIR, 'index.html')
@@ -58,7 +58,6 @@ export default async (req, res) => {
     const document = data
       .replace('<div id="app"></div>', `<div id="app">${markup}</div>`)
       .replace('__LANG__', locale)
-      .replace('__HOST__', HOST)
       .replace('<input id="videoId">', videoId ? `<input type="hidden" id="videoId" value="${videoId}">` : '')
 
     // Sends html with the rendered React markup and styles.
