@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import NoSsr from '../NoSsr'
 import { GAEvents, handleGAClick } from '../../lib/GoogleAnalytics'
 
 const DescriptionComponent = ({ description, video }) => (
@@ -13,12 +14,14 @@ const DescriptionComponent = ({ description, video }) => (
       <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 event__desc_text">
         <div className="event__desc_wrapper">
           <p dangerouslySetInnerHTML={description} />
-          <button
-            className="interactive-element video-wrapper"
-            dangerouslySetInnerHTML={video}
-            onClick={() => handleGAClick(GAEvents.hero[6])}
-            type="button"
-          />
+          <NoSsr>
+            <button
+              className="interactive-element video-wrapper"
+              dangerouslySetInnerHTML={video}
+              onClick={() => handleGAClick(GAEvents.hero[6])}
+              type="button"
+            />
+          </NoSsr>
         </div>
       </div>
     </div>

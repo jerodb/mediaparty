@@ -16,6 +16,7 @@ import Venue from '../../components/Venue'
 import Apply from '../../components/Apply'
 import Register from '../../components/Register'
 import LiveStreaming from '../../components/LiveStreaming'
+import NoSsr from '../../components/NoSsr'
 
 const HomeComponent = ({
   registerPre, registerPos, register, proposal, workshop, talk, fair, description, venue, where, quotes, about, videoId,
@@ -23,7 +24,9 @@ const HomeComponent = ({
 }) => (
   <div>
     { /* LIVE STREAMING */ }
-    <LiveStreaming videoId={videoId} />
+    <NoSsr>
+      <LiveStreaming videoId={videoId} />
+    </NoSsr>
 
     { /* HERO */ }
     { !videoId && (
@@ -69,7 +72,9 @@ const HomeComponent = ({
 
     {/* SPEAKERS */}
     <section id="speakers" className="wrapper">
-      <Speakers speakers={speakers} />
+      <NoSsr>
+        <Speakers speakers={speakers} />
+      </NoSsr>
     </section>
 
     { /* VENUE */ }
@@ -78,63 +83,65 @@ const HomeComponent = ({
     { /* WHERE TO STAY */ }
     <WhereToStay {...where} />
 
-    { /* PARTNERS */ }
-    <AvatarsList
-      list={partners}
-      name="PARTNERS"
-      type="partners"
-      Avatar={Partner}
-    />
-
-    { /* SPONSORS */ }
-    <AvatarsList
-      list={sponsors}
-      name="SPONSORS"
-      type="sponsors"
-      Avatar={Sponsor}
-    />
-
-    { /* COLLABORATORS */ }
-    <AvatarsList
-      list={collaborators}
-      name="COLLABORATORS"
-      type="collaborators"
-      Avatar={Collaborator}
-    />
-
-    { /* RECRUITERS */ }
-    <AvatarsList
-      list={recruiters}
-      name="RECRUITERS"
-      type="recruiters"
-      Avatar={Recruiter}
-    />
-
-    { /* EXECUTIVE TEAM */ }
-    <AvatarsList
-      list={executiveTeam}
-      name="EXECUTIVE TEAM"
-      type="team"
-      Avatar={Team}
-    />
-
-    { /* TEAM */ }
-    <AvatarsList
-      list={team}
-      name="TEAM"
-      type="team"
-      Avatar={Team}
-    />
-
-    {/* MORE SPEAKERS */}
-    <div id="more-speakers">
+    <NoSsr>
+      { /* PARTNERS */ }
       <AvatarsList
-        list={moreSpeakers}
-        name="MORE SPEAKERS"
-        type="speakers_full"
-        Avatar={MoreSpeakers}
+        list={partners}
+        name="PARTNERS"
+        type="partners"
+        Avatar={Partner}
       />
-    </div>
+
+      { /* SPONSORS */ }
+      <AvatarsList
+        list={sponsors}
+        name="SPONSORS"
+        type="sponsors"
+        Avatar={Sponsor}
+      />
+
+      { /* COLLABORATORS */ }
+      <AvatarsList
+        list={collaborators}
+        name="COLLABORATORS"
+        type="collaborators"
+        Avatar={Collaborator}
+      />
+
+      { /* RECRUITERS */ }
+      <AvatarsList
+        list={recruiters}
+        name="RECRUITERS"
+        type="recruiters"
+        Avatar={Recruiter}
+      />
+
+      { /* EXECUTIVE TEAM */ }
+      <AvatarsList
+        list={executiveTeam}
+        name="EXECUTIVE TEAM"
+        type="team"
+        Avatar={Team}
+      />
+
+      { /* TEAM */ }
+      <AvatarsList
+        list={team}
+        name="TEAM"
+        type="team"
+        Avatar={Team}
+      />
+
+      {/* MORE SPEAKERS */}
+      <div id="more-speakers">
+        <AvatarsList
+          list={moreSpeakers}
+          name="MORE SPEAKERS"
+          type="speakers_full"
+          Avatar={MoreSpeakers}
+        />
+      </div>
+    </NoSsr>
   </div>
 )
 
