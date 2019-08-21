@@ -25,7 +25,7 @@ const HomeContainer = props => {
         setSchedData(data)
       }
     })()
-  })
+  }, [])
 
   return (
     <Home
