@@ -15,7 +15,7 @@ const Agenda = () => {
       sched.appendChild(script)
     }
 
-    ReactGA.pageview(`${window.location.pathname}${window.location.search}agenda`)
+    ReactGA.pageview(`${window.location.pathname}${window.location.search}`)
 
     return () => {
       const el = document.getElementById('sched-iframe')
