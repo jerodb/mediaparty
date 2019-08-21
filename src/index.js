@@ -14,6 +14,7 @@ import './res/css/style.css'
 const gaKey = process.env.GA_TRACKING_ID || ''
 
 ReactGA.initialize(gaKey)
+ReactGA.pageview(`${window.location.pathname}${window.location.search}`)
 
 window.onload = () => {
   const locale = document.documentElement.getAttribute('lang') || process.env.LANG_DEFAULT

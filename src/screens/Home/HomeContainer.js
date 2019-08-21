@@ -24,6 +24,7 @@ const HomeContainer = props => {
   })
 
   useEffect(() => {
+    ReactGA.pageview(`${window.location.pathname}${window.location.search}`);
     (async () => {
       if (speakers === null) {
         const speakersList = await getSpeakers()
@@ -39,8 +40,6 @@ const HomeContainer = props => {
         setTeam(teamList)
       }
     })()
-
-    ReactGA.pageview(`${window.location.pathname}${window.location.search}`)
   }, [])
 
   return (
