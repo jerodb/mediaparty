@@ -1,4 +1,4 @@
-import getSchedData from './getSchedData'
+import getTeam from './getTeam'
 import getMoreSpeakers from './getMoreSpeakers'
 import getSpeakers from './getSpeakers'
 import getSponsors from './getSponsors'
@@ -6,6 +6,6 @@ import getSponsors from './getSponsors'
 export default {
   getSpeakers,
   getMoreSpeakers,
-  getSchedData,
+  getTeam,
   getSponsors,
 }

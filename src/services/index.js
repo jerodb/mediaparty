@@ -1,9 +1,9 @@
 import getSpeakers from './getSpeakers'
 import getMoreSpeakers from './getMoreSpeakers'
-import getSchedData from './getSchedData'
+import getTeam from './getTeam'
 import getSponsors from './getSponsors'
 
-export { getSchedData }
+export { getTeam }
 export { getMoreSpeakers }
 export { getSpeakers }
 export { getSponsors }

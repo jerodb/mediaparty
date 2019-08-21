@@ -1,9 +1,9 @@
-const getSchedData = () => new Promise(resolve => fetch('/api/get/sched-data/', {
+const getTeam = () => new Promise(resolve => fetch('/api/get/team/', {
   method: 'GET',
 })
   .then(res => {
-    res.json().then(data => {
-      resolve(data)
+    res.json().then(team => {
+      resolve(team)
     })
   })
   .catch(err => {
@@ -12,4 +12,4 @@ const getSchedData = () => new Promise(resolve => fetch('/api/get/sched-data/', 
     resolve({})
   }))
 
-export default getSchedData
+export default getTeam

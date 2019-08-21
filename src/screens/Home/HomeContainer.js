@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import ReactGA from 'react-ga'
 import Home from './HomeComponent'
 import {
-  getSchedData, getMoreSpeakers, getSpeakers, getSponsors
+  getTeam, getMoreSpeakers, getSpeakers, getSponsors
 } from '../../services'
 
 const HomeContainer = props => {
@@ -18,7 +18,7 @@ const HomeContainer = props => {
     recruiters: [],
   })
 
-  const [schedData, setSchedData] = useState({
+  const [team, setTeam] = useState({
     team: [],
     executiveTeam: [],
   })
@@ -35,8 +35,8 @@ const HomeContainer = props => {
         const sponsorsList = await getSponsors()
         setSponsors(sponsorsList)
 
-        const data = await getSchedData()
-        setSchedData(data)
+        const teamList = await getTeam()
+        setTeam(teamList)
       }
     })()
 
@@ -46,7 +46,7 @@ const HomeContainer = props => {
   return (
     <Home
       {...props}
-      {...schedData}
+      {...team}
       {...sponsors}
       speakers={speakers}
       moreSpeakers={moreSpeakers}
