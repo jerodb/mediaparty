@@ -3,13 +3,15 @@ import PropTypes from 'prop-types'
 import { HashLink as Link } from 'react-router-hash-link'
 import { GAEvents, handleGAClick } from '../lib/GoogleAnalytics'
 
+const { HOST } = process.env
+
 const Header = ({ lang, nav, root }) => (
   <header className="event__header wrapper-header">
     <div className="row">
       <div className="event__lang">
         <p>
           <a
-            href={`${root}${lang.to}`}
+            href={`${HOST}${lang.to}`}
             title={lang.title}
             onClick={() => { handleGAClick(GAEvents.header[0], lang.description) }}
             className="event__lang_link"
