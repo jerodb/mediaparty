@@ -42,9 +42,9 @@ const minify = {
 
 
 const plugins = [
-  new BundleAnalyzerPlugin(),
   // Moves all the require/import "[fileName].css" into a separate single CSS file.
   extractStyles,
+
   // Creates global constants which can be configured at compile time.
   new webpack.DefinePlugin({
     'process.env': {
@@ -87,10 +87,7 @@ const plugins = [
 
   new CompressionPlugin({
     algorithm: 'gzip',
-    // asset: '[path].gz[query]',
-    // minRatio: 0.8,
-    test: /\.js$|\.css$|\.html$/,
-    // threshold: 10240,
+    test: /\.js$|\.css$/,
   }),
 
   new CopyWebpackPlugin([
@@ -101,6 +98,7 @@ const plugins = [
 if (isDev) {
   // Development plugins
   plugins.push(
+    new BundleAnalyzerPlugin(),
     // enable Hot Module Replacement (HMR) globally
     new webpack.HotModuleReplacementPlugin(),
     // prints more readable module names in the browser console on HMR updates
