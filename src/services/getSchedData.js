@@ -1,10 +1,5 @@
-const getSchedData = feauteredSpeakers => new Promise(resolve => fetch('/api/get/schedData/', {
-  method: 'POST',
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({ feauteredSpeakers })
+const getSchedData = () => new Promise(resolve => fetch('/api/get/sched-data/', {
+  method: 'GET',
 })
   .then(res => {
     res.json().then(data => {

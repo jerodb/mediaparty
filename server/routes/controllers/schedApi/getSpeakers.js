@@ -13,6 +13,6 @@ export default async (req, res) => {
     .catch(err => {
       // eslint-disable-next-line no-console
       console.error('Error featured speakers: ', err)
-      return res.json(false)
+      return res.json([])
     })
 }

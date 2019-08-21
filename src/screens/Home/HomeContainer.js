@@ -1,16 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
+import ReactGA from 'react-ga'
 import Home from './HomeComponent'
-import { getSchedData, getSpeakers } from '../../services'
+import {
+  getSchedData, getMoreSpeakers, getSpeakers, getSponsors
+} from '../../services'
 
 const HomeContainer = props => {
   const [speakers, setSpeakers] = useState(null)
-  const [schedData, setSchedData] = useState({
-    moreSpeakers: [],
+
+  const [moreSpeakers, setMoreSpeakers] = useState([])
+
+  const [sponsors, setSponsors] = useState({
     partners: [],
     sponsors: [],
     collaborators: [],
     recruiters: [],
+  })
+
+  const [schedData, setSchedData] = useState({
     team: [],
     executiveTeam: [],
   })
@@ -21,17 +29,27 @@ const HomeContainer = props => {
         const speakersList = await getSpeakers()
         setSpeakers(speakersList)
 
-        const data = await getSchedData(speakersList)
+        const moreSpeakersList = await getMoreSpeakers(speakersList)
+        setMoreSpeakers(moreSpeakersList)
+
+        const sponsorsList = await getSponsors()
+        setSponsors(sponsorsList)
+
+        const data = await getSchedData()
         setSchedData(data)
       }
     })()
+
+    ReactGA.pageview(`${window.location.pathname}${window.location.search}`)
   }, [])
 
   return (
     <Home
       {...props}
       {...schedData}
+      {...sponsors}
       speakers={speakers}
+      moreSpeakers={moreSpeakers}
     />
   )
 }
