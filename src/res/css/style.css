@@ -1719,3 +1719,7 @@ a {
 .show {
 	display: flex;
 }
+
+.agenda-wrapper {
+	margin-top: 30px;
+}
