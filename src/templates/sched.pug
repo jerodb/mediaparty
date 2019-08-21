@@ -4,6 +4,15 @@
 doctype html
 html(lang='en')
   head
+    script(async src='https://www.googletagmanager.com/gtag/js?id=UA-42580986-1')
+    script
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-42580986-1', {
+        'page_path': '/sched19'
+      });
+
     include includes/metas-links
     title Media Party / 2019 / Rebooting Journalism
     style(type='text/css').
