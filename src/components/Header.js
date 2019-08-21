@@ -8,21 +8,25 @@ const Header = ({ lang, nav, root }) => (
     <div className="row">
       <div className="event__lang">
         <p>
-          <Link
-            to={lang.to}
+          <a
+            href={`${root}${lang.to}`}
             title={lang.title}
             onClick={() => { handleGAClick(GAEvents.header[0], lang.description) }}
             className="event__lang_link"
           >
             { lang.description }
-          </Link>
+          </a>
         </p>
       </div>
       <div className="col-lg-12 col-md-12 col-sm-12 col-xs-9 event__nav">
         <div className="title-line" />
-        {/*
-            <a href="http://sched18.mediaparty.info/" target="_blank" rel="noopener noreferrer" className="event__menu_item event__agenda" onClick={ () => { handleGAClick(GAEvents.header[0], 'Agenda') } }>{ nav.agenda }</a>
-            */}
+        <Link
+          to={`${root}/agenda`}
+          className="event__menu_item event__agenda"
+          onClick={() => { handleGAClick(GAEvents.header[0], 'Agenda') }}
+        >
+          { nav.agenda }
+        </Link>
         <Link
           to={`${root}/#speakers`}
           className="event__menu_item event__speakers"
