@@ -18,10 +18,11 @@ export default async (req, res) => {
     locale = ['es', 'en'].indexOf(lang) !== -1 ? lang : locale
   }
 
-  const getVideoId = () => new Promise(resolve => {
+  const getVideoId = () => new Promise(resolve => (
     fs.readFile('./liveStreaming', 'utf8', (err, data) => {
       if (err) {
-        console.error(err)
+        // eslint-disable-next-line no-console
+        console.error('Error reading liveStreaming file:', err)
       } else {
         liveStreaming = data || 'off'
       }
@@ -30,16 +31,17 @@ export default async (req, res) => {
         return resolve(null)
       }
 
-      fs.readFile('./videoId', 'utf8', (err2, id) => {
+      return fs.readFile('./videoId', 'utf8', (err2, id) => {
         if (err2) {
-          console.error(err2)
+          // eslint-disable-next-line no-console
+          console.error('Error reading videId file:', err2)
           return resolve(null)
         }
 
         return resolve(id)
       })
     })
-  })
+  ))
 
   const videoId = await getVideoId()
 

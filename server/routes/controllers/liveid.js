@@ -15,7 +15,7 @@ export default (req, res) => {
 
   if (auth && key === process.env.MP_KEY) {
     if (videoId) {
-      fs.writeFile('./videoId', videoId, 'utf8', err => {
+      return fs.writeFile('./videoId', videoId, 'utf8', err => {
         if (err) {
           console.log(err)
           return res.send('Ocurrió un error al intentar guardar el nuevo Id de video.')
@@ -23,20 +23,20 @@ export default (req, res) => {
 
         return res.send(`<div>Video actualizado correctamente!</div><div><a href="${HOST}">GO TO LANDINGPAGE</div>`)
       })
-    } else {
-      return res.send('Ocurrió un error. Faltó incluir el id de video. (ex: /liveid/veas_6NvJMk)')
     }
-  } else {
-    // Loads auth template
-    fs.readFile(template, 'utf8', (err, data) => {
-      if (err) throw err
 
-      // Insert redirect uri
-      const document = data
-        .replace('<input id="redirect">', `<input type="hidden" name="redirect" value="${redirect}">`)
-
-      // Sends html
-      return res.send(document)
-    })
+    return res.send('Ocurrió un error. Faltó incluir el id de video. (ex: /liveid/veas_6NvJMk)')
   }
+
+  // Loads auth template
+  return fs.readFile(template, 'utf8', (err, data) => {
+    if (err) throw err
+
+    // Insert redirect uri
+    const document = data
+      .replace('<input id="redirect">', `<input type="hidden" name="redirect" value="${redirect}">`)
+
+    // Sends html
+    return res.send(document)
+  })
 }
