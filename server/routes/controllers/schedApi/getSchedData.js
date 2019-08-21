@@ -32,7 +32,7 @@ export default async (req, res) => {
     .catch(err => {
       // eslint-disable-next-line no-console
       console.error('Error more speakers: ', err)
-      return res.json(false)
+      return []
     })
 
   fullResponse.executiveTeam = await axios.get(endPoints[1].url)
@@ -40,7 +40,7 @@ export default async (req, res) => {
     .catch(err => {
       // eslint-disable-next-line no-console
       console.error('Error executive team: ', err)
-      return res.json(false)
+      return []
     })
 
   const fullTeam = await axios.get(endPoints[2].url)
@@ -48,7 +48,7 @@ export default async (req, res) => {
     .catch(err => {
       // eslint-disable-next-line no-console
       console.error('Error team: ', err)
-      return res.json(false)
+      return []
     })
 
   const allSponsors = await axios.get(endPoints[3].url)
@@ -56,7 +56,7 @@ export default async (req, res) => {
     .catch(err => {
       // eslint-disable-next-line no-console
       console.error('Error sponsors: ', err)
-      return res.json(false)
+      return []
     })
 
 
