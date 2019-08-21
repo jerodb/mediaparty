@@ -5,6 +5,7 @@ import CompressionPlugin from 'compression-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import HtmlWebpackPugPlugin from 'html-webpack-pug-plugin'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import webpack from 'webpack'
 import path from 'path'
 import {
@@ -41,6 +42,7 @@ const minify = {
 
 
 const plugins = [
+  new BundleAnalyzerPlugin(),
   // Moves all the require/import "[fileName].css" into a separate single CSS file.
   extractStyles,
   // Creates global constants which can be configured at compile time.
