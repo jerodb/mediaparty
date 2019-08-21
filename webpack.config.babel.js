@@ -90,14 +90,21 @@ const plugins = [
   new HtmlWebpackPlugin({
     filename: 'index.html', // output template
     hash: !isDev, // automagically hashes bundles
-    host,
+    host, // host variable passed to pug file
     template: path.join(templates, 'index.pug'), // original template
   }),
 
   new HtmlWebpackPlugin({
-    filename: 'auth.html', // output template
-    inject: false,
-    template: path.join(templates, 'auth.pug'), // original template
+    filename: path.join('root', 'sched.html'),
+    inject: false, // don't insert assets in this template
+    host,
+    template: path.join(templates, 'sched.pug'),
+  }),
+
+  new HtmlWebpackPlugin({
+    filename: 'auth.html',
+    inject: false, // don't insert assets in this template
+    template: path.join(templates, 'auth.pug'),
   }),
 
   // https://www.npmjs.com/package/html-webpack-pug-plugin
