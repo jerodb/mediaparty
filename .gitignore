@@ -6,3 +6,4 @@ node_modules
 *.log
 mp-prod*
 .env
+nginx.conf
