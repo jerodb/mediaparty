@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import ReactGA from 'react-ga'
+import { pageview } from 'react-ga'
 
 const NotFound = ({ back, msg, root }) => {
   useEffect(() => {
-    ReactGA.pageview('/not-found')
+    pageview('/not-found')
   }, [])
 
   return (

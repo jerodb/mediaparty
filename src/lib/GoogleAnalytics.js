@@ -1,9 +1,9 @@
-import ReactGA from 'react-ga'
+import { event } from 'react-ga'
 
 const handleGAClick = (ev, action) => {
   const evObj = ev
   evObj.action = action || ev.action
-  ReactGA.event(evObj)
+  event(evObj)
 }
 
 const GAEvents = {

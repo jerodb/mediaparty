@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import ReactGA from 'react-ga'
+import { pageview } from 'react-ga'
 
 const Agenda = () => {
   let sched = ''
@@ -15,7 +15,7 @@ const Agenda = () => {
       sched.appendChild(script)
     }
 
-    ReactGA.pageview(`${window.location.pathname}${window.location.search}`)
+    pageview(`${window.location.pathname}${window.location.search}`)
 
     return () => {
       const el = document.getElementById('sched-iframe')
