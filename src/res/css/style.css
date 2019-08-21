@@ -1143,7 +1143,7 @@ a {
 	height: 300px;
 	color: #fff;
 	margin-top: 20px;
-	background: url("/images/konex_mob.png") no-repeat center;
+	background: url("/images/konex_mob.jpg") no-repeat center;
 	background-size: cover;
 }
 
@@ -1162,7 +1162,7 @@ a {
 
 @media (min-width: 992px) {
 	.event__venue_info {
-		background: url("/images/konex.png") no-repeat center;
+		background: url("/images/konex.jpg") no-repeat center;
 		background-size: cover;
 	}
 }
