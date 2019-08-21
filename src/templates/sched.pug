@@ -1,0 +1,44 @@
+- var host = htmlWebpackPlugin.options.host
+- var imgPath = `${host}images/`
+
+doctype html
+html(lang='en')
+  head
+    include includes/metas-links
+    title Media Party / 2019 / Rebooting Journalism
+    style(type='text/css').
+      .link:hover {
+        border-bottom: 1px solid #ffffff;
+      }
+  body(style='padding:0;margin:0;')
+    div(style=`background: #212B34;
+      z-index: 9999;
+      height: 20px;
+      text-align: center;
+      padding: 15px 12px;
+      font-family: "Avenir Next", "Helvetica Neue", "Lucida Grande", Helvetica, Arial, sans-serif;
+      font-weight: 500;`)
+      a(
+        class='link'
+        href='https://mediaparty.info'
+        style=`color: #ffffff;
+          text-decoration: none`
+      ) Visit Media Party 2019 official site
+    div(style='width:100%;text-align:center;')
+      div(
+        style=`background:url(${imgPath}logo_horizontal.png);
+          background-position: top;
+          background-repeat: no-repeat;
+          background-size: contain;
+          margin: 0 auto;
+          max-width: 1170px;
+          height: 1px;
+          padding-bottom: 20%;`
+      )
+      a(
+        id='sched-embed'
+        data-sched-sidebar='no'
+        href='https://mediaparty2019.sched.com/'
+        style='margin:0 auto;'
+      )
+    script(type='text/javascript' src='https://mediaparty2019.sched.com/js/embed.js')
