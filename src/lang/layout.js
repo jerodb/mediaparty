@@ -3,7 +3,7 @@ const layout = {
     langClass: 'event__en',
     header: {
       lang: {
-        to: '/es/',
+        to: 'es/',
         title: 'Español',
         description: 'ES'
       },
@@ -26,7 +26,7 @@ const layout = {
     langClass: 'event__es',
     header: {
       lang: {
-        to: '/en/',
+        to: 'en/',
         title: 'English',
         description: 'EN'
       },
