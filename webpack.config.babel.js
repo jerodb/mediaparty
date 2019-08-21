@@ -30,6 +30,84 @@ const isDev = mode === 'development'
 
 const extractStyles = new ExtractTextPlugin('css/styles.css')
 
+const minify = {
+  collapseWhitespace: true,
+  removeComments: true,
+  removeRedundantAttributes: true,
+  useShortDoctype: true,
+  minifyCSS: true,
+  minifyJS: true
+}
+
+
+const plugins = [
+  // Moves all the require/import "[fileName].css" into a separate single CSS file.
+  extractStyles,
+  // Creates global constants which can be configured at compile time.
+  new webpack.DefinePlugin({
+    'process.env': {
+      HOST: JSON.stringify(host),
+      NODE_ENV: JSON.stringify(nodeEnv),
+      PORT: JSON.stringify(port),
+      GA_TRACKING_ID: JSON.stringify(gaTrackingId),
+      LANG_DEFAULT: JSON.stringify(langDefault),
+      SCHED_URL: JSON.stringify(schedUrl),
+    },
+  }),
+
+  // https://webpack.js.org/plugins/html-webpack-plugin/
+  // Generate an .html file that includes webpack bundles in the body.
+  new HtmlWebpackPlugin({
+    filename: 'index.html', // output template
+    hash: !isDev, // automagically hashes bundles
+    host, // host variable passed to pug file
+    template: path.join(templates, 'index.pug'), // original template
+    minify // set minification rules because is not working by default when mode=production
+  }),
+
+  new HtmlWebpackPlugin({
+    filename: path.join('root', 'sched.html'),
+    inject: false, // don't insert assets in this template
+    host,
+    template: path.join(templates, 'sched.pug'),
+    minify
+  }),
+
+  new HtmlWebpackPlugin({
+    filename: 'auth.html',
+    inject: false, // don't insert assets in this template
+    template: path.join(templates, 'auth.pug'),
+    minify
+  }),
+
+  // https://www.npmjs.com/package/html-webpack-pug-plugin
+  new HtmlWebpackPugPlugin(),
+
+  new CompressionPlugin({
+    algorithm: 'gzip',
+    // asset: '[path].gz[query]',
+    // minRatio: 0.8,
+    test: /\.js$|\.css$|\.html$/,
+    // threshold: 10240,
+  }),
+
+  new CopyWebpackPlugin([
+    { from: assets, to: buildPath },
+  ]),
+]
+
+if (isDev) {
+  // Development plugins
+  plugins.push(
+    // enable Hot Module Replacement (HMR) globally
+    new webpack.HotModuleReplacementPlugin(),
+    // prints more readable module names in the browser console on HMR updates
+    new webpack.NamedModulesPlugin(),
+    // CLI dashboard for the webpack dev server
+    // new DashboardPlugin()
+  )
+}
+
 const rules = [
   {
     test: /\.pug/,
@@ -69,72 +147,6 @@ const rules = [
     ]
   },
 ]
-
-const plugins = [
-  // Moves all the require/import "[fileName].css" into a separate single CSS file.
-  extractStyles,
-  // Creates global constants which can be configured at compile time.
-  new webpack.DefinePlugin({
-    'process.env': {
-      HOST: JSON.stringify(host),
-      NODE_ENV: JSON.stringify(nodeEnv),
-      PORT: JSON.stringify(port),
-      GA_TRACKING_ID: JSON.stringify(gaTrackingId),
-      LANG_DEFAULT: JSON.stringify(langDefault),
-      SCHED_URL: JSON.stringify(schedUrl),
-    },
-  }),
-
-  // https://webpack.js.org/plugins/html-webpack-plugin/
-  // Generate an .html file that includes webpack bundles in the body.
-  new HtmlWebpackPlugin({
-    filename: 'index.html', // output template
-    hash: !isDev, // automagically hashes bundles
-    host, // host variable passed to pug file
-    template: path.join(templates, 'index.pug'), // original template
-  }),
-
-  new HtmlWebpackPlugin({
-    filename: path.join('root', 'sched.html'),
-    inject: false, // don't insert assets in this template
-    host,
-    template: path.join(templates, 'sched.pug'),
-  }),
-
-  new HtmlWebpackPlugin({
-    filename: 'auth.html',
-    inject: false, // don't insert assets in this template
-    template: path.join(templates, 'auth.pug'),
-  }),
-
-  // https://www.npmjs.com/package/html-webpack-pug-plugin
-  new HtmlWebpackPugPlugin(),
-
-  new CompressionPlugin({
-    algorithm: 'gzip',
-    // asset: '[path].gz[query]',
-    // minRatio: 0.8,
-    test: /\.js$|\.css$|\.html$/,
-    // threshold: 10240,
-  }),
-
-  new CopyWebpackPlugin([
-    { from: assets, to: buildPath },
-  ]),
-]
-
-if (isDev) {
-  // Development plugins
-  plugins.push(
-    // enable Hot Module Replacement (HMR) globally
-    new webpack.HotModuleReplacementPlugin(),
-    // prints more readable module names in the browser console on HMR updates
-    new webpack.NamedModulesPlugin(),
-    // CLI dashboard for the webpack dev server
-    // new DashboardPlugin()
-  )
-}
-
 
 export default () => ({
   // https://webpack.js.org/configuration/mode/
