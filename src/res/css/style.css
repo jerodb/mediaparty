@@ -1711,3 +1711,11 @@ a {
 	border: 0;
 	cursor: deafult;
 }
+
+.hide {
+	display: none;
+}
+
+.show {
+	display: flex;
+}
