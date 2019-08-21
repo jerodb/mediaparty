@@ -5,7 +5,7 @@ import ReactGA from 'react-ga'
 
 const NotFound = ({ back, msg, root }) => {
   useEffect(() => {
-    ReactGA.pageview(`${window.location.pathname}${window.location.search}not-found`)
+    ReactGA.pageview(`${window.location.pathname}not-found`)
   }, [])
 
   return (
