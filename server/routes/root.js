@@ -8,6 +8,7 @@ import { ROOT_DIR } from '../../config'
 
 export default async (req, res) => {
   const template = path.join(ROOT_DIR, 'index.html')
+  const styles = path.join(ROOT_DIR, 'css', 'styles.css')
 
   let lang = req.header('Accept-Language')
   let locale = process.env.DEFAULT_LANG
@@ -52,17 +53,22 @@ export default async (req, res) => {
     </StaticRouter>
   )
 
-  // Loads template
-  fs.readFile(template, 'utf8', (err, data) => {
-    if (err) throw err
+  fs.readFile(styles, 'utf8', (er, css) => {
+    if (er) throw er
 
-    // Inserts the rendered React HTML and params.
-    const document = data
-      .replace('<div id="app"></div>', `<div id="app">${markup}</div>`)
-      .replace('__LANG__', locale)
-      .replace('<input id="videoId">', videoId ? `<input type="hidden" id="videoId" value="${videoId}">` : '')
+    // Loads template
+    fs.readFile(template, 'utf8', (err, data) => {
+      if (err) throw err
 
-    // Sends html with the rendered React markup and styles.
-    return res.send(document)
+      // Inserts the rendered React HTML and params.
+      const document = data
+        .replace('<div id="app"></div>', `<div id="app">${markup}</div>`)
+        .replace('<style id="ssr-styles"></style>', `<style type="text/css" id="ssr-styles">${css}</style>`)
+        .replace('__LANG__', locale)
+        .replace('<input id="videoId">', videoId ? `<input type="hidden" id="videoId" value="${videoId}">` : '')
+
+      // Sends html with the rendered React markup and styles.
+      return res.send(document)
+    })
   })
 }
