@@ -1,10 +1,12 @@
 // NOTE: webpack v4+ will minify your code by default in production mode.
 // import DashboardPlugin from 'webpack-dashboard/plugin';
-import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import CompressionPlugin from 'compression-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import HtmlWebpackPugPlugin from 'html-webpack-pug-plugin'
+import TerserJSPlugin from 'terser-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import webpack from 'webpack'
 import path from 'path'
@@ -29,8 +31,6 @@ const templates = path.join(sourcePath, 'templates')
 const mode = nodeEnv
 const isDev = mode === 'development'
 
-const extractStyles = new ExtractTextPlugin('css/styles.css')
-
 const minify = {
   collapseWhitespace: true,
   removeComments: true,
@@ -42,8 +42,12 @@ const minify = {
 
 
 const plugins = [
+  // https://github.com/webpack-contrib/mini-css-extract-plugin
   // Moves all the require/import "[fileName].css" into a separate single CSS file.
-  extractStyles,
+  new MiniCssExtractPlugin({
+    filename: path.join('css', 'styles.css'),
+    ignoreOrder: false, // Enable to remove warnings about conflicting order
+  }),
 
   // Creates global constants which can be configured at compile time.
   new webpack.DefinePlugin({
@@ -120,7 +124,17 @@ const rules = [
   },
   {
     test: /\.css$/,
-    use: extractStyles.extract({ fallback: 'style-loader', use: 'css-loader' }),
+    use: [
+      {
+        loader: MiniCssExtractPlugin.loader
+      },
+      {
+        loader: 'css-loader',
+        options: {
+          sourceMap: true
+        }
+      }
+    ]
   },
   {
     test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
@@ -164,6 +178,13 @@ export default () => ({
     filename: outputBundle,
     path: buildPath,
     publicPath: host,
+    sourceMapFilename: '[file].map',
+  },
+  optimization: {
+    minimizer: [
+      new TerserJSPlugin({ sourceMap: true }),
+      new OptimizeCSSAssetsPlugin()
+    ],
   },
   // https://webpack.js.org/configuration/plugins/
   plugins,
