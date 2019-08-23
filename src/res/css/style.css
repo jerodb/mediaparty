@@ -503,17 +503,25 @@ a {
 
 .event__description_inner {
 	position: relative;
-	z-index: 2;
+	z-index: 3;
 }
 
 .event__description_backgronud {
+	background: #FF5E5E;
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	width: 100%;
+	z-index: 1;
+}
+
+.event__description_backgronud_img {
+	position: relative;
+	width: 100%;
+	height: 100%;
 	background: #FF5E5E url("/images/foto_escalera.jpg") no-repeat;
 	background-size: contain;
-	z-index: 1;
+	z-index: 2;
 }
 
 .event__video {
@@ -524,7 +532,7 @@ a {
 }
 
 @media (max-width: 1292px) {
-	.event__description_backgronud {
+	.event__description_backgronud_img {
 		background-size: cover;
 		background-position: center;
 	}
