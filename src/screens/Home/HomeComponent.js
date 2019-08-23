@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { LazyLoadComponent } from 'react-lazy-load-image-component'
 import Quotes from '../../components/Quotes'
 import About from '../../components/About'
 import Speakers from '../../components/Speakers'
@@ -31,7 +32,9 @@ const HomeComponent = ({
     { /* HERO */ }
     { !videoId && (
       <div className="event__hero">
-        <div className="row event__hero_inner" />
+        <LazyLoadComponent>
+          <div className="row event__hero_inner" />
+        </LazyLoadComponent>
       </div>
     )}
 
@@ -61,7 +64,9 @@ const HomeComponent = ({
     { /* TIMELINE */ }
     {
       // <section className="wrapper">
-      //  <div className="event__timeline" />
+      //   <LazyLoadComponent>
+      //     <div className="event__timeline" />
+      //   </LazyLoadComponent>
       // </section>
       }
 

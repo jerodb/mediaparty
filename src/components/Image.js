@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { phSpeakers } from '../res/images'
 
 const Image = ({ imageSrc, imageAlt, className }) => {
@@ -7,7 +8,7 @@ const Image = ({ imageSrc, imageAlt, className }) => {
   const [src, setSrc] = useState(imageSrc)
 
   return (
-    <img
+    <LazyLoadImage
       src={src}
       className={className || ''}
       alt={imageAlt || 'image'}

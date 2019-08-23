@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { GAEvents, handleGAClick } from '../lib/GoogleAnalytics'
 import { mpLogoMid } from '../res/images'
 
@@ -7,7 +8,10 @@ const Footer = ({ title, description, former }) => (
   <footer className="event__footer">
     <div className="row">
       <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 event__footer_cta">
-        <img src={mpLogoMid} title="Media Party / 2019" alt="Media Party / 2019" />
+        <LazyLoadImage
+          src={mpLogoMid}
+          alt="Media Party / 2019"
+        />
         <h3>{ title }</h3>
         <p>
           { description }
