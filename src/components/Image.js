@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { phSpeakers } from '../res/images'
 
-const Image = ({ imageSrc, imageAlt, className }) => {
+const Image = ({
+  className, imageAlt, imageSrc, scrollPosition
+}) => {
   const defaultImg = phSpeakers
   const [src, setSrc] = useState(imageSrc)
 
@@ -13,14 +15,16 @@ const Image = ({ imageSrc, imageAlt, className }) => {
       className={className || ''}
       alt={imageAlt || 'image'}
       onError={() => setSrc(defaultImg)}
+      scrollPosition={scrollPosition}
     />
   )
 }
 
 Image.propTypes = {
-  imageSrc: PropTypes.string,
-  imageAlt: PropTypes.string,
   className: PropTypes.string,
+  imageAlt: PropTypes.string,
+  imageSrc: PropTypes.string,
+  scrollPosition: PropTypes.object,
 }
 
 export default Image

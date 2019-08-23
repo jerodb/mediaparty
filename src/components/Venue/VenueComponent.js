@@ -4,7 +4,7 @@ import { LazyLoadComponent } from 'react-lazy-load-image-component'
 import NoSsr from '../NoSsr'
 
 const Venue = ({
-  allowMapEvents, mapIframe, mapEvents, venue
+  allowMapEvents, mapIframe, mapEvents, scrollPosition, venue
 }) => (
   <section id="venue" className="venue">
     <div className="event__venue_info">
@@ -13,20 +13,21 @@ const Venue = ({
         <p className="event__venue_name">Ciudad Cultural Konex</p>
         <p className="event__venue_address">Sarmiento 3131, Buenos Aires, Argentina</p>
       </div>
-      <LazyLoadComponent>
+      <LazyLoadComponent
+        scrollPosition={scrollPosition}
+        threshold={250}
+      >
         <div className="event__venue_info_background" />
       </LazyLoadComponent>
     </div>
     <NoSsr>
-      <LazyLoadComponent>
-        <button
-          className={`${mapEvents} map-wrapper interactive-element`}
-          dangerouslySetInnerHTML={mapIframe}
-          onClick={() => allowMapEvents(true)}
-          onMouseLeave={() => allowMapEvents(false)}
-          type="button"
-        />
-      </LazyLoadComponent>
+      <button
+        className={`${mapEvents} map-wrapper interactive-element`}
+        dangerouslySetInnerHTML={mapIframe}
+        onClick={() => allowMapEvents(true)}
+        onMouseLeave={() => allowMapEvents(false)}
+        type="button"
+      />
     </NoSsr>
   </section>
 )
@@ -35,6 +36,7 @@ Venue.propTypes = {
   allowMapEvents: PropTypes.func,
   mapIframe: PropTypes.object,
   mapEvents: PropTypes.string,
+  scrollPosition: PropTypes.object,
   venue: PropTypes.string,
 }
 

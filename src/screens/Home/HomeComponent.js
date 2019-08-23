@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { LazyLoadComponent } from 'react-lazy-load-image-component'
+import { LazyLoadComponent, trackWindowScroll } from 'react-lazy-load-image-component'
 import Quotes from '../../components/Quotes'
 import About from '../../components/About'
 import Speakers from '../../components/Speakers'
@@ -190,4 +190,4 @@ HomeComponent.propTypes = {
   executiveTeam: PropTypes.array,
 }
 
-export default HomeComponent
+export default trackWindowScroll(HomeComponent)

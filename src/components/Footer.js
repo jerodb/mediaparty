@@ -4,13 +4,17 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { GAEvents, handleGAClick } from '../lib/GoogleAnalytics'
 import { mpLogoMid } from '../res/images'
 
-const Footer = ({ title, description, former }) => (
+const Footer = ({
+  description, former, scrollPosition, title
+}) => (
   <footer className="event__footer">
     <div className="row">
       <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 event__footer_cta">
         <LazyLoadImage
           src={mpLogoMid}
           alt="Media Party / 2019"
+          scrollPosition={scrollPosition}
+          threshold={250}
         />
         <h3>{ title }</h3>
         <p>
@@ -40,9 +44,10 @@ const Footer = ({ title, description, former }) => (
 )
 
 Footer.propTypes = {
-  title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   former: PropTypes.string.isRequired,
+  scrollPosition: PropTypes.object,
+  title: PropTypes.string.isRequired,
 }
 
 export default Footer
