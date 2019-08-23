@@ -19,12 +19,14 @@ const DescriptionComponent = ({ description, video }) => (
           <div className="event__desc_wrapper">
             <p dangerouslySetInnerHTML={description} />
             <NoSsr>
-              <button
-                className="interactive-element video-wrapper"
-                dangerouslySetInnerHTML={video}
-                onClick={() => handleGAClick(GAEvents.hero[6])}
-                type="button"
-              />
+              <LazyLoadComponent>
+                <button
+                  className="interactive-element video-wrapper"
+                  dangerouslySetInnerHTML={video}
+                  onClick={() => handleGAClick(GAEvents.hero[6])}
+                  type="button"
+                />
+              </LazyLoadComponent>
             </NoSsr>
           </div>
         </div>

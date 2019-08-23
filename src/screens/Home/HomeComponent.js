@@ -78,7 +78,9 @@ const HomeComponent = ({
     {/* SPEAKERS */}
     <section id="speakers" className="wrapper">
       <NoSsr>
-        <Speakers speakers={speakers} />
+        <LazyLoadComponent>
+          <Speakers speakers={speakers} />
+        </LazyLoadComponent>
       </NoSsr>
     </section>
 
@@ -89,62 +91,76 @@ const HomeComponent = ({
     <WhereToStay {...where} />
 
     <NoSsr>
-      { /* PARTNERS */ }
-      <AvatarsList
-        list={partners}
-        name="PARTNERS"
-        type="partners"
-        Avatar={Partner}
-      />
+      <LazyLoadComponent>
+        { /* PARTNERS */ }
+        <AvatarsList
+          list={partners}
+          name="PARTNERS"
+          type="partners"
+          Avatar={Partner}
+        />
+      </LazyLoadComponent>
 
       { /* SPONSORS */ }
-      <AvatarsList
-        list={sponsors}
-        name="SPONSORS"
-        type="sponsors"
-        Avatar={Sponsor}
-      />
+      <LazyLoadComponent>
+        <AvatarsList
+          list={sponsors}
+          name="SPONSORS"
+          type="sponsors"
+          Avatar={Sponsor}
+        />
+      </LazyLoadComponent>
 
       { /* COLLABORATORS */ }
-      <AvatarsList
-        list={collaborators}
-        name="COLLABORATORS"
-        type="collaborators"
-        Avatar={Collaborator}
-      />
+      <LazyLoadComponent>
+        <AvatarsList
+          list={collaborators}
+          name="COLLABORATORS"
+          type="collaborators"
+          Avatar={Collaborator}
+        />
+      </LazyLoadComponent>
 
       { /* RECRUITERS */ }
-      <AvatarsList
-        list={recruiters}
-        name="RECRUITERS"
-        type="recruiters"
-        Avatar={Recruiter}
-      />
+      <LazyLoadComponent>
+        <AvatarsList
+          list={recruiters}
+          name="RECRUITERS"
+          type="recruiters"
+          Avatar={Recruiter}
+        />
+      </LazyLoadComponent>
 
       { /* EXECUTIVE TEAM */ }
-      <AvatarsList
-        list={executiveTeam}
-        name="EXECUTIVE TEAM"
-        type="team"
-        Avatar={Team}
-      />
+      <LazyLoadComponent>
+        <AvatarsList
+          list={executiveTeam}
+          name="EXECUTIVE TEAM"
+          type="team"
+          Avatar={Team}
+        />
+      </LazyLoadComponent>
 
       { /* TEAM */ }
-      <AvatarsList
-        list={team}
-        name="TEAM"
-        type="team"
-        Avatar={Team}
-      />
+      <LazyLoadComponent>
+        <AvatarsList
+          list={team}
+          name="TEAM"
+          type="team"
+          Avatar={Team}
+        />
+      </LazyLoadComponent>
 
       {/* MORE SPEAKERS */}
       <div id="more-speakers">
-        <AvatarsList
-          list={moreSpeakers}
-          name="MORE SPEAKERS"
-          type="speakers_full"
-          Avatar={MoreSpeakers}
-        />
+        <LazyLoadComponent>
+          <AvatarsList
+            list={moreSpeakers}
+            name="MORE SPEAKERS"
+            type="speakers_full"
+            Avatar={MoreSpeakers}
+          />
+        </LazyLoadComponent>
       </div>
     </NoSsr>
   </div>
