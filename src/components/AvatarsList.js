@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 const AvatarsList = ({
   Avatar, list, name, type
 }) => {
-  if (list.length > 0) {
+  if (list && list.length > 0) {
     return (
       <section className={`event__${type} wrapper`}>
         <h2>
