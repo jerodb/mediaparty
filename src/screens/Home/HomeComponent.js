@@ -21,7 +21,7 @@ import NoSsr from '../../components/NoSsr'
 
 const HomeComponent = ({
   registerPre, registerPos, register, proposal, workshop, talk, fair, description, venue, where, quotes, about, videoId,
-  speakers, moreSpeakers, partners, sponsors, collaborators, recruiters, team
+  speakers, moreSpeakers, partners, sponsors, collaborators, recruiters, team, hosts
 }) => (
   <div>
     { /* LIVE STREAMING */ }
@@ -131,6 +131,16 @@ const HomeComponent = ({
         />
       </LazyLoadComponent>
 
+      { /* HOSTS */ }
+      <LazyLoadComponent>
+        <AvatarsList
+          list={hosts}
+          name="HOSTS"
+          type="team"
+          Avatar={Team}
+        />
+      </LazyLoadComponent>
+
       { /* TEAM */ }
       <LazyLoadComponent>
         <AvatarsList
@@ -177,7 +187,7 @@ HomeComponent.propTypes = {
   collaborators: PropTypes.array,
   recruiters: PropTypes.array,
   team: PropTypes.array,
-  executiveTeam: PropTypes.array,
+  hosts: PropTypes.array,
 }
 
 export default trackWindowScroll(HomeComponent)

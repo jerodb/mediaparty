@@ -17,7 +17,10 @@ const HomeContainer = props => {
     recruiters: [],
   })
 
-  const [team, setTeam] = useState([])
+  const [team, setTeam] = useState({
+    team: [],
+    hosts: [],
+  })
 
   useEffect(() => {
     (async () => {
@@ -41,9 +44,9 @@ const HomeContainer = props => {
     <Home
       {...props}
       {...sponsors}
+      {...team}
       speakers={speakers}
       moreSpeakers={moreSpeakers}
-      team={team}
     />
   )
 }
