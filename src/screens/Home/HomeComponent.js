@@ -21,7 +21,7 @@ import NoSsr from '../../components/NoSsr'
 
 const HomeComponent = ({
   registerPre, registerPos, register, proposal, workshop, talk, fair, description, venue, where, quotes, about, videoId,
-  speakers, moreSpeakers, partners, sponsors, collaborators, recruiters, team, executiveTeam
+  speakers, moreSpeakers, partners, sponsors, collaborators, recruiters, team
 }) => (
   <div>
     { /* LIVE STREAMING */ }
@@ -128,16 +128,6 @@ const HomeComponent = ({
           name="RECRUITERS"
           type="recruiters"
           Avatar={Recruiter}
-        />
-      </LazyLoadComponent>
-
-      { /* EXECUTIVE TEAM */ }
-      <LazyLoadComponent>
-        <AvatarsList
-          list={executiveTeam}
-          name="EXECUTIVE TEAM"
-          type="team"
-          Avatar={Team}
         />
       </LazyLoadComponent>
 

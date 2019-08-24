@@ -18,10 +18,7 @@ const HomeContainer = props => {
     recruiters: [],
   })
 
-  const [team, setTeam] = useState({
-    team: [],
-    executiveTeam: [],
-  })
+  const [team, setTeam] = useState([])
 
   useEffect(() => {
     pageview(`${window.location.pathname}${window.location.search}`);
@@ -45,10 +42,10 @@ const HomeContainer = props => {
   return (
     <Home
       {...props}
-      {...team}
       {...sponsors}
       speakers={speakers}
       moreSpeakers={moreSpeakers}
+      team={team}
     />
   )
 }
