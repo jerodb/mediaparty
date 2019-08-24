@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
+import { pageview } from 'react-ga'
 import Router from './navigation/Router'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -9,6 +10,10 @@ import lan from './lang'
 const App = ({ root, locale, videoId }) => {
   const { langClass, header, footer } = lan.layout[locale]
   const h = Object.assign(header, { root })
+
+  useEffect(() => {
+    pageview(`${window.location.pathname}${window.location.search}`)
+  }, [])
 
   return (
     <div className={langClass}>

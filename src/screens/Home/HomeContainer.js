@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { pageview } from 'react-ga'
 import Home from './HomeComponent'
 import {
   getTeam, getMoreSpeakers, getSpeakers, getSponsors
@@ -21,7 +20,6 @@ const HomeContainer = props => {
   const [team, setTeam] = useState([])
 
   useEffect(() => {
-    pageview(`${window.location.pathname}${window.location.search}`);
     (async () => {
       if (speakers === null) {
         const speakersList = await getSpeakers()
