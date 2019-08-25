@@ -14,11 +14,11 @@ export default async (req, res) => {
         resp.map(item => {
           if (item.tags.includes('team')) {
             team.push(item)
-          } else if (item.tags.include('host')) {
-            hosts.push(item)
           }
 
-          return ''
+          if (item.tags.includes('host')) {
+            hosts.push(item)
+          }
         })
 
         res.json({ team, hosts })
