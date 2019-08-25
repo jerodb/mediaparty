@@ -6,16 +6,19 @@ export default async (req, res) => {
 
   const uri = `${apiEndpoint}&role=artist&format=json&strip_html=Y&fields=name,avatar,username,tags`
   const hosts = []
+  const team = []
 
   fetch(uri)
     .then(response => {
       response.json().then(resp => {
-        const team = resp.filter(item => {
-          if (!item.tags.includes('team')) {
+        resp.map(item => {
+          if (item.tags.includes('team')) {
+            team.push(item)
+          } else if (item.tags.include('host')) {
             hosts.push(item)
           }
 
-          return item.tags.includes('team')
+          return ''
         })
 
         res.json({ team, hosts })
