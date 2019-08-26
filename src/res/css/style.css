@@ -1810,12 +1810,13 @@ a {
 	font-size: 1.1em;
 }
 
-.space-component {
+.space-component, .not-found h2 {
 	padding-top: 64px;
 }
+
 @media (min-width: 992px) {
-	.space-component  {
-		font-size: 36px;
+	.space-component, .not-found h2  {
 		padding-top: 40px;
 	}
 }
+

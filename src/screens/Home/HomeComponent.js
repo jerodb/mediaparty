@@ -108,69 +108,46 @@ const HomeComponent = ({
         <Speakers speakers={speakers} />
       </section>
 
-      { /* PARTNERS */ }
-      {/*
-      <AvatarsList
-        list={partners}
-        name="PARTNERS"
-        type="partners"
-        Avatar={Partner}
-      />
-      */}
-
       <Space />
 
-      { /* SPONSORS */ }
-      <AvatarsList
-        list={sponsors}
-        name="SPONSORS"
-        type="sponsors"
-        Avatar={Sponsor}
-      />
-
-      <Space />
-
-      { /* COLLABORATORS */ }
-      {/*
-      <LazyLoadComponent>
+      <LazyLoadComponent
+        threshold={0}
+      >
+        { /* SPONSORS */ }
         <AvatarsList
-          list={collaborators}
-          name="COLLABORATORS"
-          type="collaborators"
-          Avatar={Collaborator}
+          list={sponsors}
+          name="SPONSORS"
+          type="sponsors"
+          Avatar={Sponsor}
         />
       </LazyLoadComponent>
-      */}
+      <Space />
 
-      { /* RECRUITERS */ }
-      {/*
-      <LazyLoadComponent>
+      <LazyLoadComponent
+        threshold={0}
+      >
+        { /* HOSTS */ }
         <AvatarsList
-          list={recruiters}
-          name="RECRUITERS"
-          type="recruiters"
-          Avatar={Recruiter}
+          list={hosts}
+          name="HOSTS"
+          type="team"
+          Avatar={Team}
         />
       </LazyLoadComponent>
-      */}
-
-      { /* HOSTS */ }
-      <AvatarsList
-        list={hosts}
-        name="HOSTS"
-        type="team"
-        Avatar={Team}
-      />
 
       <Space />
 
-      { /* TEAM */ }
-      <AvatarsList
-        list={team}
-        name="TEAM"
-        type="team"
-        Avatar={Team}
-      />
+      <LazyLoadComponent
+        threshold={0}
+      >
+        { /* TEAM */ }
+        <AvatarsList
+          list={team}
+          name="TEAM"
+          type="team"
+          Avatar={Team}
+        />
+      </LazyLoadComponent>
 
       <Space />
 
@@ -198,6 +175,41 @@ const HomeComponent = ({
 
       { /* WHERE TO STAY */ }
       <WhereToStay {...where} />
+
+
+      { /* PARTNERS */ }
+      {/*
+      <AvatarsList
+        list={partners}
+        name="PARTNERS"
+        type="partners"
+        Avatar={Partner}
+      />
+      */}
+
+      { /* COLLABORATORS */ }
+      {/*
+      <LazyLoadComponent>
+        <AvatarsList
+          list={collaborators}
+          name="COLLABORATORS"
+          type="collaborators"
+          Avatar={Collaborator}
+        />
+      </LazyLoadComponent>
+      */}
+
+      { /* RECRUITERS */ }
+      {/*
+      <LazyLoadComponent>
+        <AvatarsList
+          list={recruiters}
+          name="RECRUITERS"
+          type="recruiters"
+          Avatar={Recruiter}
+        />
+      </LazyLoadComponent>
+      */}
 
     </NoSsr>
   </div>
