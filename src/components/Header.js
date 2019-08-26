@@ -37,6 +37,13 @@ const Header = ({ lang, nav, root }) => (
           { nav.speakers }
         </Link>
         <Link
+          to={`${root}/#more-speakers`}
+          className="event__menu_item"
+          onClick={() => { handleGAClick(GAEvents.header[0], 'More Speakers') }}
+        >
+          { nav.moreSpeakers }
+        </Link>
+        <Link
           to={`${root}/#venue`}
           className="event__menu_item event__venue"
           onClick={() => { handleGAClick(GAEvents.header[0], 'Venue') }}
@@ -49,13 +56,6 @@ const Header = ({ lang, nav, root }) => (
           onClick={() => { handleGAClick(GAEvents.header[0], 'Where to stay') }}
         >
           { nav.stay }
-        </Link>
-        <Link
-          to={`${root}/#more-speakers`}
-          className="event__menu_item"
-          onClick={() => { handleGAClick(GAEvents.header[0], 'More Speakers') }}
-        >
-          { nav.moreSpeakers }
         </Link>
         <a href="https://blog.mediaparty.info" target="_blank" rel="noopener noreferrer" className="event__menu_item event__blog" onClick={() => { handleGAClick(GAEvents.header[0], 'Blog') }}>{ nav.blog }</a>
       </div>
