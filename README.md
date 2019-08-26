@@ -90,5 +90,11 @@ $ pm2 l
 3. Turn off live streaming: got to **https://mediaparty.info/liveoff**  
     
 *(\*) The key/password used for live streaming management should be set in the .env file.*    
-*(\*\*) The **VIDEO_ID** can be obtained from the youtube video uri. ex: https://www.youtube.com/watch?v=**veas_6NvJMk**.*  
+*(\*\*) The **VIDEO_ID** can be obtained from the youtube video uri. ex: https://www.youtube.com/watch?v=**veas_6NvJMk**.*    
   
+&nbsp;
+## To Do  
+
+- Add redux or some state manager.
+- Add testing.
+- Reduce bundle.js size. 
