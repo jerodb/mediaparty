@@ -1782,26 +1782,30 @@ a {
 }
 .event__en .event__agenda_web {
 	height: 943px;
-	background: url("/images/agenda_web_mob.png") no-repeat center;
+	background: url("/images/agenda_web_mob_en.png") no-repeat center;
 	background-size: contain;
 }
 
 .event__es .event__agenda_web {
 	height: 943px;
-	background: url("/images/agenda_web_mob.png") no-repeat center;
+	background: url("/images/agenda_web_mob_es.png") no-repeat center;
 	background-size: contain;
 }
 
 @media (min-width: 992px) {
 	.event__en .event__agenda_web {
 		height: 749px;
-		background: url("/images/agenda_web.png") no-repeat center;
+		background: url("/images/agenda_web_en.png") no-repeat center;
 		background-size: contain;
 	}
 
 	.event__es .event__agenda_web {
 		height: 749px;
-		background: url("/images/agenda_web.png") no-repeat center;
+		background: url("/images/agenda_web_es.png") no-repeat center;
 		background-size: contain;
 	}
+}
+
+.event__form_btn_link {
+	font-size: 1.1em;
 }
