@@ -98,3 +98,4 @@ $ pm2 l
 - Add redux or some state manager.
 - Add testing.
 - Reduce bundle.js size. 
+- Move Header Link Components from Home screen to Individual screens.
