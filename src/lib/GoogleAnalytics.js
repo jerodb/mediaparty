@@ -55,6 +55,12 @@ const GAEvents = {
       action: 'click here',
     },
   ],
+  home: [
+    {
+      category: 'Link',
+      action: 'Go to Agenda',
+    }
+  ],
   whereToStay: [
     {
       category: 'Where to stay',
