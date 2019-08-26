@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { LazyLoadComponent, trackWindowScroll } from 'react-lazy-load-image-component'
+import { Link } from 'react-router-dom'
 import Quotes from '../../components/Quotes'
 import About from '../../components/About'
 import Speakers from '../../components/Speakers'
@@ -14,15 +15,16 @@ import Team from '../../components/Avatars/Team'
 import WhereToStay from '../../components/WhereToStay'
 import Description from '../../components/Description'
 import Venue from '../../components/Venue'
-import Apply from '../../components/Apply'
+// import Apply from '../../components/Apply'
 import Register from '../../components/Register'
 import LiveStreaming from '../../components/LiveStreaming'
 import NoSsr from '../../components/NoSsr'
+import { GAEvents, handleGAClick } from '../../lib/GoogleAnalytics'
 
 const HomeComponent = ({
-  registerPre, registerPos, register, proposal, workshop, talk, fair, description, venue, where, quotes, about, videoId,
-  speakers, moreSpeakers, partners, sponsors, collaborators, recruiters, team, hosts
-}) => (
+  registerPre, registerPos, register, description, venue, where, quotes, about, videoId,
+  speakers, moreSpeakers, partners, sponsors, collaborators, recruiters, team, hosts, root, goToAgenda
+}) => ( // proposal, workshop, talk, fair,
   <div>
     { /* LIVE STREAMING */ }
     <NoSsr>
@@ -46,12 +48,29 @@ const HomeComponent = ({
     />
 
     { /* APPLY */ }
+    { /*
     <Apply
       fair={fair}
       proposal={proposal}
       talk={talk}
       workshop={workshop}
     />
+    */ }
+
+    <section className="wrapper event__proposals">
+      <div className="col-sm-12 col-xs-12 event__forms">
+        <div className="event__forms_links">
+          <Link
+            to={`${root}/agenda`}
+            onClick={() => { handleGAClick(GAEvents.home[0]) }}
+            className="event__form_btn_link"
+          >
+            { goToAgenda }
+          </Link>
+        </div>
+      </div>
+    </section>
+
 
     { /* QUOTES */ }
     <section className="wrapper">
@@ -204,6 +223,8 @@ HomeComponent.propTypes = {
   recruiters: PropTypes.array,
   team: PropTypes.array,
   hosts: PropTypes.array,
+  root: PropTypes.string,
+  goToAgenda: PropTypes.string,
 }
 
 export default trackWindowScroll(HomeComponent)
