@@ -16,7 +16,11 @@ const Router = ({ root, locale, videoId }) => (
           path={root + path}
           exact={exact}
           render={() => (
-            <Component {...cLang} videoId={videoId} />
+            <Component
+              {...cLang}
+              root={root}
+              videoId={videoId}
+            />
           )}
         />
       )
