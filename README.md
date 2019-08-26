@@ -85,12 +85,12 @@ $ pm2 l
 &nbsp;
 ## Live streaming  
 
-1. Go to **https://mediaparty.info/liveid/<VIDEO_ID>** to set the youtube video that will be played on the landing page. (ex: https://mediaparty.info/liveid/**veas_6NvJMk**).
+1. Go to **https://mediaparty.info/liveid/<VIDEO_ID>** to set the youtube video that will be played on the landing page. (ex: https://mediaparty.info/liveid/veas_6NvJMk).
 2. Turn on live streaming: go to **https://mediaparty.info/liveon**
 3. Turn off live streaming: got to **https://mediaparty.info/liveoff**  
     
 *(\*) The key/password used for live streaming management should be set in the .env file.*    
-*(\*\*) The **VIDEO_ID** can be obtained from the youtube video uri. ex: https://www.youtube.com/watch?v=**veas_6NvJMk**.*    
+*(\*\*) The **VIDEO_ID** can be obtained from the youtube video uri. ex: https://www.youtube.com/watch?v=veas_6NvJMk. (VIDEO_ID = **veas_6NvJMk**)*    
   
 &nbsp;
 ## To Do  
