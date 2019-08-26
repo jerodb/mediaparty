@@ -68,29 +68,30 @@ const HomeComponent = ({
       //     <div className="event__timeline" />
       //   </LazyLoadComponent>
       // </section>
-      }
+    }
+
+    { /* AGENDA WEB */ }
+    <section className="wrapper">
+      <LazyLoadComponent threshold={250}>
+        <div className="event__agenda_web" />
+      </LazyLoadComponent>
+    </section>
 
     { /* ABOUT */ }
     <section className="wrapper">
       <About about={about} />
     </section>
 
-    {/* SPEAKERS */}
-    <section id="speakers" className="wrapper">
-      <NoSsr>
-        <LazyLoadComponent>
+    <NoSsr>
+      {/* SPEAKERS */}
+      <section id="speakers" className="wrapper">
+        <LazyLoadComponent
+          threshold={350}
+        >
           <Speakers speakers={speakers} />
         </LazyLoadComponent>
-      </NoSsr>
-    </section>
+      </section>
 
-    { /* VENUE */ }
-    <Venue venue={venue} />
-
-    { /* WHERE TO STAY */ }
-    <WhereToStay {...where} />
-
-    <NoSsr>
       <LazyLoadComponent>
         { /* PARTNERS */ }
         <AvatarsList
@@ -102,7 +103,9 @@ const HomeComponent = ({
       </LazyLoadComponent>
 
       { /* SPONSORS */ }
-      <LazyLoadComponent>
+      <LazyLoadComponent
+        threshold={300}
+      >
         <AvatarsList
           list={sponsors}
           name="SPONSORS"
@@ -132,7 +135,9 @@ const HomeComponent = ({
       </LazyLoadComponent>
 
       { /* HOSTS */ }
-      <LazyLoadComponent>
+      <LazyLoadComponent
+        threshold={350}
+      >
         <AvatarsList
           list={hosts}
           name="HOSTS"
@@ -142,7 +147,9 @@ const HomeComponent = ({
       </LazyLoadComponent>
 
       { /* TEAM */ }
-      <LazyLoadComponent>
+      <LazyLoadComponent
+        threshold={350}
+      >
         <AvatarsList
           list={team}
           name="TEAM"
@@ -153,7 +160,9 @@ const HomeComponent = ({
 
       {/* MORE SPEAKERS */}
       <div id="more-speakers">
-        <LazyLoadComponent>
+        <LazyLoadComponent
+          threshold={350}
+        >
           <AvatarsList
             list={moreSpeakers}
             name="MORE SPEAKERS"
@@ -162,6 +171,13 @@ const HomeComponent = ({
           />
         </LazyLoadComponent>
       </div>
+
+      { /* VENUE */ }
+      <Venue venue={venue} />
+
+      { /* WHERE TO STAY */ }
+      <WhereToStay {...where} />
+
     </NoSsr>
   </div>
 )
