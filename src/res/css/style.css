@@ -1762,3 +1762,46 @@ a {
 .agenda-wrapper {
 	margin-top: 30px;
 }
+
+.link {
+	color: #00b8c3;
+	text-decoration: none;
+}
+
+.link:hover {
+	color: #00b8c3;
+	text-decoration: underline;
+}
+
+.event__en .event__agenda_web,
+.event__es .event__agenda_web {
+	width: 100%;
+	margin: auto;
+	background-size: contain;
+	margin-top: 25px;
+}
+.event__en .event__agenda_web {
+	height: 943px;
+	background: url("/images/agenda_web_mob.png") no-repeat center;
+	background-size: contain;
+}
+
+.event__es .event__agenda_web {
+	height: 943px;
+	background: url("/images/agenda_web_mob.png") no-repeat center;
+	background-size: contain;
+}
+
+@media (min-width: 992px) {
+	.event__en .event__agenda_web {
+		height: 749px;
+		background: url("/images/agenda_web.png") no-repeat center;
+		background-size: contain;
+	}
+
+	.event__es .event__agenda_web {
+		height: 749px;
+		background: url("/images/agenda_web.png") no-repeat center;
+		background-size: contain;
+	}
+}
