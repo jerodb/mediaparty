@@ -64,7 +64,7 @@ const home = {
       {
         icon: iHackaton,
         title: 'Hackathon',
-        description: { __html: 'A Hackathon is a full working day to develop a project. Ideas are suggested and those who want to develop them during the event organize multidisciplinary teams to produce interactive stories, web tools, civic apps or innovative media. Everybody can suggest a project on the <a class="link" href="https://hackdash.org/dashboards/mp2019" target="_blank">HackDash</a> or work on the project suggested by others during the event. <b>There are 10,000 dollars in prizes for the winners.</b>' },
+        description: { __html: 'A Hackathon is a full working day to develop a project. Ideas are suggested and those who want to develop them during the event organize multidisciplinary teams to produce interactive stories, web tools, civic apps or innovative media. Everybody can suggest a project on the <a class="link" href="https://hackdash.org/dashboards/mp2019" target="_blank">HackDash</a> or work on the project suggested by others during the event. <b>There are 10.000 dollars in prizes for the winners.</b>' },
       },
       {
         icon: iLightning,
@@ -72,6 +72,7 @@ const home = {
         description: { __html: 'Short and dynamic talks about innovation projects regarding journalism, media, open data and citizen participation. Focusing on how the projects were carried out and their impact. In just 5 minutes.' },
       },
     ],
+    goToAgenda: 'Event Agenda'
   },
   es: {
     register: 'REGISTRATE AQUÍ',
@@ -134,7 +135,7 @@ const home = {
       {
         icon: iHackaton,
         title: 'Hackatón',
-        description: { __html: 'Un hackatón en una jornada maratónica de trabajo para desarrollar un proyecto, se proponen ideas y los interesados en desarrollarlas durante la jornada se organizan en equipos multidisciplinarios para producir historias interactivas, herramientas web, aplicaciones cívicas o medios innovadores. Todo el mundo está invitado a proponer un proyecto en el <a class="link" href="https://hackdash.org/dashboards/mp2019" target="_blank">HackDash</a> y/o a sumarse a trabajar durante la jornada en el proyecto propuesto por otro. <b>Hay 10,000 dolares en premios para los ganadores.</b>' },
+        description: { __html: 'Un hackatón en una jornada maratónica de trabajo para desarrollar un proyecto, se proponen ideas y los interesados en desarrollarlas durante la jornada se organizan en equipos multidisciplinarios para producir historias interactivas, herramientas web, aplicaciones cívicas o medios innovadores. Todo el mundo está invitado a proponer un proyecto en el <a class="link" href="https://hackdash.org/dashboards/mp2019" target="_blank">HackDash</a> y/o a sumarse a trabajar durante la jornada en el proyecto propuesto por otro. <b>Hay 10.000 dolares en premios para los ganadores.</b>' },
       },
       {
         icon: iLightning,
@@ -142,6 +143,7 @@ const home = {
         description: { __html: 'Charlas cortas y dinámicas sobre proyectos de innovación en periodismo, medios, datos abiertos o participación ciudadana. Con foco en el cómo de los proyectos y/o en el impacto generado. En sólo 5\'.' },
       },
     ],
+    goToAgenda: 'Agenda del Evento'
   },
 }
 
