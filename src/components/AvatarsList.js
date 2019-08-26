@@ -15,21 +15,21 @@ const AvatarsList = ({
         </h2>
         <div className="row flex-wrapper">
           {
-        list.map((data, k) => {
-          const url = data && data.url
-          let urlLink = ''
-          if (url) { urlLink = url.startsWith('http') ? url : `http://${url}` }
+            list.map((data, k) => {
+              const url = data && data.url
+              let urlLink = ''
+              if (url) { urlLink = url.startsWith('http') ? url : `http://${url}` }
 
-          return (
-            <Avatar
-              {...data}
-              key={JSON.stringify(k)}
-              imageSrc={data.avatar}
-              urlLink={urlLink}
-            />
-          )
-        })
-      }
+              return (
+                <Avatar
+                  {...data}
+                  key={JSON.stringify(k)}
+                  imageSrc={data.avatar}
+                  urlLink={urlLink}
+                />
+              )
+            })
+          }
         </div>
       </section>
     )
