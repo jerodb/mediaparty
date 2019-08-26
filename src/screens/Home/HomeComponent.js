@@ -7,10 +7,10 @@ import About from '../../components/About'
 import Speakers from '../../components/Speakers'
 import MoreSpeakers from '../../components/Avatars/MoreSpeakers'
 import AvatarsList from '../../components/AvatarsList'
-import Partner from '../../components/Avatars/Partner'
+// import Partner from '../../components/Avatars/Partner'
 import Sponsor from '../../components/Avatars/Sponsor'
-import Collaborator from '../../components/Avatars/Collaborator'
-import Recruiter from '../../components/Avatars/Recruiter'
+// import Collaborator from '../../components/Avatars/Collaborator'
+// import Recruiter from '../../components/Avatars/Recruiter'
 import Team from '../../components/Avatars/Team'
 import WhereToStay from '../../components/WhereToStay'
 import Description from '../../components/Description'
@@ -19,12 +19,13 @@ import Venue from '../../components/Venue'
 import Register from '../../components/Register'
 import LiveStreaming from '../../components/LiveStreaming'
 import NoSsr from '../../components/NoSsr'
+import Space from '../../components/Space'
 import { GAEvents, handleGAClick } from '../../lib/GoogleAnalytics'
 
 const HomeComponent = ({
   registerPre, registerPos, register, description, venue, where, quotes, about, videoId,
-  speakers, moreSpeakers, partners, sponsors, collaborators, recruiters, team, hosts, root, goToAgenda
-}) => ( // proposal, workshop, talk, fair,
+  speakers, moreSpeakers, sponsors, team, hosts, root, goToAgenda
+}) => ( // collaborators, recruiters, partners, proposal, workshop, talk, fair,
   <div>
     { /* LIVE STREAMING */ }
     <NoSsr>
@@ -104,36 +105,33 @@ const HomeComponent = ({
     <NoSsr>
       {/* SPEAKERS */}
       <section id="speakers" className="wrapper">
-        <LazyLoadComponent
-          threshold={350}
-        >
-          <Speakers speakers={speakers} />
-        </LazyLoadComponent>
+        <Speakers speakers={speakers} />
       </section>
 
-      <LazyLoadComponent>
-        { /* PARTNERS */ }
-        <AvatarsList
-          list={partners}
-          name="PARTNERS"
-          type="partners"
-          Avatar={Partner}
-        />
-      </LazyLoadComponent>
+      { /* PARTNERS */ }
+      {/*
+      <AvatarsList
+        list={partners}
+        name="PARTNERS"
+        type="partners"
+        Avatar={Partner}
+      />
+      */}
+
+      <Space />
 
       { /* SPONSORS */ }
-      <LazyLoadComponent
-        threshold={300}
-      >
-        <AvatarsList
-          list={sponsors}
-          name="SPONSORS"
-          type="sponsors"
-          Avatar={Sponsor}
-        />
-      </LazyLoadComponent>
+      <AvatarsList
+        list={sponsors}
+        name="SPONSORS"
+        type="sponsors"
+        Avatar={Sponsor}
+      />
+
+      <Space />
 
       { /* COLLABORATORS */ }
+      {/*
       <LazyLoadComponent>
         <AvatarsList
           list={collaborators}
@@ -142,8 +140,10 @@ const HomeComponent = ({
           Avatar={Collaborator}
         />
       </LazyLoadComponent>
+      */}
 
       { /* RECRUITERS */ }
+      {/*
       <LazyLoadComponent>
         <AvatarsList
           list={recruiters}
@@ -152,35 +152,33 @@ const HomeComponent = ({
           Avatar={Recruiter}
         />
       </LazyLoadComponent>
+      */}
 
       { /* HOSTS */ }
-      <LazyLoadComponent
-        threshold={350}
-      >
-        <AvatarsList
-          list={hosts}
-          name="HOSTS"
-          type="team"
-          Avatar={Team}
-        />
-      </LazyLoadComponent>
+      <AvatarsList
+        list={hosts}
+        name="HOSTS"
+        type="team"
+        Avatar={Team}
+      />
+
+      <Space />
 
       { /* TEAM */ }
-      <LazyLoadComponent
-        threshold={350}
-      >
-        <AvatarsList
-          list={team}
-          name="TEAM"
-          type="team"
-          Avatar={Team}
-        />
-      </LazyLoadComponent>
+      <AvatarsList
+        list={team}
+        name="TEAM"
+        type="team"
+        Avatar={Team}
+      />
+
+      <Space />
 
       {/* MORE SPEAKERS */}
       <div id="more-speakers">
+
         <LazyLoadComponent
-          threshold={350}
+          threshold={0}
         >
           <AvatarsList
             list={moreSpeakers}
@@ -191,8 +189,12 @@ const HomeComponent = ({
         </LazyLoadComponent>
       </div>
 
+      <Space />
+
       { /* VENUE */ }
       <Venue venue={venue} />
+
+      <Space />
 
       { /* WHERE TO STAY */ }
       <WhereToStay {...where} />
