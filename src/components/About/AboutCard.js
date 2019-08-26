@@ -15,7 +15,7 @@ const AboutCard = ({
         />
       </div>
       <div className="event__about_title">{ title }</div>
-      <div className="event__about_description">{ description }</div>
+      <div className="event__about_description" dangerouslySetInnerHTML={description} />
     </div>
   )
 )

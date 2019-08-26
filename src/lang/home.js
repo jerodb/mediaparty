@@ -49,75 +49,27 @@ const home = {
       {
         icon: iKeynotes,
         title: 'Keynotes',
-        description: 'International experts of the most important and innovative media worldwide come to Media Party to share their experiences and knowledge.',
-        detail: [
-          [
-            'Gran Sala (A)',
-            'Day 1 (Wednesday Sep. 13th) - 9 am to 1 pm',
-            'Day 2 (Thursday Sep. 14th) - 9 am to 12:30 pm',
-            'Day 3 (Friday Sep. 15th) - 9 am to 1 pm.',
-          ],
-        ],
+        description: { __html: 'International experts of the most important and innovative media worldwide come to Media Party to share their experiences and knowledge.' },
       },
       {
         icon: iWorkshop,
         title: 'Workshops',
-        description: 'An opportunity to develop, improve or change abilities and skills. A space to learn about making, using, etc whitin 2 or 3 hours. There will be two tracks with 8 workshops working simultaneously in the afternoons and 1 track with 3 workshops on Thursday and Friday afternoon. They will be delivered in the mother tongue of the person in charge and they might aim at some specific profiles, might require a computer or installed software. ',
-        detail: [
-          [
-            'Sala de las Columnas (E), Galería (C), Abasto (D) y Auditorio (B)',
-            'Day 1 (Wednesday Sep. 13th) - 3 to 5 pm / 5 to 7 pm',
-            'Day 2 (Thursday Sep. 14th) - 9 to 11 am / 2 to 4 pm / 4 to 7 pm',
-            'Day 3 (Friday Sep.15th) - 9 to 11 am / 2 to 4 pm / 4 to 6 pm',
-          ],
-        ],
+        description: { __html: 'An opportunity to develop, improve or change abilities and skills. A space to learn about making, using, etc whitin 2 or 3 hours. There will be two tracks with 8 workshops working simultaneously in the afternoons and 1 track with 3 workshops on Thursday and Friday afternoon. They will be delivered in the mother tongue of the person in charge and they might aim at some specific profiles, might require a computer or installed software.' },
       },
       {
         icon: iFeria,
         title: 'Media Fair',
-        description: 'An inspiring exhibition where creators show their prototypes, services, tools or data journalism products, media innovation initiatives, etc. A hotspot for networkng and face-to-face exchange with the makers.',
-        detail: [
-          [
-            'Sala de las Columnas (E)',
-            'Just Day 1 (Wednesday Sep. 13th) - 1 o 3 pm',
-          ],
-        ],
+        description: { __html: 'An inspiring exhibition where creators show their prototypes, services, tools or data journalism products, media innovation initiatives, etc. A hotspot for networkng and face-to-face exchange with the makers.' },
       },
       {
         icon: iHackaton,
         title: 'Hackathon',
-        description: 'A Hackathon is a full working day to develop a project. Ideas are suggested and those who want to develop them during the event organize multidisciplinary teams to produce interactive stories, web tools, civic apps or innovative media. Everybody can suggest a project on the HackDash or work on the project suggested by others during the event.',
-        detail: [
-          [
-            'Pitch',
-            'Gran Sala (A)',
-            'DAY 2 - Thursday Sep. 14th - 12:30 am to 13:30 pm',
-          ],
-          [
-            'Hackathon',
-            'Antesala',
-            'Day 2 (Thursday Sep. 14th) - 2 to 7 pm',
-            'Day 3 (Friday Sep.15th) - 9 am to 6 pm',
-          ],
-          [
-            'Closing',
-            'Gran Sala (A)',
-            'Day 3 (Friday Sep. 15th) - 6 to 7 pm',
-          ],
-        ],
+        description: { __html: 'A Hackathon is a full working day to develop a project. Ideas are suggested and those who want to develop them during the event organize multidisciplinary teams to produce interactive stories, web tools, civic apps or innovative media. Everybody can suggest a project on the <a class="link" href="https://hackdash.org/dashboards/mp2019" target="_blank">HackDash</a> or work on the project suggested by others during the event. <b>There are 10,000 dollars in prizes for the winners.</b>' },
       },
       {
         icon: iLightning,
         title: 'Lightning Talks',
-        description: 'Short and dynamic talks about innovation projects regarding journalism, media, open data and citizen participation. Focusing on how the projects were carried out and their impact. In just 5 minutes.',
-        detail: [
-          [
-            'Gran Sala (A)',
-            'Day 1 (Wednesday Sep. 13th) - 4 to 6 pm',
-            'Day 2 (Thursday Sep. 14th) - 4 to 6 pm',
-            'Day 3 (Friday Sep. 15th) - 4 to 6 pm.',
-          ],
-        ],
+        description: { __html: 'Short and dynamic talks about innovation projects regarding journalism, media, open data and citizen participation. Focusing on how the projects were carried out and their impact. In just 5 minutes.' },
       },
     ],
   },
@@ -167,75 +119,27 @@ const home = {
       {
         icon: iKeynotes,
         title: 'Keynotes',
-        description: 'Expertos internacionales de los medios más importantes e innovadores de todo el mundo llegan a la Media Party para compartir su experiencia y conocimientos.',
-        detail: [
-          [
-            'Gran Sala (A)',
-            'Día 1 (Miércoles 13/9) - 9 a 13 hs.',
-            'Día 2 (Jueves 14/9) - 9 a 12:30 hs.',
-            'Día 3 (Viernes 15/9) - 9 a 13 hs.',
-          ],
-        ],
+        description: { __html: 'Expertos internacionales de los medios más importantes e innovadores de todo el mundo llegan a la Media Party para compartir su experiencia y conocimientos.' },
       },
       {
         icon: iWorkshop,
         title: 'Workshops',
-        description: 'Oportunidades para desarrollar nuevas habilidades o aptitudes, o para mejorarlas o cambiarlas. Espacios para aprender a hacer, a usar, etc. en 2 o 3 horas. Habrá dos tracks de  8 talleres en simultáneo por las tardes y 1 track de 3 talleres por las mañanas de jueves y viernes. Serán en el idioma nativo de quien lo lidera, y puede que esté dirigido a perfiles específicos o requieran trabajar con compu, o tener un software instalado.',
-        detail: [
-          [
-            'Sala de las Columnas (E), Galería (C), Abasto (D) y Auditorio (B)',
-            'Día 1 (Miércoles 13/9) - 15 a 17 / 17 a 19 hs',
-            'Día 2 (Jueves 14/9) - 9 a 11 /14 a 16 / 16 a 19 hs',
-            'Día 3 (Viernes 15/9 - 9 a 11 / 14 a 16 / 16 a 18 hs.',
-          ],
-        ],
+        description: { __html: 'Oportunidades para desarrollar nuevas habilidades o aptitudes, o para mejorarlas o cambiarlas. Espacios para aprender a hacer, a usar, etc. en 2 o 3 horas. Habrá dos tracks de  8 talleres en simultáneo por las tardes y 1 track de 3 talleres por las mañanas de jueves y viernes. Serán en el idioma nativo de quien lo lidera, y puede que esté dirigido a perfiles específicos o requieran trabajar con compu, o tener un software instalado.' },
       },
       {
         icon: iFeria,
         title: 'Media Feria',
-        description: 'Un recorrido inspirador donde los propios creadores exhiben sus prototipos, servicios, herramientas o productos de periodismo de datos, iniciativas de innovación en medios, etc. Es el momento caliente para el networking y el intercambio uno a uno con los hacedores.',
-        detail: [
-          [
-            'Sala de las Columnas (E)',
-            'Sólo Día 1 (Miércoles 13/9) - 13:00 a 15:00hs',
-          ],
-        ],
+        description: { __html: 'Un recorrido inspirador donde los propios creadores exhiben sus prototipos, servicios, herramientas o productos de periodismo de datos, iniciativas de innovación en medios, etc. Es el momento caliente para el networking y el intercambio uno a uno con los hacedores.' },
       },
       {
         icon: iHackaton,
         title: 'Hackatón',
-        description: 'Un hackatón en una jornada maratónica de trabajo para desarrollar un proyecto, se proponen ideas y los interesados en desarrollarlas durante la jornada se organizan en equipos multidisciplinarios para producir historias interactivas, herramientas web, aplicaciones cívicas o medios innovadores. Todo el mundo está invitado a proponer un proyecto en el HackDash y/o a sumarse a trabajar durante la jornada en el proyecto propuesto por otro.',
-        detail: [
-          [
-            'Pitch',
-            'Gran Sala (A)',
-            'DÍA 2 - Jueves 14/9 - 12:30 a 13:30 hs',
-          ],
-          [
-            'Hackatón',
-            'Antesala',
-            'Día 2 (Jueves 14/9) - 14 a 19 hs.',
-            'Día 3 (Viernes 15/9) - 9 a 18 hs.',
-          ],
-          [
-            'Cierre',
-            'Gran Sala (A)',
-            'Día 3 (Viernes 15/9) - 18 a 19 hs.,',
-          ],
-        ],
+        description: { __html: 'Un hackatón en una jornada maratónica de trabajo para desarrollar un proyecto, se proponen ideas y los interesados en desarrollarlas durante la jornada se organizan en equipos multidisciplinarios para producir historias interactivas, herramientas web, aplicaciones cívicas o medios innovadores. Todo el mundo está invitado a proponer un proyecto en el <a class="link" href="https://hackdash.org/dashboards/mp2019" target="_blank">HackDash</a> y/o a sumarse a trabajar durante la jornada en el proyecto propuesto por otro. <b>Hay 10,000 dolares en premios para los ganadores.</b>' },
       },
       {
         icon: iLightning,
         title: 'Charlas Relámpago',
-        description: 'Charlas cortas y dinámicas sobre proyectos de innovación en periodismo, medios, datos abiertos o participación ciudadana. Con foco en el cómo de los proyectos y/o en el impacto generado. En sólo 5\'.',
-        detail: [
-          [
-            'Gran Sala (A)',
-            'Día 1 (Miércoles 13/9) - 16 a 18 hs.',
-            'Día 2 (Jueves 14/9) - 16 a 18 hs.',
-            'Día 3 (Viernes 15/9 - 16 a 18 hs.',
-          ],
-        ],
+        description: { __html: 'Charlas cortas y dinámicas sobre proyectos de innovación en periodismo, medios, datos abiertos o participación ciudadana. Con foco en el cómo de los proyectos y/o en el impacto generado. En sólo 5\'.' },
       },
     ],
   },
