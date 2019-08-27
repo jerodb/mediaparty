@@ -19,20 +19,6 @@ p {
 }
 /* End of Bootstrap correction */
 
-
-/* Remove dotted outline */
-a {
-	outline: 0;
-}
-input::-moz-focus-inner { 
-  border: 0; 
-}
-object, embed { 
-  outline: 0;
-}
-/* End of Remove dotted outline */
-
-
 body {
 	margin: 0;
 	padding: 0;
@@ -1835,6 +1821,7 @@ a {
 
 .ScrollUpButton__Container {
 	z-index: 9000;
+	outline: none;
 }
 
 .ScrollUpButton__Toggled {
