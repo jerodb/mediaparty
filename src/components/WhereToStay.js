@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const WhereToStay = ({ description, description2, title }) => (
-  <section id="where-to-stay" className="wrapper event__where_to_stay">
-    <h2>
+  <section className="wrapper event__where_to_stay">
+    <h2 id="where-to-stay">
       <div className="title-txt">{ title }</div>
       <div className="title-line" />
     </h2>

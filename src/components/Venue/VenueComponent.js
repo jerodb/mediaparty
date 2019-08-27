@@ -6,10 +6,10 @@ import NoSsr from '../NoSsr'
 const Venue = ({
   allowMapEvents, mapIframe, mapEvents, scrollPosition, venue
 }) => (
-  <section id="venue" className="venue">
+  <section className="venue">
     <div className="event__venue_info">
       <div className="event__venue_info_inner">
-        <h2>{ venue }</h2>
+        <h2 id="venue">{ venue }</h2>
         <p className="event__venue_name">Ciudad Cultural Konex</p>
         <p className="event__venue_address">Sarmiento 3131, Buenos Aires, Argentina</p>
       </div>
@@ -23,7 +23,7 @@ const Venue = ({
     <NoSsr>
       <LazyLoadComponent
         scrollPosition={scrollPosition}
-        threshold={250}
+        threshold={0}
       >
         <button
           className={`${mapEvents} map-wrapper interactive-element`}

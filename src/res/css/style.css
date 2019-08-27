@@ -1261,6 +1261,7 @@ a {
 
 .event__where_to_stay_description {
 	text-align: left;
+	margin-top: 20px;
 }
 
 @media (min-width: 992px) {
@@ -1734,6 +1735,10 @@ a {
 .userDescription {
 	line-height: 20px;
 	margin-bottom: 5px;
+}
+
+.venue {
+	margin-top: 20px;
 }
 
 .venue .map-wrapper {
