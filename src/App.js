@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { pageview } from 'react-ga'
+import { CircleArrow as ScrollUpButton } from 'react-scroll-up-button'
 import Router from './navigation/Router'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -25,6 +26,14 @@ const App = ({ root, locale, videoId }) => {
           videoId={videoId}
         />
         <Footer {...footer} />
+        <ScrollUpButton
+          StopPosition={0}
+          ShowAtPosition={500}
+          EasingType="easeOutCubic"
+          AnimationDuration={500}
+          ContainerClassName="ScrollUpButton__Container"
+          TransitionClassName="ScrollUpButton__Toggled"
+        />
       </div>
     </div>
   )

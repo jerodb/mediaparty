@@ -1818,3 +1818,22 @@ a {
 	padding-top: 40px;
 	padding-bottom: 80px
 }
+
+.ScrollUpButton__Container {
+	z-index: 9000;
+}
+
+.ScrollUpButton__Toggled {
+	opacity: .5 !important;
+	right: 10px !important;
+}
+
+.ScrollUpButton__Toggled:hover {
+	opacity: 1 !important;
+}
+
+@media (min-width: 992px) {
+	.ScrollUpButton__Toggled {
+		right: 20px !important;
+	}
+}

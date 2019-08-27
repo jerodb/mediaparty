@@ -39,6 +39,7 @@
     "react-lazy-load-image-component": "^1.3.2",
     "react-router-dom": "^5.0.1",
     "react-router-hash-link": "^1.2.2",
+    "react-scroll-up-button": "^1.6.4",
     "regenerator-runtime": "^0.13.3",
     "whatwg-fetch": "^3.0.0"
   },
