@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Speakers from './SpeakersComponent'
 
-const SpeakersContainer = ({ speakers }) => {
+const SpeakersContainer = ({ speakers, speakersTitle }) => {
   if (speakers && speakers.length > 0) {
     return (
       <>
         <h2>
-          <div className="title-txt">SPEAKERS</div>
+          <div className="title-txt">{speakersTitle}</div>
           <div className="title-line" />
         </h2>
         <div className="event__speakers_featured">
@@ -47,7 +47,8 @@ const SpeakersContainer = ({ speakers }) => {
 }
 
 SpeakersContainer.propTypes = {
-  speakers: PropTypes.array
+  speakers: PropTypes.array,
+  speakersTitle: PropTypes.string
 }
 
 export default SpeakersContainer

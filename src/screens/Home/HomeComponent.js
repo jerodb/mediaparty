@@ -24,7 +24,7 @@ import { GAEvents, handleGAClick } from '../../lib/GoogleAnalytics'
 
 const HomeComponent = ({
   registerPre, registerPos, register, description, venue, where, quotes, about, videoId,
-  speakers, moreSpeakers, sponsors, team, hosts, root, goToAgenda
+  speakers, moreSpeakers, sponsors, team, hosts, root, goToAgenda, speakersTitle, sponsorsTitle, hostsTitle, teamTitle, moreSpeakersTitle
 }) => ( // collaborators, recruiters, partners, proposal, workshop, talk, fair,
   <div>
     { /* LIVE STREAMING */ }
@@ -102,10 +102,12 @@ const HomeComponent = ({
       <About about={about} />
     </section>
 
+    <Space />
+
     <NoSsr>
       {/* SPEAKERS */}
       <section id="speakers" className="wrapper">
-        <Speakers speakers={speakers} />
+        <Speakers speakers={speakers} speakersTitle={speakersTitle} />
       </section>
 
       <Space />
@@ -116,11 +118,12 @@ const HomeComponent = ({
         { /* SPONSORS */ }
         <AvatarsList
           list={sponsors}
-          name="SPONSORS"
+          name={sponsorsTitle}
           type="sponsors"
           Avatar={Sponsor}
         />
       </LazyLoadComponent>
+
       <Space />
 
       <LazyLoadComponent
@@ -129,7 +132,7 @@ const HomeComponent = ({
         { /* HOSTS */ }
         <AvatarsList
           list={hosts}
-          name="HOSTS"
+          name={hostsTitle}
           type="team"
           Avatar={Team}
         />
@@ -143,7 +146,7 @@ const HomeComponent = ({
         { /* TEAM */ }
         <AvatarsList
           list={team}
-          name="TEAM"
+          name={teamTitle}
           type="team"
           Avatar={Team}
         />
@@ -159,7 +162,7 @@ const HomeComponent = ({
         >
           <AvatarsList
             list={moreSpeakers}
-            name="MORE SPEAKERS"
+            name={moreSpeakersTitle}
             type="speakers_full"
             Avatar={MoreSpeakers}
           />
@@ -239,6 +242,11 @@ HomeComponent.propTypes = {
   hosts: PropTypes.array,
   root: PropTypes.string,
   goToAgenda: PropTypes.string,
+  speakersTitle: PropTypes.string,
+  sponsorsTitle: PropTypes.string,
+  hostsTitle: PropTypes.string,
+  teamTitle: PropTypes.string,
+  moreSpeakersTitle: PropTypes.string
 }
 
 export default trackWindowScroll(HomeComponent)

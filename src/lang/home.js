@@ -18,6 +18,11 @@ const home = {
     description: {
       __html: 'The <span class="event__name">Media Party</span> is a three-day event in Buenos Aires, Argentina, that gathers more than 2500 entrepreneurs, journalists, developers and designers from five continents to work together for the future of media. Born from Hacks/Hackers Buenos Aires, this event combines big companies like The New York Times, The Guardian, Vox Media, ProPublica, Watchup, Neo4J or DocumentCloud with regional communities in the world’s biggest network of journalists and developers.',
     },
+    speakersTitle: 'Speakers',
+    sponsorsTitle: 'Sponsors',
+    hostsTitle: 'Hosts',
+    teamTitle: 'Team',
+    moreSpeakersTitle: 'More Speakers',
     venue: 'Venue',
     where: {
       title: 'Where to Stay',
@@ -89,6 +94,11 @@ const home = {
     description: {
       __html: '<span class="event__name">Media Party</span> es un evento de tres días en Argentina, que reúne a 2500 emprendedores, periodistas, programadores de software y diseñadores de cinco continentes para trabajar juntos para el futuro de los medios de comunicación. Nacido de Hacks/Hackers Buenos Aires, el evento fusiona a grandes empresas como New York Times, The Guardian, Vox, ProPublica, Watchup, Neo4J o DocumentCloud y comunidades regionales de la mayor red de periodistas y desarrolladores del mundo.',
     },
+    speakersTitle: 'Speakers',
+    sponsorsTitle: 'Sponsors',
+    hostsTitle: 'Hosts',
+    teamTitle: 'Equipo',
+    moreSpeakersTitle: 'Más Speakers',
     venue: 'Lugar',
     where: {
       title: 'Dónde Alojarse',
