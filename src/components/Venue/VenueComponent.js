@@ -21,13 +21,18 @@ const Venue = ({
       </LazyLoadComponent>
     </div>
     <NoSsr>
-      <button
-        className={`${mapEvents} map-wrapper interactive-element`}
-        dangerouslySetInnerHTML={mapIframe}
-        onClick={() => allowMapEvents(true)}
-        onMouseLeave={() => allowMapEvents(false)}
-        type="button"
-      />
+      <LazyLoadComponent
+        scrollPosition={scrollPosition}
+        threshold={250}
+      >
+        <button
+          className={`${mapEvents} map-wrapper interactive-element`}
+          dangerouslySetInnerHTML={mapIframe}
+          onClick={() => allowMapEvents(true)}
+          onMouseLeave={() => allowMapEvents(false)}
+          type="button"
+        />
+      </LazyLoadComponent>
     </NoSsr>
   </section>
 )

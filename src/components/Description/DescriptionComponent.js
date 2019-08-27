@@ -22,12 +22,17 @@ const DescriptionComponent = ({ description, scrollPosition, video }) => (
           <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 event__desc_text">
             <div className="event__desc_wrapper">
               <p dangerouslySetInnerHTML={description} />
-              <button
-                className="interactive-element video-wrapper"
-                dangerouslySetInnerHTML={video}
-                onClick={() => handleGAClick(GAEvents.hero[6])}
-                type="button"
-              />
+              <LazyLoadComponent
+                scrollPosition={scrollPosition}
+                threshold={250}
+              >
+                <button
+                  className="interactive-element video-wrapper"
+                  dangerouslySetInnerHTML={video}
+                  onClick={() => handleGAClick(GAEvents.hero[6])}
+                  type="button"
+                />
+              </LazyLoadComponent>
             </div>
           </div>
         </div>
