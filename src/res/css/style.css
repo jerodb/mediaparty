@@ -1,7 +1,7 @@
 /* Media Party 2018 - Styles */
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700');
 
-/* Extracted from Bootstrap by Jero */
+/* Extracted from Bootstrap */
 p {
 	margin: 0 0 10px;
 }
@@ -12,12 +12,26 @@ p {
 
 /* End of extracted from Bootstrap */
 
-/* Bootstrap correction by Jero */
+/* Bootstrap correction */
 .row {
 	margin-right: 0;
 	margin-left: 0;
 }
 /* End of Bootstrap correction */
+
+
+/* Remove dotted outline */
+a {
+	outline: 0;
+}
+input::-moz-focus-inner { 
+  border: 0; 
+}
+object, embed { 
+  outline: 0;
+}
+/* End of Remove dotted outline */
+
 
 body {
 	margin: 0;
