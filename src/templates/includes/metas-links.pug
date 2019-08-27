@@ -7,6 +7,9 @@ meta(name='keywords', content='')
 meta(name='theme-color' content='#2222222')
 meta(name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no')
 
+// This directive instructs the browser to upgrade insecure URLs before making network requests.
+meta(http-equiv='Content-Security-Policy' content='upgrade-insecure-requests')
+
 link(rel='shortcut icon' type='image/x-icon' href=`${imgPath}favicon.ico`)
 
 // link(rel='apple-touch-icon' sizes='180x180' href=`${iconsPath}apple-touch-icon.png`)
