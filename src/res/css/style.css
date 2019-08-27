@@ -1810,13 +1810,17 @@ a {
 	font-size: 1.1em;
 }
 
-.space-component, .not-found h2 {
-	padding-top: 64px;
+.space-component {
+	padding-top: 40px;
 }
 
 @media (min-width: 992px) {
-	.space-component, .not-found h2  {
-		padding-top: 40px;
+	.space-component  {
+		padding-top: 64px;
 	}
 }
 
+.not-found h2 {
+	padding-top: 40px;
+	padding-bottom: 80px
+}
