@@ -817,12 +817,6 @@ a {
 	}
 }
 
-.event__speakers_full {
-	margin-top: 2em;
-	display: flex;
-	flex-wrap: wrap;
-}
-
 .event__speakers_full .event__speaker_name {
 	color: #333333;
 }
