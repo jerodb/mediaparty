@@ -18,7 +18,7 @@ const Lang = ({ locale, videoId }) => {
     {
       id: 'default',
       path: '',
-      loc: locale,
+      loc: 'es',
     },
   ]
 
