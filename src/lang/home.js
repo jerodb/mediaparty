@@ -77,7 +77,9 @@ const home = {
         description: { __html: 'Short and dynamic talks about innovation projects regarding journalism, media, open data and citizen participation. Focusing on how the projects were carried out and their impact. In just 5 minutes.' },
       },
     ],
-    goToAgenda: 'Event Agenda'
+    goToAgenda: 'Event Agenda',
+    vote: 'Vote',
+    voteText: '¿Who should travel to the Mozilla Festival representing the Media Party?'
   },
   es: {
     register: 'REGISTRATE AQUÍ',
@@ -153,7 +155,9 @@ const home = {
         description: { __html: 'Charlas cortas y dinámicas sobre proyectos de innovación en periodismo, medios, datos abiertos o participación ciudadana. Con foco en el cómo de los proyectos y/o en el impacto generado. En sólo 5\'.' },
       },
     ],
-    goToAgenda: 'Agenda del Evento'
+    goToAgenda: 'Agenda del Evento',
+    vote: 'Votar',
+    voteText: '¿Quién debería viajar al Mozilla Festival para representar a Media Party?'
   },
 }
 
