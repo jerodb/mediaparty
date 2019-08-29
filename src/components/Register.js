@@ -15,7 +15,7 @@ const Register = ({ register, registerPos, registerPre }) => (
                 onClick={() => { handleGAClick(GAEvents.hero[0]) }}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="event__meet_up_cta"
+                className="action_button"
               >
                 { register }
               </a>
