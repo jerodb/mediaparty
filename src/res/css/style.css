@@ -1846,7 +1846,7 @@ a {
 	color: #fff;
 }
 
-.action_button:active {
+.action_button:focus {
 	text-decoration: none;
 	color: #fff;
 }
