@@ -59,6 +59,10 @@ const GAEvents = {
     {
       category: 'Link',
       action: 'Go to Agenda',
+    },
+    {
+      category: 'Link',
+      action: 'Vote for Mozilla Fest representative',
     }
   ],
   whereToStay: [
