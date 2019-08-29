@@ -78,7 +78,7 @@ const home = {
       },
     ],
     goToAgenda: 'Event Agenda',
-    vote: 'Vote',
+    vote: 'VOTE',
     voteText: '¿Who should travel to the Mozilla Festival representing the Media Party?'
   },
   es: {
@@ -156,7 +156,7 @@ const home = {
       },
     ],
     goToAgenda: 'Agenda del Evento',
-    vote: 'Votar',
+    vote: 'VOTAR',
     voteText: '¿Quién debería viajar al Mozilla Festival para representar a Media Party?'
   },
 }
