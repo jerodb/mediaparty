@@ -24,7 +24,7 @@ import { GAEvents, handleGAClick } from '../../lib/GoogleAnalytics'
 
 const HomeComponent = ({
   registerPre, registerPos, register, description, venue, where, quotes, about, videoId,
-  speakers, moreSpeakers, sponsors, team, hosts, root, goToAgenda, speakersTitle, sponsorsTitle, hostsTitle, teamTitle, moreSpeakersTitle
+  speakers, moreSpeakers, sponsors, team, hosts, root, goToAgenda, speakersTitle, sponsorsTitle, hostsTitle, teamTitle, moreSpeakersTitle, voteText, vote
 }) => ( // collaborators, recruiters, partners, proposal, workshop, talk, fair,
   <div>
     { /* LIVE STREAMING */ }
@@ -57,6 +57,21 @@ const HomeComponent = ({
       workshop={workshop}
     />
     */ }
+
+    <section className="wrapper event__extra">
+      <div className="event__extra_text">{voteText}</div>
+      <div className="event__extra_btn">
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfPZs8UY70QvuD-DWrzlUGFvQlWiyMtY3sla7lFKA5pYs3mNA/viewform?usp=sf_link"
+          onClick={() => { handleGAClick(GAEvents.home[1]) }}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="action_button"
+        >
+          { vote }
+        </a>
+      </div>
+    </section>
 
     <section className="wrapper event__proposals">
       <div className="col-sm-12 col-xs-12 event__forms">
@@ -246,7 +261,9 @@ HomeComponent.propTypes = {
   sponsorsTitle: PropTypes.string,
   hostsTitle: PropTypes.string,
   teamTitle: PropTypes.string,
-  moreSpeakersTitle: PropTypes.string
+  moreSpeakersTitle: PropTypes.string,
+  vote: PropTypes.string,
+  voteText: PropTypes.string,
 }
 
 export default trackWindowScroll(HomeComponent)
