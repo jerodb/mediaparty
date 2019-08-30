@@ -163,7 +163,7 @@ const home = {
     voteText: '¿Quién debería viajar al Mozilla Festival para representar a Media Party?',
     participate: 'PARTICIPAR',
     participateText: '¿Querés ser parte de la red global que lucha contra la desinformación?',
-    participateText2: 'Participá del hackatón! Subí tu proyecto o sumate a uno existente aquí'
+    participateText2: 'Participá del hackatón! Subí tu proyecto o sumate a uno existente.'
   },
 }
 
