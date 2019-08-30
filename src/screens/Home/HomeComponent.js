@@ -24,7 +24,7 @@ import { GAEvents, handleGAClick } from '../../lib/GoogleAnalytics'
 
 const HomeComponent = ({
   registerPre, registerPos, register, description, venue, where, quotes, about, videoId,
-  speakers, moreSpeakers, sponsors, team, hosts, root, goToAgenda, speakersTitle, sponsorsTitle, hostsTitle, teamTitle, moreSpeakersTitle, voteText, vote
+  speakers, moreSpeakers, sponsors, team, hosts, root, goToAgenda, speakersTitle, sponsorsTitle, hostsTitle, teamTitle, moreSpeakersTitle, voteText, vote, participate, participateText, participateText2
 }) => ( // collaborators, recruiters, partners, proposal, workshop, talk, fair,
   <div>
     { /* LIVE STREAMING */ }
@@ -69,6 +69,36 @@ const HomeComponent = ({
           className="action_button"
         >
           { vote }
+        </a>
+      </div>
+    </section>
+
+    <section className="wrapper event__extra">
+      <div className="event__extra_text">{participateText}</div>
+      <div className="event__extra_btn">
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfGjzeIxeWgt9LrjC0JQsM97vk4rMLL6LEXI2D4TDEssQ1Aow/viewform "
+          onClick={() => { handleGAClick(GAEvents.home[2]) }}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="action_button"
+        >
+          { participate }
+        </a>
+      </div>
+    </section>
+
+    <section className="wrapper event__extra">
+      <div className="event__extra_text">{participateText2}</div>
+      <div className="event__extra_btn">
+        <a
+          href="https://hackdash.org/dashboards/mp2019"
+          onClick={() => { handleGAClick(GAEvents.home[3]) }}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="action_button"
+        >
+          { participate }
         </a>
       </div>
     </section>
@@ -264,6 +294,9 @@ HomeComponent.propTypes = {
   moreSpeakersTitle: PropTypes.string,
   vote: PropTypes.string,
   voteText: PropTypes.string,
+  participate: PropTypes.string,
+  participateText: PropTypes.string,
+  participateText2: PropTypes.string
 }
 
 export default trackWindowScroll(HomeComponent)

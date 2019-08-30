@@ -63,6 +63,14 @@ const GAEvents = {
     {
       category: 'Link',
       action: 'Vote for Mozilla Fest representative',
+    },
+    {
+      category: 'Link',
+      action: 'Take part of global net of misinformation',
+    },
+    {
+      category: 'Link',
+      action: 'Take part of the hackaton',
     }
   ],
   whereToStay: [

@@ -79,7 +79,10 @@ const home = {
     ],
     goToAgenda: 'Event Agenda',
     vote: 'VOTE',
-    voteText: '¿Who should travel to the Mozilla Festival representing the Media Party?'
+    voteText: 'Who should travel to the Mozilla Festival representing the Media Party?',
+    participate: 'TAKE PART',
+    participateText: 'Do you want to take part of the global net who fights misinformation?',
+    participateText2: 'Participate in the hackathon! Upload your project or join an existing one.'
   },
   es: {
     register: 'REGISTRATE AQUÍ',
@@ -157,7 +160,10 @@ const home = {
     ],
     goToAgenda: 'Agenda del Evento',
     vote: 'VOTAR',
-    voteText: '¿Quién debería viajar al Mozilla Festival para representar a Media Party?'
+    voteText: '¿Quién debería viajar al Mozilla Festival para representar a Media Party?',
+    participate: 'PARTICIPAR',
+    participateText: '¿Querés ser parte de la red global que lucha contra la desinformación?',
+    participateText2: 'Participá del hackatón! Subí tu proyecto o sumate a uno existente aquí'
   },
 }
 
