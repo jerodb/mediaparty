@@ -1835,8 +1835,8 @@ a {
 	max-width: 400px;
 	display: inline-block;
 	padding-top: 16px;
-	padding-left: 8px;
-	padding-right: 8px;
+	padding-left: 16px;
+	padding-right: 16px;
 }
 
 
@@ -1881,6 +1881,6 @@ a {
 
 	.event__extra_btn {
 		margin-top: 0;
-		width: 120px;
+		min-width: 120px;
 	}
 }
