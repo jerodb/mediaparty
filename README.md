@@ -91,11 +91,4 @@ $ pm2 l
     
 *(\*) The key/password used for live streaming management should be set in the .env file.*    
 *(\*\*) The **VIDEO_ID** can be obtained from the youtube video uri. ex: https://www.youtube.com/watch?v=veas_6NvJMk. (VIDEO_ID = **veas_6NvJMk**)*    
-  
-&nbsp;
-## To Do  
 
-- Add redux or some state manager.
-- Add testing.
-- Reduce bundle.js size. 
-- Move Header Link Components from Home screen to Individual screens.
